@@ -1,0 +1,13 @@
+.unauthorizedModalContainer {
+    padding: 1.5rem;
+}
+@media (min-width: 599px) {
+    .mobileSuburbStatePostcode {
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    .desktopSuburbStatePostcode {
+        display: none;
+    }
+}

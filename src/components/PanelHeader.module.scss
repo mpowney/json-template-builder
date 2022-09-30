@@ -1,0 +1,8 @@
+.root {
+    padding: 0.6rem 0.5rem 0.65rem 3.5rem;
+    border-radius: 3px;
+    width: calc(100vw - 4rem - 240px); // 4rem = padding left + padding right, 240px = Navigation width + navigation right border width
+    @media (max-width: 800px) {
+        width: calc(100vw - 4rem);
+    }
+}

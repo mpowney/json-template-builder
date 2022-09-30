@@ -1,0 +1,78 @@
+name: $(SourceBranchName)_1.0_$(Date:yyMM)$(DayOfMonth).$(Rev:r)
+
+trigger:
+  - main
+
+variables:
+  # Agent VM image name
+  vmImageName: 'windows-2019'
+  
+stages:
+- stage: Bundle
+  displayName: Bundle stage
+
+  jobs:
+  - job: Bundle
+    displayName: Bundle
+    steps:
+    - task: NodeTool@0
+      displayName: 'Use Node 16.15.0'
+      inputs:
+        versionSpec: 16.15.0
+    - task: Npm@1
+      displayName: 'npm ci'
+      inputs:
+        command: custom
+        verbose: false
+        customCommand: 'ci'
+    - task: Npm@1
+      displayName: 'npm run build'
+      inputs:
+        command: custom
+        verbose: false
+        customCommand: 'run build'
+    - task: ArchiveFiles@2
+      displayName: 'Archive dist folder'
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/build'
+        includeRootFolder: false
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber)-build.zip'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish artifacts: drop'
+
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Bundle
+  condition: succeeded()
+
+  jobs:
+  - deployment: Deploy
+    displayName: Deploy
+    environment: 'development'
+    pool:
+      vmImage: $(vmImageName)
+
+    strategy:
+      runOnce:
+        deploy:
+
+          steps:
+          - task: ExtractFiles@1
+            displayName: 'Extract files'
+            inputs:
+              archiveFilePatterns: '$(Pipeline.Workspace)/**/*.zip'
+              destinationFolder: '$(System.DefaultWorkingDirectory)/build'
+          - task: AzureFileCopy@4
+            displayName: 'Azure File Copy'
+            inputs:
+              SourcePath: '$(System.DefaultWorkingDirectory)/build/*'
+              azureSubscription: 'Visual Studio Enterprise – MPN (bfd4bd72-b677-43e8-bb6a-9b1904db85d6)'
+              Destination: AzureBlob
+              storage: ocmanagamentclient
+              ContainerName: '$web'
+          # - task: AzureCLI@1
+          #   displayName: 'Azure CLI '
+          #   inputs:
+          #     azureSubscription: 'Visual Studio Enterprise – MPN (bfd4bd72-b677-43e8-bb6a-9b1904db85d6)'
+          #     scriptLocation: inlineScript
+          #     inlineScript: 'az cdn endpoint purge --resource-group AzureRedirect --profile-name redirect-content --name redirect-content --content-paths /*'
