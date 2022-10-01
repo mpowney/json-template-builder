@@ -1,0 +1,6908 @@
+$themeDark: #005a9e;
+$themeDarkAlt: #106ebe;
+$themeDarker: #004578;
+$themePrimary: #0078d4;
+$themeSecondary: #2b88d8;
+$themeTertiary: #71afe5;
+$themeLight: #c7e0f4;
+$themeLighter: #deecf9;
+$themeLighterAlt: #eff6fc;
+$black: #000000;
+$gray220: #11100f;
+$gray210: #161514;
+$gray200: #1b1a19;
+$gray190: #201f1e;
+$gray180: #252423;
+$gray170: #292827;
+$gray160: #323130;
+$gray150: #3b3a39;
+$gray140: #484644;
+$gray130: #605e5c;
+$gray120: #797775;
+$gray110: #8a8886;
+$gray100: #979593;
+$gray90: #a19f9d;
+$gray80: #b3b0ad;
+$gray70: #bebbb8;
+$gray60: #c8c6c4;
+$gray50: #d2d0ce;
+$gray40: #e1dfdd;
+$gray30: #edebe9;
+$gray20: #f3f2f1;
+$gray10: #faf9f8;
+$white: #ffffff;
+$neutralPrimaryAlt: $gray150;
+$neutralSecondary: $gray130;
+$neutralSecondaryAlt: $gray110;
+$neutralTertiary: $gray90;
+$neutralQuaternaryAlt: $gray40;
+$neutralLight: $gray30;
+$neutralLighter: $gray20;
+$neutralLighterAlt: $gray10;
+
+$sharedPinkRed10: #750b1c;
+$sharedRed20: #a4262c;
+$sharedRed10: #d13438;
+$sharedRedOrange20: #603d30;
+$sharedRedOrange10: #da3b01;
+$sharedOrange30: #8e562e;
+$sharedOrange20: #ca5010;
+$sharedOrange10: #fa4;
+$sharedYellow10: #fce100;
+$sharedOrangeYellow20: #986f0b;
+$sharedOrangeYellow10: #c19c00;
+$sharedYellowGreen10: #8cbd18;
+$sharedGreen20: #0b6a0b;
+$sharedGreen10: #498205;
+$sharedGreenCyan10: #00ad56;
+$sharedCyan40: #005e50;
+$sharedCyan30: #005b70;
+$sharedCyan20: #038387;
+$sharedCyan10: #00b7c3;
+$sharedCyanBlue20: #004e8c;
+$sharedCyanBlue10: $themePrimary;
+$sharedBlue10: #4f6bed;
+$sharedBlueMagenta40: #373277;
+$sharedBlueMagenta30: #5c2e91;
+$sharedBlueMagenta20: #8764b8;
+$sharedBlueMagenta10: #8378de;
+$sharedMagenta20: #881798;
+$sharedMagenta10: #c239b3;
+$sharedMagentaPink20: #9b0062;
+$sharedMagentaPink10: #e3008c;
+$sharedGray40: #393939;
+$sharedGray30: #7a7574;
+$sharedGray20: #69797e;
+$sharedGray10: #a0aeb2;
+
+
+.container {
+
+    :global {
+
+        .ms-bgColor-communicationShade30,
+        .ms-bgColor-communicationShade30--hover:hover {
+            background-color: $themeDarker
+        }
+
+        .ms-bgColor-communicationShade20,
+        .ms-bgColor-communicationShade20--hover:hover {
+            background-color: $themeDark
+        }
+
+        .ms-bgColor-communicationShade10,
+        .ms-bgColor-communicationShade10--hover:hover {
+            background-color: $themeDarkAlt
+        }
+
+        .ms-bgColor-communicationPrimary,
+        .ms-bgColor-communicationPrimary--hover:hover {
+            background-color: $themePrimary
+        }
+
+        .ms-bgColor-communicationTint10,
+        .ms-bgColor-communicationTint10--hover:hover {
+            background-color: $themeSecondary
+        }
+
+        .ms-bgColor-communicationTint20,
+        .ms-bgColor-communicationTint20--hover:hover {
+            background-color: $themeLight
+        }
+
+        .ms-bgColor-communicationTint30,
+        .ms-bgColor-communicationTint30--hover:hover {
+            background-color: $themeLighter
+        }
+
+        .ms-bgColor-communicationTint40,
+        .ms-bgColor-communicationTint40--hover:hover {
+            background-color: $themeLighterAlt
+        }
+
+        .ms-bgColor-black,
+        .ms-bgColor-black--hover:hover {
+            background-color: $black
+        }
+
+        .ms-bgColor-gray220,
+        .ms-bgColor-gray220--hover:hover {
+            background-color: $gray220
+        }
+
+        .ms-bgColor-gray210,
+        .ms-bgColor-gray210--hover:hover {
+            background-color: $gray210
+        }
+
+        .ms-bgColor-gray200,
+        .ms-bgColor-gray200--hover:hover {
+            background-color: $gray200
+        }
+
+        .ms-bgColor-gray190,
+        .ms-bgColor-gray190--hover:hover {
+            background-color: $gray190
+        }
+
+        .ms-bgColor-gray180,
+        .ms-bgColor-gray180--hover:hover {
+            background-color: $gray180
+        }
+
+        .ms-bgColor-gray170,
+        .ms-bgColor-gray170--hover:hover {
+            background-color: $gray170
+        }
+
+        .ms-bgColor-gray160,
+        .ms-bgColor-gray160--hover:hover {
+            background-color: $gray160
+        }
+
+        .ms-bgColor-gray150,
+        .ms-bgColor-gray150--hover:hover {
+            background-color: $neutralPrimaryAlt
+        }
+
+        .ms-bgColor-gray140,
+        .ms-bgColor-gray140--hover:hover {
+            background-color: $gray140
+        }
+
+        .ms-bgColor-gray130,
+        .ms-bgColor-gray130--hover:hover {
+            background-color: $neutralSecondary
+        }
+
+        .ms-bgColor-gray120,
+        .ms-bgColor-gray120--hover:hover {
+            background-color: $gray120
+        }
+
+        .ms-bgColor-gray110,
+        .ms-bgColor-gray110--hover:hover {
+            background-color: $neutralSecondaryAlt
+        }
+
+        .ms-bgColor-gray100,
+        .ms-bgColor-gray100--hover:hover {
+            background-color: $gray100
+        }
+
+        .ms-bgColor-gray90,
+        .ms-bgColor-gray90--hover:hover {
+            background-color: $neutralTertiary
+        }
+
+        .ms-bgColor-gray80,
+        .ms-bgColor-gray80--hover:hover {
+            background-color: $gray80
+        }
+
+        .ms-bgColor-gray70,
+        .ms-bgColor-gray70--hover:hover {
+            background-color: $gray70
+        }
+
+        .ms-bgColor-gray60,
+        .ms-bgColor-gray60--hover:hover {
+            background-color: $gray60
+        }
+
+        .ms-bgColor-gray50,
+        .ms-bgColor-gray50--hover:hover {
+            background-color: $gray50
+        }
+
+        .ms-bgColor-gray40,
+        .ms-bgColor-gray40--hover:hover {
+            background-color: $neutralQuaternaryAlt
+        }
+
+        .ms-bgColor-gray30,
+        .ms-bgColor-gray30--hover:hover {
+            background-color: $neutralLight
+        }
+
+        .ms-bgColor-gray20,
+        .ms-bgColor-gray20--hover:hover {
+            background-color: $neutralLighter
+        }
+
+        .ms-bgColor-gray10,
+        .ms-bgColor-gray10--hover:hover {
+            background-color: $neutralLighterAlt
+        }
+
+        .ms-bgColor-white,
+        .ms-bgColor-white--hover:hover {
+            background-color: $white
+        }
+
+        .ms-bgColor-sharedPinkRed10,
+        .ms-bgColor-sharedPinkRed10--hover:hover {
+            background-color: #750b1c
+        }
+
+        .ms-bgColor-sharedRed20,
+        .ms-bgColor-sharedRed20--hover:hover {
+            background-color: #a4262c
+        }
+
+        .ms-bgColor-sharedRed10,
+        .ms-bgColor-sharedRed10--hover:hover {
+            background-color: #d13438
+        }
+
+        .ms-bgColor-sharedRedOrange20,
+        .ms-bgColor-sharedRedOrange20--hover:hover {
+            background-color: #603d30
+        }
+
+        .ms-bgColor-sharedRedOrange10,
+        .ms-bgColor-sharedRedOrange10--hover:hover {
+            background-color: #da3b01
+        }
+
+        .ms-bgColor-sharedOrange30,
+        .ms-bgColor-sharedOrange30--hover:hover {
+            background-color: #8e562e
+        }
+
+        .ms-bgColor-sharedOrange20,
+        .ms-bgColor-sharedOrange20--hover:hover {
+            background-color: #ca5010
+        }
+
+        .ms-bgColor-sharedOrange10,
+        .ms-bgColor-sharedOrange10--hover:hover {
+            background-color: #fa4
+        }
+
+        .ms-bgColor-sharedYellow10,
+        .ms-bgColor-sharedYellow10--hover:hover {
+            background-color: #fce100
+        }
+
+        .ms-bgColor-sharedOrangeYellow20,
+        .ms-bgColor-sharedOrangeYellow20--hover:hover {
+            background-color: #986f0b
+        }
+
+        .ms-bgColor-sharedOrangeYellow10,
+        .ms-bgColor-sharedOrangeYellow10--hover:hover {
+            background-color: #c19c00
+        }
+
+        .ms-bgColor-sharedYellowGreen10,
+        .ms-bgColor-sharedYellowGreen10--hover:hover {
+            background-color: #8cbd18
+        }
+
+        .ms-bgColor-sharedGreen20,
+        .ms-bgColor-sharedGreen20--hover:hover {
+            background-color: #0b6a0b
+        }
+
+        .ms-bgColor-sharedGreen10,
+        .ms-bgColor-sharedGreen10--hover:hover {
+            background-color: #498205
+        }
+
+        .ms-bgColor-sharedGreenCyan10,
+        .ms-bgColor-sharedGreenCyan10--hover:hover {
+            background-color: #00ad56
+        }
+
+        .ms-bgColor-sharedCyan40,
+        .ms-bgColor-sharedCyan40--hover:hover {
+            background-color: #005e50
+        }
+
+        .ms-bgColor-sharedCyan30,
+        .ms-bgColor-sharedCyan30--hover:hover {
+            background-color: #005b70
+        }
+
+        .ms-bgColor-sharedCyan20,
+        .ms-bgColor-sharedCyan20--hover:hover {
+            background-color: #038387
+        }
+
+        .ms-bgColor-sharedCyan10,
+        .ms-bgColor-sharedCyan10--hover:hover {
+            background-color: #00b7c3
+        }
+
+        .ms-bgColor-sharedCyanBlue20,
+        .ms-bgColor-sharedCyanBlue20--hover:hover {
+            background-color: #004e8c
+        }
+
+        .ms-bgColor-sharedCyanBlue10,
+        .ms-bgColor-sharedCyanBlue10--hover:hover {
+            background-color: $themePrimary
+        }
+
+        .ms-bgColor-sharedBlue10,
+        .ms-bgColor-sharedBlue10--hover:hover {
+            background-color: #4f6bed
+        }
+
+        .ms-bgColor-sharedBlueMagenta40,
+        .ms-bgColor-sharedBlueMagenta40--hover:hover {
+            background-color: #373277
+        }
+
+        .ms-bgColor-sharedBlueMagenta30,
+        .ms-bgColor-sharedBlueMagenta30--hover:hover {
+            background-color: #5c2e91
+        }
+
+        .ms-bgColor-sharedBlueMagenta20,
+        .ms-bgColor-sharedBlueMagenta20--hover:hover {
+            background-color: #8764b8
+        }
+
+        .ms-bgColor-sharedBlueMagenta10,
+        .ms-bgColor-sharedBlueMagenta10--hover:hover {
+            background-color: #8378de
+        }
+
+        .ms-bgColor-sharedMagenta20,
+        .ms-bgColor-sharedMagenta20--hover:hover {
+            background-color: #881798
+        }
+
+        .ms-bgColor-sharedMagenta10,
+        .ms-bgColor-sharedMagenta10--hover:hover {
+            background-color: #c239b3
+        }
+
+        .ms-bgColor-sharedMagentaPink20,
+        .ms-bgColor-sharedMagentaPink20--hover:hover {
+            background-color: #9b0062
+        }
+
+        .ms-bgColor-sharedMagentaPink10,
+        .ms-bgColor-sharedMagentaPink10--hover:hover {
+            background-color: #e3008c
+        }
+
+        .ms-bgColor-sharedGray40,
+        .ms-bgColor-sharedGray40--hover:hover {
+            background-color: #393939
+        }
+
+        .ms-bgColor-sharedGray30,
+        .ms-bgColor-sharedGray30--hover:hover {
+            background-color: #7a7574
+        }
+
+        .ms-bgColor-sharedGray20,
+        .ms-bgColor-sharedGray20--hover:hover {
+            background-color: #69797e
+        }
+
+        .ms-bgColor-sharedGray10,
+        .ms-bgColor-sharedGray10--hover:hover {
+            background-color: #a0aeb2
+        }
+
+        .ms-borderColor-communicationShade30,
+        .ms-borderColor-communicationShade30--hover:hover {
+            border-color: $themeDarker
+        }
+
+        .ms-borderColor-communicationShade20,
+        .ms-borderColor-communicationShade20--hover:hover {
+            border-color: $themeDark
+        }
+
+        .ms-borderColor-communicationShade10,
+        .ms-borderColor-communicationShade10--hover:hover {
+            border-color: $themeDarkAlt
+        }
+
+        .ms-borderColor-communicationPrimary,
+        .ms-borderColor-communicationPrimary--hover:hover {
+            border-color: $themePrimary
+        }
+
+        .ms-borderColor-communicationTint10,
+        .ms-borderColor-communicationTint10--hover:hover {
+            border-color: $themeSecondary
+        }
+
+        .ms-borderColor-communicationTint20,
+        .ms-borderColor-communicationTint20--hover:hover {
+            border-color: $themeLight
+        }
+
+        .ms-borderColor-communicationTint30,
+        .ms-borderColor-communicationTint30--hover:hover {
+            border-color: $themeLighter
+        }
+
+        .ms-borderColor-communicationTint40,
+        .ms-borderColor-communicationTint40--hover:hover {
+            border-color: $themeLighterAlt
+        }
+
+        .ms-borderColor-black,
+        .ms-borderColor-black--hover:hover {
+            border-color: $black
+        }
+
+        .ms-borderColor-gray220,
+        .ms-borderColor-gray220--hover:hover {
+            border-color: $gray220
+        }
+
+        .ms-borderColor-gray210,
+        .ms-borderColor-gray210--hover:hover {
+            border-color: $gray210
+        }
+
+        .ms-borderColor-gray200,
+        .ms-borderColor-gray200--hover:hover {
+            border-color: $gray200
+        }
+
+        .ms-borderColor-gray190,
+        .ms-borderColor-gray190--hover:hover {
+            border-color: $gray190
+        }
+
+        .ms-borderColor-gray180,
+        .ms-borderColor-gray180--hover:hover {
+            border-color: $gray180
+        }
+
+        .ms-borderColor-gray170,
+        .ms-borderColor-gray170--hover:hover {
+            border-color: $gray170
+        }
+
+        .ms-borderColor-gray160,
+        .ms-borderColor-gray160--hover:hover {
+            border-color: $gray160
+        }
+
+        .ms-borderColor-gray150,
+        .ms-borderColor-gray150--hover:hover {
+            border-color: $neutralPrimaryAlt
+        }
+
+        .ms-borderColor-gray140,
+        .ms-borderColor-gray140--hover:hover {
+            border-color: $gray140
+        }
+
+        .ms-borderColor-gray130,
+        .ms-borderColor-gray130--hover:hover {
+            border-color: $neutralSecondary
+        }
+
+        .ms-borderColor-gray120,
+        .ms-borderColor-gray120--hover:hover {
+            border-color: $gray120
+        }
+
+        .ms-borderColor-gray110,
+        .ms-borderColor-gray110--hover:hover {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .ms-borderColor-gray100,
+        .ms-borderColor-gray100--hover:hover {
+            border-color: $gray100
+        }
+
+        .ms-borderColor-gray90,
+        .ms-borderColor-gray90--hover:hover {
+            border-color: $neutralTertiary
+        }
+
+        .ms-borderColor-gray80,
+        .ms-borderColor-gray80--hover:hover {
+            border-color: $gray80
+        }
+
+        .ms-borderColor-gray70,
+        .ms-borderColor-gray70--hover:hover {
+            border-color: $gray70
+        }
+
+        .ms-borderColor-gray60,
+        .ms-borderColor-gray60--hover:hover {
+            border-color: $gray60
+        }
+
+        .ms-borderColor-gray50,
+        .ms-borderColor-gray50--hover:hover {
+            border-color: $gray50
+        }
+
+        .ms-borderColor-gray40,
+        .ms-borderColor-gray40--hover:hover {
+            border-color: $neutralQuaternaryAlt
+        }
+
+        .ms-borderColor-gray30,
+        .ms-borderColor-gray30--hover:hover {
+            border-color: $neutralLight
+        }
+
+        .ms-borderColor-gray20,
+        .ms-borderColor-gray20--hover:hover {
+            border-color: $neutralLighter
+        }
+
+        .ms-borderColor-gray10,
+        .ms-borderColor-gray10--hover:hover {
+            border-color: $neutralLighterAlt
+        }
+
+        .ms-borderColor-white,
+        .ms-borderColor-white--hover:hover {
+            border-color: $white
+        }
+
+        .ms-borderColor-sharedPinkRed10,
+        .ms-borderColor-sharedPinkRed10--hover:hover {
+            border-color: #750b1c
+        }
+
+        .ms-borderColor-sharedRed20,
+        .ms-borderColor-sharedRed20--hover:hover {
+            border-color: #a4262c
+        }
+
+        .ms-borderColor-sharedRed10,
+        .ms-borderColor-sharedRed10--hover:hover {
+            border-color: #d13438
+        }
+
+        .ms-borderColor-sharedRedOrange20,
+        .ms-borderColor-sharedRedOrange20--hover:hover {
+            border-color: #603d30
+        }
+
+        .ms-borderColor-sharedRedOrange10,
+        .ms-borderColor-sharedRedOrange10--hover:hover {
+            border-color: #da3b01
+        }
+
+        .ms-borderColor-sharedOrange30,
+        .ms-borderColor-sharedOrange30--hover:hover {
+            border-color: #8e562e
+        }
+
+        .ms-borderColor-sharedOrange20,
+        .ms-borderColor-sharedOrange20--hover:hover {
+            border-color: #ca5010
+        }
+
+        .ms-borderColor-sharedOrange10,
+        .ms-borderColor-sharedOrange10--hover:hover {
+            border-color: #fa4
+        }
+
+        .ms-borderColor-sharedYellow10,
+        .ms-borderColor-sharedYellow10--hover:hover {
+            border-color: #fce100
+        }
+
+        .ms-borderColor-sharedOrangeYellow20,
+        .ms-borderColor-sharedOrangeYellow20--hover:hover {
+            border-color: #986f0b
+        }
+
+        .ms-borderColor-sharedOrangeYellow10,
+        .ms-borderColor-sharedOrangeYellow10--hover:hover {
+            border-color: #c19c00
+        }
+
+        .ms-borderColor-sharedYellowGreen10,
+        .ms-borderColor-sharedYellowGreen10--hover:hover {
+            border-color: #8cbd18
+        }
+
+        .ms-borderColor-sharedGreen20,
+        .ms-borderColor-sharedGreen20--hover:hover {
+            border-color: #0b6a0b
+        }
+
+        .ms-borderColor-sharedGreen10,
+        .ms-borderColor-sharedGreen10--hover:hover {
+            border-color: #498205
+        }
+
+        .ms-borderColor-sharedGreenCyan10,
+        .ms-borderColor-sharedGreenCyan10--hover:hover {
+            border-color: #00ad56
+        }
+
+        .ms-borderColor-sharedCyan40,
+        .ms-borderColor-sharedCyan40--hover:hover {
+            border-color: #005e50
+        }
+
+        .ms-borderColor-sharedCyan30,
+        .ms-borderColor-sharedCyan30--hover:hover {
+            border-color: #005b70
+        }
+
+        .ms-borderColor-sharedCyan20,
+        .ms-borderColor-sharedCyan20--hover:hover {
+            border-color: #038387
+        }
+
+        .ms-borderColor-sharedCyan10,
+        .ms-borderColor-sharedCyan10--hover:hover {
+            border-color: #00b7c3
+        }
+
+        .ms-borderColor-sharedCyanBlue20,
+        .ms-borderColor-sharedCyanBlue20--hover:hover {
+            border-color: #004e8c
+        }
+
+        .ms-borderColor-sharedCyanBlue10,
+        .ms-borderColor-sharedCyanBlue10--hover:hover {
+            border-color: $themePrimary
+        }
+
+        .ms-borderColor-sharedBlue10,
+        .ms-borderColor-sharedBlue10--hover:hover {
+            border-color: #4f6bed
+        }
+
+        .ms-borderColor-sharedBlueMagenta40,
+        .ms-borderColor-sharedBlueMagenta40--hover:hover {
+            border-color: #373277
+        }
+
+        .ms-borderColor-sharedBlueMagenta30,
+        .ms-borderColor-sharedBlueMagenta30--hover:hover {
+            border-color: #5c2e91
+        }
+
+        .ms-borderColor-sharedBlueMagenta20,
+        .ms-borderColor-sharedBlueMagenta20--hover:hover {
+            border-color: #8764b8
+        }
+
+        .ms-borderColor-sharedBlueMagenta10,
+        .ms-borderColor-sharedBlueMagenta10--hover:hover {
+            border-color: #8378de
+        }
+
+        .ms-borderColor-sharedMagenta20,
+        .ms-borderColor-sharedMagenta20--hover:hover {
+            border-color: #881798
+        }
+
+        .ms-borderColor-sharedMagenta10,
+        .ms-borderColor-sharedMagenta10--hover:hover {
+            border-color: #c239b3
+        }
+
+        .ms-borderColor-sharedMagentaPink20,
+        .ms-borderColor-sharedMagentaPink20--hover:hover {
+            border-color: #9b0062
+        }
+
+        .ms-borderColor-sharedMagentaPink10,
+        .ms-borderColor-sharedMagentaPink10--hover:hover {
+            border-color: #e3008c
+        }
+
+        .ms-borderColor-sharedGray40,
+        .ms-borderColor-sharedGray40--hover:hover {
+            border-color: #393939
+        }
+
+        .ms-borderColor-sharedGray30,
+        .ms-borderColor-sharedGray30--hover:hover {
+            border-color: #7a7574
+        }
+
+        .ms-borderColor-sharedGray20,
+        .ms-borderColor-sharedGray20--hover:hover {
+            border-color: #69797e
+        }
+
+        .ms-borderColor-sharedGray10,
+        .ms-borderColor-sharedGray10--hover:hover {
+            border-color: #a0aeb2
+        }
+
+        .ms-fontColor-communicationShade30,
+        .ms-fontColor-communicationShade30--hover:hover {
+            color: $themeDarker
+        }
+
+        .ms-fontColor-communicationShade20,
+        .ms-fontColor-communicationShade20--hover:hover {
+            color: $themeDark
+        }
+
+        .ms-fontColor-communicationShade10,
+        .ms-fontColor-communicationShade10--hover:hover {
+            color: $themeDarkAlt
+        }
+
+        .ms-fontColor-communicationPrimary,
+        .ms-fontColor-communicationPrimary--hover:hover {
+            color: $themePrimary
+        }
+
+        .ms-fontColor-communicationTint10,
+        .ms-fontColor-communicationTint10--hover:hover {
+            color: $themeSecondary
+        }
+
+        .ms-fontColor-communicationTint20,
+        .ms-fontColor-communicationTint20--hover:hover {
+            color: $themeLight
+        }
+
+        .ms-fontColor-communicationTint30,
+        .ms-fontColor-communicationTint30--hover:hover {
+            color: $themeLighter
+        }
+
+        .ms-fontColor-communicationTint40,
+        .ms-fontColor-communicationTint40--hover:hover {
+            color: $themeLighterAlt
+        }
+
+        .ms-fontColor-black,
+        .ms-fontColor-black--hover:hover {
+            color: $black
+        }
+
+        .ms-fontColor-gray220,
+        .ms-fontColor-gray220--hover:hover {
+            color: $gray220
+        }
+
+        .ms-fontColor-gray210,
+        .ms-fontColor-gray210--hover:hover {
+            color: $gray210
+        }
+
+        .ms-fontColor-gray200,
+        .ms-fontColor-gray200--hover:hover {
+            color: $gray200
+        }
+
+        .ms-fontColor-gray190,
+        .ms-fontColor-gray190--hover:hover {
+            color: $gray190
+        }
+
+        .ms-fontColor-gray180,
+        .ms-fontColor-gray180--hover:hover {
+            color: $gray180
+        }
+
+        .ms-fontColor-gray170,
+        .ms-fontColor-gray170--hover:hover {
+            color: $gray170
+        }
+
+        .ms-fontColor-gray160,
+        .ms-fontColor-gray160--hover:hover {
+            color: $gray160
+        }
+
+        .ms-fontColor-gray150,
+        .ms-fontColor-gray150--hover:hover {
+            color: $neutralPrimaryAlt
+        }
+
+        .ms-fontColor-gray140,
+        .ms-fontColor-gray140--hover:hover {
+            color: $gray140
+        }
+
+        .ms-fontColor-gray130,
+        .ms-fontColor-gray130--hover:hover {
+            color: $neutralSecondary
+        }
+
+        .ms-fontColor-gray120,
+        .ms-fontColor-gray120--hover:hover {
+            color: $gray120
+        }
+
+        .ms-fontColor-gray110,
+        .ms-fontColor-gray110--hover:hover {
+            color: $neutralSecondaryAlt
+        }
+
+        .ms-fontColor-gray100,
+        .ms-fontColor-gray100--hover:hover {
+            color: $gray100
+        }
+
+        .ms-fontColor-gray90,
+        .ms-fontColor-gray90--hover:hover {
+            color: $neutralTertiary
+        }
+
+        .ms-fontColor-gray80,
+        .ms-fontColor-gray80--hover:hover {
+            color: $gray80
+        }
+
+        .ms-fontColor-gray70,
+        .ms-fontColor-gray70--hover:hover {
+            color: $gray70
+        }
+
+        .ms-fontColor-gray60,
+        .ms-fontColor-gray60--hover:hover {
+            color: $gray60
+        }
+
+        .ms-fontColor-gray50,
+        .ms-fontColor-gray50--hover:hover {
+            color: $gray50
+        }
+
+        .ms-fontColor-gray40,
+        .ms-fontColor-gray40--hover:hover {
+            color: $neutralQuaternaryAlt
+        }
+
+        .ms-fontColor-gray30,
+        .ms-fontColor-gray30--hover:hover {
+            color: $neutralLight
+        }
+
+        .ms-fontColor-gray20,
+        .ms-fontColor-gray20--hover:hover {
+            color: $neutralLighter
+        }
+
+        .ms-fontColor-gray10,
+        .ms-fontColor-gray10--hover:hover {
+            color: $neutralLighterAlt
+        }
+
+        .ms-fontColor-white,
+        .ms-fontColor-white--hover:hover {
+            color: $white
+        }
+
+        .ms-fontColor-sharedPinkRed10,
+        .ms-fontColor-sharedPinkRed10--hover:hover {
+            color: #750b1c
+        }
+
+        .ms-fontColor-sharedRed20,
+        .ms-fontColor-sharedRed20--hover:hover {
+            color: #a4262c
+        }
+
+        .ms-fontColor-sharedRed10,
+        .ms-fontColor-sharedRed10--hover:hover {
+            color: #d13438
+        }
+
+        .ms-fontColor-sharedRedOrange20,
+        .ms-fontColor-sharedRedOrange20--hover:hover {
+            color: #603d30
+        }
+
+        .ms-fontColor-sharedRedOrange10,
+        .ms-fontColor-sharedRedOrange10--hover:hover {
+            color: #da3b01
+        }
+
+        .ms-fontColor-sharedOrange30,
+        .ms-fontColor-sharedOrange30--hover:hover {
+            color: #8e562e
+        }
+
+        .ms-fontColor-sharedOrange20,
+        .ms-fontColor-sharedOrange20--hover:hover {
+            color: #ca5010
+        }
+
+        .ms-fontColor-sharedOrange10,
+        .ms-fontColor-sharedOrange10--hover:hover {
+            color: #fa4
+        }
+
+        .ms-fontColor-sharedYellow10,
+        .ms-fontColor-sharedYellow10--hover:hover {
+            color: #fce100
+        }
+
+        .ms-fontColor-sharedOrangeYellow20,
+        .ms-fontColor-sharedOrangeYellow20--hover:hover {
+            color: #986f0b
+        }
+
+        .ms-fontColor-sharedOrangeYellow10,
+        .ms-fontColor-sharedOrangeYellow10--hover:hover {
+            color: #c19c00
+        }
+
+        .ms-fontColor-sharedYellowGreen10,
+        .ms-fontColor-sharedYellowGreen10--hover:hover {
+            color: #8cbd18
+        }
+
+        .ms-fontColor-sharedGreen20,
+        .ms-fontColor-sharedGreen20--hover:hover {
+            color: #0b6a0b
+        }
+
+        .ms-fontColor-sharedGreen10,
+        .ms-fontColor-sharedGreen10--hover:hover {
+            color: #498205
+        }
+
+        .ms-fontColor-sharedGreenCyan10,
+        .ms-fontColor-sharedGreenCyan10--hover:hover {
+            color: #00ad56
+        }
+
+        .ms-fontColor-sharedCyan40,
+        .ms-fontColor-sharedCyan40--hover:hover {
+            color: #005e50
+        }
+
+        .ms-fontColor-sharedCyan30,
+        .ms-fontColor-sharedCyan30--hover:hover {
+            color: #005b70
+        }
+
+        .ms-fontColor-sharedCyan20,
+        .ms-fontColor-sharedCyan20--hover:hover {
+            color: #038387
+        }
+
+        .ms-fontColor-sharedCyan10,
+        .ms-fontColor-sharedCyan10--hover:hover {
+            color: #00b7c3
+        }
+
+        .ms-fontColor-sharedCyanBlue20,
+        .ms-fontColor-sharedCyanBlue20--hover:hover {
+            color: #004e8c
+        }
+
+        .ms-fontColor-sharedCyanBlue10,
+        .ms-fontColor-sharedCyanBlue10--hover:hover {
+            color: $themePrimary
+        }
+
+        .ms-fontColor-sharedBlue10,
+        .ms-fontColor-sharedBlue10--hover:hover {
+            color: #4f6bed
+        }
+
+        .ms-fontColor-sharedBlueMagenta40,
+        .ms-fontColor-sharedBlueMagenta40--hover:hover {
+            color: #373277
+        }
+
+        .ms-fontColor-sharedBlueMagenta30,
+        .ms-fontColor-sharedBlueMagenta30--hover:hover {
+            color: #5c2e91
+        }
+
+        .ms-fontColor-sharedBlueMagenta20,
+        .ms-fontColor-sharedBlueMagenta20--hover:hover {
+            color: #8764b8
+        }
+
+        .ms-fontColor-sharedBlueMagenta10,
+        .ms-fontColor-sharedBlueMagenta10--hover:hover {
+            color: #8378de
+        }
+
+        .ms-fontColor-sharedMagenta20,
+        .ms-fontColor-sharedMagenta20--hover:hover {
+            color: #881798
+        }
+
+        .ms-fontColor-sharedMagenta10,
+        .ms-fontColor-sharedMagenta10--hover:hover {
+            color: #c239b3
+        }
+
+        .ms-fontColor-sharedMagentaPink20,
+        .ms-fontColor-sharedMagentaPink20--hover:hover {
+            color: #9b0062
+        }
+
+        .ms-fontColor-sharedMagentaPink10,
+        .ms-fontColor-sharedMagentaPink10--hover:hover {
+            color: #e3008c
+        }
+
+        .ms-fontColor-sharedGray40,
+        .ms-fontColor-sharedGray40--hover:hover {
+            color: #393939
+        }
+
+        .ms-fontColor-sharedGray30,
+        .ms-fontColor-sharedGray30--hover:hover {
+            color: #7a7574
+        }
+
+        .ms-fontColor-sharedGray20,
+        .ms-fontColor-sharedGray20--hover:hover {
+            color: #69797e
+        }
+
+        .ms-fontColor-sharedGray10,
+        .ms-fontColor-sharedGray10--hover:hover {
+            color: #a0aeb2
+        }
+
+        .ms-bgColor-themeDark,
+        .ms-bgColor-themeDark--hover:hover {
+            background-color: $themeDark
+        }
+
+        .ms-bgColor-themeDarkAlt,
+        .ms-bgColor-themeDarkAlt--hover:hover {
+            background-color: $themeDarkAlt
+        }
+
+        .ms-bgColor-themeDarker,
+        .ms-bgColor-themeDarker--hover:hover {
+            background-color: $themeDarker
+        }
+
+        .ms-bgColor-themePrimary,
+        .ms-bgColor-themePrimary--hover:hover {
+            background-color: $themePrimary
+        }
+
+        .ms-bgColor-themeSecondary,
+        .ms-bgColor-themeSecondary--hover:hover {
+            background-color: $themeSecondary
+        }
+
+        .ms-bgColor-themeTertiary,
+        .ms-bgColor-themeTertiary--hover:hover {
+            background-color: $themeTertiary
+        }
+
+        .ms-bgColor-themeLight,
+        .ms-bgColor-themeLight--hover:hover {
+            background-color: $themeLight
+        }
+
+        .ms-bgColor-themeLighter,
+        .ms-bgColor-themeLighter--hover:hover {
+            background-color: $themeLighter
+        }
+
+        .ms-bgColor-themeLighterAlt,
+        .ms-bgColor-themeLighterAlt--hover:hover {
+            background-color: $themeLighterAlt
+        }
+
+        .ms-borderColor-themeDark,
+        .ms-borderColor-themeDark--hover:hover {
+            border-color: $themeDark
+        }
+
+        .ms-borderColor-themeDarkAlt,
+        .ms-borderColor-themeDarkAlt--hover:hover {
+            border-color: $themeDarkAlt
+        }
+
+        .ms-borderColor-themeDarker,
+        .ms-borderColor-themeDarker--hover:hover {
+            border-color: $themeDarker
+        }
+
+        .ms-borderColor-themePrimary,
+        .ms-borderColor-themePrimary--hover:hover {
+            border-color: $themePrimary
+        }
+
+        .ms-borderColor-themeSecondary,
+        .ms-borderColor-themeSecondary--hover:hover {
+            border-color: $themeSecondary
+        }
+
+        .ms-borderColor-themeTertiary,
+        .ms-borderColor-themeTertiary--hover:hover {
+            border-color: $themeTertiary
+        }
+
+        .ms-borderColor-themeLight,
+        .ms-borderColor-themeLight--hover:hover {
+            border-color: $themeLight
+        }
+
+        .ms-borderColor-themeLighter,
+        .ms-borderColor-themeLighter--hover:hover {
+            border-color: $themeLighter
+        }
+
+        .ms-borderColor-themeLighterAlt,
+        .ms-borderColor-themeLighterAlt--hover:hover {
+            border-color: $themeLighterAlt
+        }
+
+        .ms-fontColor-themeDarker,
+        .ms-fontColor-themeDarker--hover:hover {
+            color: $themeDarker
+        }
+
+        .ms-fontColor-themeDark,
+        .ms-fontColor-themeDark--hover:hover {
+            color: $themeDark
+        }
+
+        .ms-fontColor-themeDarkAlt,
+        .ms-fontColor-themeDarkAlt--hover:hover {
+            color: $themeDarkAlt
+        }
+
+        .ms-fontColor-themePrimary,
+        .ms-fontColor-themePrimary--hover:hover {
+            color: $themePrimary
+        }
+
+        .ms-fontColor-themeSecondary,
+        .ms-fontColor-themeSecondary--hover:hover {
+            color: $themeSecondary
+        }
+
+        .ms-fontColor-themeTertiary,
+        .ms-fontColor-themeTertiary--hover:hover {
+            color: $themeTertiary
+        }
+
+        .ms-fontColor-themeLight,
+        .ms-fontColor-themeLight--hover:hover {
+            color: $themeLight
+        }
+
+        .ms-fontColor-themeLighter,
+        .ms-fontColor-themeLighter--hover:hover {
+            color: $themeLighter
+        }
+
+        .ms-fontColor-themeLighterAlt,
+        .ms-fontColor-themeLighterAlt--hover:hover {
+            color: $themeLighterAlt
+        }
+
+        .ms-bgColor-black,
+        .ms-bgColor-black--hover:hover {
+            background-color: $black
+        }
+
+        .ms-bgColor-neutralDark,
+        .ms-bgColor-neutralDark--hover:hover {
+            background-color: $gray190
+        }
+
+        .ms-bgColor-neutralPrimary,
+        .ms-bgColor-neutralPrimary--hover:hover {
+            background-color: $gray160
+        }
+
+        .ms-bgColor-neutralPrimaryAlt,
+        .ms-bgColor-neutralPrimaryAlt--hover:hover {
+            background-color: $neutralPrimaryAlt
+        }
+
+        .ms-bgColor-neutralSecondary,
+        .ms-bgColor-neutralSecondary--hover:hover {
+            background-color: $neutralSecondary
+        }
+
+        .ms-bgColor-neutralSecondaryAlt,
+        .ms-bgColor-neutralSecondaryAlt--hover:hover {
+            background-color: $neutralSecondaryAlt
+        }
+
+        .ms-bgColor-neutralTertiary,
+        .ms-bgColor-neutralTertiary--hover:hover {
+            background-color: $neutralTertiary
+        }
+
+        .ms-bgColor-neutralTertiaryAlt,
+        .ms-bgColor-neutralTertiaryAlt--hover:hover {
+            background-color: $gray60
+        }
+
+        .ms-bgColor-neutralQuaternary,
+        .ms-bgColor-neutralQuaternary--hover:hover {
+            background-color: $gray50
+        }
+
+        .ms-bgColor-neutralQuaternaryAlt,
+        .ms-bgColor-neutralQuaternaryAlt--hover:hover {
+            background-color: $neutralQuaternaryAlt
+        }
+
+        .ms-bgColor-neutralLight,
+        .ms-bgColor-neutralLight--hover:hover {
+            background-color: $neutralLight
+        }
+
+        .ms-bgColor-neutralLighter,
+        .ms-bgColor-neutralLighter--hover:hover {
+            background-color: $neutralLighter
+        }
+
+        .ms-bgColor-neutralLighterAlt,
+        .ms-bgColor-neutralLighterAlt--hover:hover {
+            background-color: $neutralLighterAlt
+        }
+
+        .ms-bgColor-white,
+        .ms-bgColor-white--hover:hover {
+            background-color: $white
+        }
+
+        .ms-borderColor-black,
+        .ms-borderColor-black--hover:hover {
+            border-color: $black
+        }
+
+        .ms-borderColor-neutralDark,
+        .ms-borderColor-neutralDark--hover:hover {
+            border-color: $gray190
+        }
+
+        .ms-borderColor-neutralPrimary,
+        .ms-borderColor-neutralPrimary--hover:hover {
+            border-color: $gray160
+        }
+
+        .ms-borderColor-neutralPrimaryAlt,
+        .ms-borderColor-neutralPrimaryAlt--hover:hover {
+            border-color: $neutralPrimaryAlt
+        }
+
+        .ms-borderColor-neutralSecondary,
+        .ms-borderColor-neutralSecondary--hover:hover {
+            border-color: $neutralSecondary
+        }
+
+        .ms-borderColor-neutralSecondaryAlt,
+        .ms-borderColor-neutralSecondaryAlt--hover:hover {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .ms-borderColor-neutralTertiary,
+        .ms-borderColor-neutralTertiary--hover:hover {
+            border-color: $neutralTertiary
+        }
+
+        .ms-borderColor-neutralTertiaryAlt,
+        .ms-borderColor-neutralTertiaryAlt--hover:hover {
+            border-color: $gray60
+        }
+
+        .ms-borderColor-neutralQuaternary,
+        .ms-borderColor-neutralQuaternary--hover:hover {
+            border-color: $gray50
+        }
+
+        .ms-borderColor-neutralQuaternaryAlt,
+        .ms-borderColor-neutralQuaternaryAlt--hover:hover {
+            border-color: $neutralQuaternaryAlt
+        }
+
+        .ms-borderColor-neutralLight,
+        .ms-borderColor-neutralLight--hover:hover {
+            border-color: $neutralLight
+        }
+
+        .ms-borderColor-neutralLighter,
+        .ms-borderColor-neutralLighter--hover:hover {
+            border-color: $neutralLighter
+        }
+
+        .ms-borderColor-neutralLighterAlt,
+        .ms-borderColor-neutralLighterAlt--hover:hover {
+            border-color: $neutralLighterAlt
+        }
+
+        .ms-borderColor-white,
+        .ms-borderColor-white--hover:hover {
+            border-color: $white
+        }
+
+        .ms-fontColor-black,
+        .ms-fontColor-black--hover:hover {
+            color: $black
+        }
+
+        .ms-fontColor-neutralDark,
+        .ms-fontColor-neutralDark--hover:hover {
+            color: $gray190
+        }
+
+        .ms-fontColor-neutralPrimary,
+        .ms-fontColor-neutralPrimary--hover:hover {
+            color: $gray160
+        }
+
+        .ms-fontColor-neutralPrimaryAlt,
+        .ms-fontColor-neutralPrimaryAlt--hover:hover {
+            color: $neutralPrimaryAlt
+        }
+
+        .ms-fontColor-neutralSecondary,
+        .ms-fontColor-neutralSecondary--hover:hover {
+            color: $neutralSecondary
+        }
+
+        .ms-fontColor-neutralSecondaryAlt,
+        .ms-fontColor-neutralSecondaryAlt--hover:hover {
+            color: $neutralSecondaryAlt
+        }
+
+        .ms-fontColor-neutralTertiary,
+        .ms-fontColor-neutralTertiary--hover:hover {
+            color: $neutralTertiary
+        }
+
+        .ms-fontColor-neutralTertiaryAlt,
+        .ms-fontColor-neutralTertiaryAlt--hover:hover {
+            color: $gray60
+        }
+
+        .ms-fontColor-neutralQuaternary,
+        .ms-fontColor-neutralQuaternary--hover:hover {
+            color: $gray50
+        }
+
+        .ms-fontColor-neutralQuaternaryAlt,
+        .ms-fontColor-neutralQuaternaryAlt--hover:hover {
+            color: $neutralQuaternaryAlt
+        }
+
+        .ms-fontColor-neutralLight,
+        .ms-fontColor-neutralLight--hover:hover {
+            color: $neutralLight
+        }
+
+        .ms-fontColor-neutralLighter,
+        .ms-fontColor-neutralLighter--hover:hover {
+            color: $neutralLighter
+        }
+
+        .ms-fontColor-neutralLighterAlt,
+        .ms-fontColor-neutralLighterAlt--hover:hover {
+            color: $neutralLighterAlt
+        }
+
+        .ms-fontColor-white,
+        .ms-fontColor-white--hover:hover {
+            color: $white
+        }
+
+        .ms-bgColor-yellow,
+        .ms-bgColor-yellow--hover:hover {
+            background-color: #ffb900
+        }
+
+        .ms-bgColor-yellowLight,
+        .ms-bgColor-yellowLight--hover:hover {
+            background-color: #fff100
+        }
+
+        .ms-bgColor-orange,
+        .ms-bgColor-orange--hover:hover {
+            background-color: #d83b01
+        }
+
+        .ms-bgColor-orangeLight,
+        .ms-bgColor-orangeLight--hover:hover {
+            background-color: #ea4300
+        }
+
+        .ms-bgColor-orangeLighter,
+        .ms-bgColor-orangeLighter--hover:hover {
+            background-color: #ff8c00
+        }
+
+        .ms-bgColor-redDark,
+        .ms-bgColor-redDark--hover:hover {
+            background-color: #a4262c
+        }
+
+        .ms-bgColor-red,
+        .ms-bgColor-red--hover:hover {
+            background-color: #e81123
+        }
+
+        .ms-bgColor-magentaDark,
+        .ms-bgColor-magentaDark--hover:hover {
+            background-color: #5c005c
+        }
+
+        .ms-bgColor-magenta,
+        .ms-bgColor-magenta--hover:hover {
+            background-color: #b4009e
+        }
+
+        .ms-bgColor-magentaLight,
+        .ms-bgColor-magentaLight--hover:hover {
+            background-color: #e3008c
+        }
+
+        .ms-bgColor-purpleDark,
+        .ms-bgColor-purpleDark--hover:hover {
+            background-color: #32145a
+        }
+
+        .ms-bgColor-purple,
+        .ms-bgColor-purple--hover:hover {
+            background-color: #5c2d91
+        }
+
+        .ms-bgColor-purpleLight,
+        .ms-bgColor-purpleLight--hover:hover {
+            background-color: #b4a0ff
+        }
+
+        .ms-bgColor-blueDark,
+        .ms-bgColor-blueDark--hover:hover {
+            background-color: #002050
+        }
+
+        .ms-bgColor-blueMid,
+        .ms-bgColor-blueMid--hover:hover {
+            background-color: #00188f
+        }
+
+        .ms-bgColor-blue,
+        .ms-bgColor-blue--hover:hover {
+            background-color: $themePrimary
+        }
+
+        .ms-bgColor-blueLight,
+        .ms-bgColor-blueLight--hover:hover {
+            background-color: #00bcf2
+        }
+
+        .ms-bgColor-tealDark,
+        .ms-bgColor-tealDark--hover:hover {
+            background-color: #004b50
+        }
+
+        .ms-bgColor-teal,
+        .ms-bgColor-teal--hover:hover {
+            background-color: #008272
+        }
+
+        .ms-bgColor-tealLight,
+        .ms-bgColor-tealLight--hover:hover {
+            background-color: #00b294
+        }
+
+        .ms-bgColor-greenDark,
+        .ms-bgColor-greenDark--hover:hover {
+            background-color: #004b1c
+        }
+
+        .ms-bgColor-green,
+        .ms-bgColor-green--hover:hover {
+            background-color: #107c10
+        }
+
+        .ms-bgColor-greenLight,
+        .ms-bgColor-greenLight--hover:hover {
+            background-color: #bad80a
+        }
+
+        .ms-borderColor-yellow,
+        .ms-borderColor-yellow--hover:hover {
+            border-color: #ffb900
+        }
+
+        .ms-borderColor-yellowLight,
+        .ms-borderColor-yellowLight--hover:hover {
+            border-color: #fff100
+        }
+
+        .ms-borderColor-orange,
+        .ms-borderColor-orange--hover:hover {
+            border-color: #d83b01
+        }
+
+        .ms-borderColor-orangeLight,
+        .ms-borderColor-orangeLight--hover:hover {
+            border-color: #ea4300
+        }
+
+        .ms-borderColor-orangeLighter,
+        .ms-borderColor-orangeLighter--hover:hover {
+            border-color: #ff8c00
+        }
+
+        .ms-borderColor-redDark,
+        .ms-borderColor-redDark--hover:hover {
+            border-color: #a4262c
+        }
+
+        .ms-borderColor-red,
+        .ms-borderColor-red--hover:hover {
+            border-color: #e81123
+        }
+
+        .ms-borderColor-magentaDark,
+        .ms-borderColor-magentaDark--hover:hover {
+            border-color: #5c005c
+        }
+
+        .ms-borderColor-magenta,
+        .ms-borderColor-magenta--hover:hover {
+            border-color: #b4009e
+        }
+
+        .ms-borderColor-magentaLight,
+        .ms-borderColor-magentaLight--hover:hover {
+            border-color: #e3008c
+        }
+
+        .ms-borderColor-purpleDark,
+        .ms-borderColor-purpleDark--hover:hover {
+            border-color: #32145a
+        }
+
+        .ms-borderColor-purple,
+        .ms-borderColor-purple--hover:hover {
+            border-color: #5c2d91
+        }
+
+        .ms-borderColor-purpleLight,
+        .ms-borderColor-purpleLight--hover:hover {
+            border-color: #b4a0ff
+        }
+
+        .ms-borderColor-blueDark,
+        .ms-borderColor-blueDark--hover:hover {
+            border-color: #002050
+        }
+
+        .ms-borderColor-blueMid,
+        .ms-borderColor-blueMid--hover:hover {
+            border-color: #00188f
+        }
+
+        .ms-borderColor-blue,
+        .ms-borderColor-blue--hover:hover {
+            border-color: $themePrimary
+        }
+
+        .ms-borderColor-blueLight,
+        .ms-borderColor-blueLight--hover:hover {
+            border-color: #00bcf2
+        }
+
+        .ms-borderColor-tealDark,
+        .ms-borderColor-tealDark--hover:hover {
+            border-color: #004b50
+        }
+
+        .ms-borderColor-teal,
+        .ms-borderColor-teal--hover:hover {
+            border-color: #008272
+        }
+
+        .ms-borderColor-tealLight,
+        .ms-borderColor-tealLight--hover:hover {
+            border-color: #00b294
+        }
+
+        .ms-borderColor-greenDark,
+        .ms-borderColor-greenDark--hover:hover {
+            border-color: #004b1c
+        }
+
+        .ms-borderColor-green,
+        .ms-borderColor-green--hover:hover {
+            border-color: #107c10
+        }
+
+        .ms-borderColor-greenLight,
+        .ms-borderColor-greenLight--hover:hover {
+            border-color: #bad80a
+        }
+
+        .ms-fontColor-yellow,
+        .ms-fontColor-yellow--hover:hover {
+            color: #ffb900
+        }
+
+        .ms-fontColor-yellowLight,
+        .ms-fontColor-yellowLight--hover:hover {
+            color: #fff100
+        }
+
+        .ms-fontColor-orange,
+        .ms-fontColor-orange--hover:hover {
+            color: #d83b01
+        }
+
+        .ms-fontColor-orangeLight,
+        .ms-fontColor-orangeLight--hover:hover {
+            color: #ea4300
+        }
+
+        .ms-fontColor-orangeLighter,
+        .ms-fontColor-orangeLighter--hover:hover {
+            color: #ff8c00
+        }
+
+        .ms-fontColor-redDark,
+        .ms-fontColor-redDark--hover:hover {
+            color: #a4262c
+        }
+
+        .ms-fontColor-red,
+        .ms-fontColor-red--hover:hover {
+            color: #e81123
+        }
+
+        .ms-fontColor-magentaDark,
+        .ms-fontColor-magentaDark--hover:hover {
+            color: #5c005c
+        }
+
+        .ms-fontColor-magenta,
+        .ms-fontColor-magenta--hover:hover {
+            color: #b4009e
+        }
+
+        .ms-fontColor-magentaLight,
+        .ms-fontColor-magentaLight--hover:hover {
+            color: #e3008c
+        }
+
+        .ms-fontColor-purpleDark,
+        .ms-fontColor-purpleDark--hover:hover {
+            color: #32145a
+        }
+
+        .ms-fontColor-purple,
+        .ms-fontColor-purple--hover:hover {
+            color: #5c2d91
+        }
+
+        .ms-fontColor-purpleLight,
+        .ms-fontColor-purpleLight--hover:hover {
+            color: #b4a0ff
+        }
+
+        .ms-fontColor-blueDark,
+        .ms-fontColor-blueDark--hover:hover {
+            color: #002050
+        }
+
+        .ms-fontColor-blueMid,
+        .ms-fontColor-blueMid--hover:hover {
+            color: #00188f
+        }
+
+        .ms-fontColor-blue,
+        .ms-fontColor-blue--hover:hover {
+            color: $themePrimary
+        }
+
+        .ms-fontColor-blueLight,
+        .ms-fontColor-blueLight--hover:hover {
+            color: #00bcf2
+        }
+
+        .ms-fontColor-tealDark,
+        .ms-fontColor-tealDark--hover:hover {
+            color: #004b50
+        }
+
+        .ms-fontColor-teal,
+        .ms-fontColor-teal--hover:hover {
+            color: #008272
+        }
+
+        .ms-fontColor-tealLight,
+        .ms-fontColor-tealLight--hover:hover {
+            color: #00b294
+        }
+
+        .ms-fontColor-greenDark,
+        .ms-fontColor-greenDark--hover:hover {
+            color: #004b1c
+        }
+
+        .ms-fontColor-green,
+        .ms-fontColor-green--hover:hover {
+            color: #107c10
+        }
+
+        .ms-fontColor-greenLight,
+        .ms-fontColor-greenLight--hover:hover {
+            color: #bad80a
+        }
+
+        .ms-bgColor-info,
+        .ms-bgColor-info--hover:hover {
+            background-color: #f4f4f4
+        }
+
+        .ms-bgColor-success,
+        .ms-bgColor-success--hover:hover {
+            background-color: #dff6dd
+        }
+
+        .ms-bgColor-severeWarning,
+        .ms-bgColor-severeWarning--hover:hover {
+            background-color: #fed9cc
+        }
+
+        .ms-bgColor-warning,
+        .ms-bgColor-warning--hover:hover {
+            background-color: #fff4ce
+        }
+
+        .ms-bgColor-error,
+        .ms-bgColor-error--hover:hover {
+            background-color: rgba(232, 17, 35, .2)
+        }
+
+        .ms-fontColor-info,
+        .ms-fontColor-info--hover:hover {
+            color: #666666
+        }
+
+        .ms-fontColor-success,
+        .ms-fontColor-success--hover:hover {
+            color: #107c10
+        }
+
+        .ms-fontColor-alert,
+        .ms-fontColor-alert--hover:hover {
+            color: #d83b01
+        }
+
+        .ms-fontColor-warning,
+        .ms-fontColor-warning--hover:hover {
+            color: #767676
+        }
+
+        .ms-fontColor-severeWarning,
+        .ms-fontColor-severeWarning--hover:hover {
+            color: #a80000
+        }
+
+        .ms-fontColor-error,
+        .ms-fontColor-error--hover:hover {
+            color: #a80000
+        }
+
+        .ms-bgColor-contrastBlackDisabled,
+        .ms-bgColor-contrastBlackDisabled--hover:hover {
+            background-color: #0f0
+        }
+
+        .ms-bgColor-contrastWhiteDisabled,
+        .ms-bgColor-contrastWhiteDisabled--hover:hover {
+            background-color: #600000
+        }
+
+        .ms-bgColor-contrastBlackSelected,
+        .ms-bgColor-contrastBlackSelected--hover:hover {
+            background-color: #1aebff
+        }
+
+        .ms-bgColor-contrastWhiteSelected,
+        .ms-bgColor-contrastWhiteSelected--hover:hover {
+            background-color: #37006e
+        }
+
+        .ms-fontColor-contrastBlackDisabled,
+        .ms-fontColor-contrastBlackDisabled--hover:hover {
+            color: #0f0
+        }
+
+        .ms-fontColor-contrastWhiteDisabled,
+        .ms-fontColor-contrastWhiteDisabled--hover:hover {
+            color: #600000
+        }
+
+        .ms-fontColor-contrastBlackSelected,
+        .ms-fontColor-contrastBlackSelected--hover:hover {
+            color: #1aebff
+        }
+
+        .ms-fontColor-contrastWhiteSelected,
+        .ms-fontColor-contrastWhiteSelected--hover:hover {
+            color: #37006e
+        }
+
+        .ms-borderColor-contrastBlackDisabled,
+        .ms-borderColor-contrastBlackDisabled--hover:hover {
+            border-color: #0f0
+        }
+
+        .ms-borderColor-contrastWhiteDisabled,
+        .ms-borderColor-contrastWhiteDisabled--hover:hover {
+            border-color: #600000
+        }
+
+        .ms-borderColor-contrastBlackSelected,
+        .ms-borderColor-contrastBlackSelected--hover:hover {
+            border-color: #1aebff
+        }
+
+        .ms-borderColor-contrastWhiteSelected,
+        .ms-borderColor-contrastWhiteSelected--hover:hover {
+            border-color: #37006e
+        }
+
+        .ms-fontSize-68 {
+            font-size: 68px
+        }
+
+        .ms-fontSize-42 {
+            font-size: 42px
+        }
+
+        .ms-fontSize-32 {
+            font-size: 32px
+        }
+
+        .ms-fontSize-28 {
+            font-size: 28px
+        }
+
+        .ms-fontSize-24 {
+            font-size: 24px
+        }
+
+        .ms-fontSize-20 {
+            font-size: 20px
+        }
+
+        .ms-fontSize-18 {
+            font-size: 18px
+        }
+
+        .ms-fontSize-16 {
+            font-size: 16px
+        }
+
+        .ms-fontSize-14 {
+            font-size: 14px
+        }
+
+        .ms-fontSize-12 {
+            font-size: 12px
+        }
+
+        .ms-fontSize-10 {
+            font-size: 10px
+        }
+
+        .ms-fontWeight-regular {
+            font-weight: 400
+        }
+
+        .ms-fontWeight-semibold {
+            font-weight: 600
+        }
+
+        .ms-fontWeight-bold {
+            font-weight: 700
+        }
+
+        .ms-font-su {
+            font-size: 42px;
+            font-weight: 100
+        }
+
+        .ms-font-xxl {
+            font-size: 28px;
+            font-weight: 100
+        }
+
+        .ms-font-xl-plus {
+            font-size: 24px;
+            font-weight: 100
+        }
+
+        .ms-font-xl {
+            font-size: 21px;
+            font-weight: 100
+        }
+
+        .ms-font-l {
+            font-size: 17px;
+            font-weight: 300
+        }
+
+        .ms-font-m-plus {
+            font-size: 15px;
+            font-weight: 400
+        }
+
+        .ms-font-m {
+            font-size: 14px;
+            font-weight: 400
+        }
+
+        .ms-font-s-plus {
+            font-size: 13px;
+            font-weight: 400
+        }
+
+        .ms-font-s {
+            font-size: 12px;
+            font-weight: 400
+        }
+
+        .ms-font-xs {
+            font-size: 11px;
+            font-weight: 400
+        }
+
+        .ms-font-mi {
+            font-size: 10px;
+            font-weight: 600
+        }
+
+        .ms-fontWeight-light {
+            font-weight: 100
+        }
+
+        .ms-fontWeight-semilight {
+            font-weight: 300
+        }
+
+        .ms-fontSize-su {
+            font-size: 42px
+        }
+
+        .ms-fontSize-xxl {
+            font-size: 28px
+        }
+
+        .ms-fontSize-xlPlus {
+            font-size: 24px
+        }
+
+        .ms-fontSize-xl {
+            font-size: 21px
+        }
+
+        .ms-fontSize-l {
+            font-size: 17px
+        }
+
+        .ms-fontSize-mPlus {
+            font-size: 15px
+        }
+
+        .ms-fontSize-m {
+            font-size: 14px
+        }
+
+        .ms-fontSize-sPlus {
+            font-size: 13px
+        }
+
+        .ms-fontSize-s {
+            font-size: 12px
+        }
+
+        .ms-fontSize-xs {
+            font-size: 11px
+        }
+
+        .ms-fontSize-mi {
+            font-size: 10px
+        }
+
+        .ms-fontSize-68 {
+            font-size: 68px
+        }
+
+        .ms-fontSize-42 {
+            font-size: 42px
+        }
+
+        .ms-fontSize-32 {
+            font-size: 32px
+        }
+
+        .ms-fontSize-28 {
+            font-size: 28px
+        }
+
+        .ms-fontSize-24 {
+            font-size: 24px
+        }
+
+        .ms-fontSize-20 {
+            font-size: 20px
+        }
+
+        .ms-fontSize-18 {
+            font-size: 18px
+        }
+
+        .ms-fontSize-16 {
+            font-size: 16px
+        }
+
+        .ms-fontSize-14 {
+            font-size: 14px
+        }
+
+        .ms-fontSize-12 {
+            font-size: 12px
+        }
+
+        .ms-fontSize-10 {
+            font-size: 10px
+        }
+
+        .ms-fontWeight-regular {
+            font-weight: 400
+        }
+
+        .ms-fontWeight-semibold {
+            font-weight: 600
+        }
+
+        .ms-fontWeight-bold {
+            font-weight: 700
+        }
+
+        .ms-font-su {
+            font-size: 42px;
+            font-weight: 100
+        }
+
+        .ms-font-xxl {
+            font-size: 28px;
+            font-weight: 100
+        }
+
+        .ms-font-xl-plus {
+            font-size: 24px;
+            font-weight: 100
+        }
+
+        .ms-font-xl {
+            font-size: 21px;
+            font-weight: 100
+        }
+
+        .ms-font-l {
+            font-size: 17px;
+            font-weight: 300
+        }
+
+        .ms-font-m-plus {
+            font-size: 15px;
+            font-weight: 400
+        }
+
+        .ms-font-m {
+            font-size: 14px;
+            font-weight: 400
+        }
+
+        .ms-font-s-plus {
+            font-size: 13px;
+            font-weight: 400
+        }
+
+        .ms-font-s {
+            font-size: 12px;
+            font-weight: 400
+        }
+
+        .ms-font-xs {
+            font-size: 11px;
+            font-weight: 400
+        }
+
+        .ms-font-mi {
+            font-size: 10px;
+            font-weight: 600
+        }
+
+        .ms-fontWeight-light {
+            font-weight: 100
+        }
+
+        .ms-fontWeight-semilight {
+            font-weight: 300
+        }
+
+        .ms-fontSize-su {
+            font-size: 42px
+        }
+
+        .ms-fontSize-xxl {
+            font-size: 28px
+        }
+
+        .ms-fontSize-xlPlus {
+            font-size: 24px
+        }
+
+        .ms-fontSize-xl {
+            font-size: 21px
+        }
+
+        .ms-fontSize-l {
+            font-size: 17px
+        }
+
+        .ms-fontSize-mPlus {
+            font-size: 15px
+        }
+
+        .ms-fontSize-m {
+            font-size: 14px
+        }
+
+        .ms-fontSize-sPlus {
+            font-size: 13px
+        }
+
+        .ms-fontSize-s {
+            font-size: 12px
+        }
+
+        .ms-fontSize-xs {
+            font-size: 11px
+        }
+
+        .ms-fontSize-mi {
+            font-size: 10px
+        }
+
+        .ms-fontColor-themeDarker,
+        .ms-fontColor-themeDarker--hover:hover {
+            color: $themeDarker
+        }
+
+        .ms-fontColor-themeDark,
+        .ms-fontColor-themeDark--hover:hover {
+            color: $themeDark
+        }
+
+        .ms-fontColor-themeDarkAlt,
+        .ms-fontColor-themeDarkAlt--hover:hover {
+            color: $themeDarkAlt
+        }
+
+        .ms-fontColor-themePrimary,
+        .ms-fontColor-themePrimary--hover:hover {
+            color: $themePrimary
+        }
+
+        .ms-fontColor-themeSecondary,
+        .ms-fontColor-themeSecondary--hover:hover {
+            color: $themeSecondary
+        }
+
+        .ms-fontColor-themeTertiary,
+        .ms-fontColor-themeTertiary--hover:hover {
+            color: $themeTertiary
+        }
+
+        .ms-fontColor-themeLight,
+        .ms-fontColor-themeLight--hover:hover {
+            color: $themeLight
+        }
+
+        .ms-fontColor-themeLighter,
+        .ms-fontColor-themeLighter--hover:hover {
+            color: $themeLighter
+        }
+
+        .ms-fontColor-themeLighterAlt,
+        .ms-fontColor-themeLighterAlt--hover:hover {
+            color: $themeLighterAlt
+        }
+
+        .ms-fontColor-black,
+        .ms-fontColor-black--hover:hover {
+            color: $black
+        }
+
+        .ms-fontColor-neutralDark,
+        .ms-fontColor-neutralDark--hover:hover {
+            color: $gray190
+        }
+
+        .ms-fontColor-neutralPrimary,
+        .ms-fontColor-neutralPrimary--hover:hover {
+            color: $gray160
+        }
+
+        .ms-fontColor-neutralSecondary,
+        .ms-fontColor-neutralSecondary--hover:hover {
+            color: $neutralSecondary
+        }
+
+        .ms-fontColor-neutralSecondaryAlt,
+        .ms-fontColor-neutralSecondaryAlt--hover:hover {
+            color: $neutralSecondaryAlt
+        }
+
+        .ms-fontColor-neutralTertiary,
+        .ms-fontColor-neutralTertiary--hover:hover {
+            color: $neutralTertiary
+        }
+
+        .ms-fontColor-neutralTertiaryAlt,
+        .ms-fontColor-neutralTertiaryAlt--hover:hover {
+            color: $gray60
+        }
+
+        .ms-fontColor-neutralLight,
+        .ms-fontColor-neutralLight--hover:hover {
+            color: $neutralLight
+        }
+
+        .ms-fontColor-neutralLighter,
+        .ms-fontColor-neutralLighter--hover:hover {
+            color: $neutralLighter
+        }
+
+        .ms-fontColor-neutralLighterAlt,
+        .ms-fontColor-neutralLighterAlt--hover:hover {
+            color: $neutralLighterAlt
+        }
+
+        .ms-fontColor-white,
+        .ms-fontColor-white--hover:hover {
+            color: $white
+        }
+
+        .ms-fontColor-yellow,
+        .ms-fontColor-yellow--hover:hover {
+            color: #ffb900
+        }
+
+        .ms-fontColor-yellowLight,
+        .ms-fontColor-yellowLight--hover:hover {
+            color: #fff100
+        }
+
+        .ms-fontColor-orange,
+        .ms-fontColor-orange--hover:hover {
+            color: #d83b01
+        }
+
+        .ms-fontColor-orangeLight,
+        .ms-fontColor-orangeLight--hover:hover {
+            color: #ea4300
+        }
+
+        .ms-fontColor-orangeLighter,
+        .ms-fontColor-orangeLighter--hover:hover {
+            color: #ff8c00
+        }
+
+        .ms-fontColor-redDark,
+        .ms-fontColor-redDark--hover:hover {
+            color: #a4262c
+        }
+
+        .ms-fontColor-red,
+        .ms-fontColor-red--hover:hover {
+            color: #e81123
+        }
+
+        .ms-fontColor-magentaDark,
+        .ms-fontColor-magentaDark--hover:hover {
+            color: #5c005c
+        }
+
+        .ms-fontColor-magenta,
+        .ms-fontColor-magenta--hover:hover {
+            color: #b4009e
+        }
+
+        .ms-fontColor-magentaLight,
+        .ms-fontColor-magentaLight--hover:hover {
+            color: #e3008c
+        }
+
+        .ms-fontColor-purpleDark,
+        .ms-fontColor-purpleDark--hover:hover {
+            color: #32145a
+        }
+
+        .ms-fontColor-purple,
+        .ms-fontColor-purple--hover:hover {
+            color: #5c2d91
+        }
+
+        .ms-fontColor-purpleLight,
+        .ms-fontColor-purpleLight--hover:hover {
+            color: #b4a0ff
+        }
+
+        .ms-fontColor-blueDark,
+        .ms-fontColor-blueDark--hover:hover {
+            color: #002050
+        }
+
+        .ms-fontColor-blueMid,
+        .ms-fontColor-blueMid--hover:hover {
+            color: #00188f
+        }
+
+        .ms-fontColor-blue,
+        .ms-fontColor-blue--hover:hover {
+            color: $themePrimary
+        }
+
+        .ms-fontColor-blueLight,
+        .ms-fontColor-blueLight--hover:hover {
+            color: #00bcf2
+        }
+
+        .ms-fontColor-tealDark,
+        .ms-fontColor-tealDark--hover:hover {
+            color: #004b50
+        }
+
+        .ms-fontColor-teal,
+        .ms-fontColor-teal--hover:hover {
+            color: #008272
+        }
+
+        .ms-fontColor-tealLight,
+        .ms-fontColor-tealLight--hover:hover {
+            color: #00b294
+        }
+
+        .ms-fontColor-greenDark,
+        .ms-fontColor-greenDark--hover:hover {
+            color: #004b1c
+        }
+
+        .ms-fontColor-green,
+        .ms-fontColor-green--hover:hover {
+            color: #107c10
+        }
+
+        .ms-fontColor-greenLight,
+        .ms-fontColor-greenLight--hover:hover {
+            color: #bad80a
+        }
+
+        .ms-fontColor-info,
+        .ms-fontColor-info--hover:hover {
+            color: #666666
+        }
+
+        .ms-fontColor-success,
+        .ms-fontColor-success--hover:hover {
+            color: #107c10
+        }
+
+        .ms-fontColor-alert,
+        .ms-fontColor-alert--hover:hover {
+            color: #d83b01
+        }
+
+        .ms-fontColor-error,
+        .ms-fontColor-error--hover:hover {
+            color: #a80000
+        }
+
+        @keyframes ms-motion-fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes ms-motion-fadeOut {
+            from {
+                opacity: 1
+            }
+
+            to {
+                opacity: 0
+            }
+        }
+
+        @keyframes ms-motion-scaleDownIn {
+            from {
+                transform: scale3d(1.15, 1.15, 1)
+            }
+
+            to {
+                transform: scale3d(1, 1, 1)
+            }
+        }
+
+        @keyframes ms-motion-scaleDownOut {
+            from {
+                transform: scale3d(1, 1, 1)
+            }
+
+            to {
+                transform: scale3d(.9, .9, 1)
+            }
+        }
+
+        @keyframes ms-motion-slideLeftOut {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(-48px, 0, 0)
+            }
+        }
+
+        @keyframes ms-motion-slideRightOut {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(48px, 0, 0)
+            }
+        }
+
+        @keyframes ms-motion-slideLeftIn {
+            from {
+                transform: translate3d(48px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-motion-slideRightIn {
+            from {
+                transform: translate3d(-48px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-motion-slideUpOut {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, -48px, 0)
+            }
+        }
+
+        @keyframes ms-motion-slideDownOut {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 48px, 0)
+            }
+        }
+
+        @keyframes ms-motion-slideUpIn {
+            from {
+                transform: translate3d(0, 48px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-motion-slideDownIn {
+            from {
+                transform: translate3d(0, -48px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        .ms-motion-fadeIn {
+            animation: ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        .ms-motion-fadeOut {
+            animation: ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        .ms-motion-scaleDownIn {
+            animation: ms-motion-scaleDownIn .3s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        .ms-motion-scaleDownOut {
+            animation: ms-motion-scaleDownOut .3s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=ltr] .ms-motion-slideLeftOut {
+            animation: ms-motion-slideLeftOut .1s cubic-bezier(.9, .1, 1, .2) both, ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=rtl] .ms-motion-slideLeftOut {
+            animation: ms-motion-slideRightOut .1s cubic-bezier(.9, .1, 1, .2) both, ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=ltr] .ms-motion-slideRightOut {
+            animation: ms-motion-slideRightOut .1s cubic-bezier(.9, .1, 1, .2) both, ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=rtl] .ms-motion-slideRightOut {
+            animation: ms-motion-slideLeftOut .1s cubic-bezier(.9, .1, 1, .2) both, ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=ltr] .ms-motion-slideLeftIn {
+            animation: ms-motion-slideLeftIn .1s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=rtl] .ms-motion-slideLeftIn {
+            animation: ms-motion-slideRightIn .1s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=ltr] .ms-motion-slideRightIn {
+            animation: ms-motion-slideRightIn .1s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        [dir=rtl] .ms-motion-slideRightIn {
+            animation: ms-motion-slideLeftIn .1s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        .ms-motion-slideUpOut {
+            animation: ms-motion-slideUpOut .1s cubic-bezier(.9, .1, 1, .2) both, ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        .ms-motion-slideDownOut {
+            animation: ms-motion-slideDownOut .1s cubic-bezier(.9, .1, 1, .2) both, ms-motion-fadeOut .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        .ms-motion-slideUpIn {
+            animation: ms-motion-slideUpIn .1s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        .ms-motion-slideDownIn {
+            animation: ms-motion-slideDownIn .1s cubic-bezier(.1, .9, .2, 1) both, ms-motion-fadeIn .1s cubic-bezier(0, 0, 1, 1) both
+        }
+
+        @keyframes ms-slideRightIn10 {
+            from {
+                transform: translate3d(-10px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideRightIn20 {
+            from {
+                transform: translate3d(-20px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideRightIn40 {
+            from {
+                transform: translate3d(-40px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideRightIn400 {
+            from {
+                transform: translate3d(-400px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideRightOut40 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(40px, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideRightOut400 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(400px, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideLeftIn10 {
+            from {
+                transform: translate3d(10px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideLeftIn20 {
+            from {
+                transform: translate3d(20px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideLeftIn40 {
+            from {
+                transform: translate3d(40px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideLeftIn400 {
+            from {
+                transform: translate3d(400px, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideLeftOut40 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(-40px, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideLeftOut400 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(-400px, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideUpIn10 {
+            from {
+                transform: translate3d(0, 10px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideUpIn20 {
+            from {
+                transform: translate3d(0, 20px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideDownIn10 {
+            from {
+                transform: translate3d(0, -10px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideDownIn20 {
+            from {
+                transform: translate3d(0, -20px, 0)
+            }
+
+            to {
+                transform: translate3d(0, 0, 0)
+            }
+        }
+
+        @keyframes ms-slideUpOut10 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, -10px, 0)
+            }
+        }
+
+        @keyframes ms-slideUpOut20 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, -20px, 0)
+            }
+        }
+
+        @keyframes ms-slideDownOut10 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 10px, 0)
+            }
+        }
+
+        @keyframes ms-slideDownOut20 {
+            from {
+                transform: translate3d(0, 0, 0)
+            }
+
+            to {
+                transform: translate3d(0, 20px, 0)
+            }
+        }
+
+        @keyframes ms-scaleUp100 {
+            from {
+                transform: scale3d(.98, .98, 1)
+            }
+
+            to {
+                transform: scale3d(1, 1, 1)
+            }
+        }
+
+        @keyframes ms-scaleUp103 {
+            from {
+                transform: scale3d(1, 1, 1)
+            }
+
+            to {
+                transform: scale3d(1.03, 1.03, 1)
+            }
+        }
+
+        @keyframes ms-scaleDown98 {
+            from {
+                transform: scale3d(1, 1, 1)
+            }
+
+            to {
+                transform: scale3d(.98, .98, 1)
+            }
+        }
+
+        @keyframes ms-scaleDown100 {
+            from {
+                transform: scale3d(1.03, 1.03, 1)
+            }
+
+            to {
+                transform: scale3d(1, 1, 1)
+            }
+        }
+
+        @keyframes ms-fadeIn {
+            from {
+                opacity: 0;
+                animation-timing-function: cubic-bezier(.1, .25, .75, .9)
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes ms-fadeOut {
+            from {
+                opacity: 1;
+                animation-timing-function: cubic-bezier(.1, .25, .75, .9)
+            }
+
+            to {
+                opacity: 0
+            }
+        }
+
+        @keyframes ms-rotate90 {
+            from {
+                transform: rotateZ(0)
+            }
+
+            to {
+                transform: rotateZ(90deg)
+            }
+        }
+
+        @keyframes ms-rotateN90 {
+            from {
+                transform: rotateZ(90deg)
+            }
+
+            to {
+                transform: rotateZ(0)
+            }
+        }
+
+        [dir=ltr] .ms-slideRightIn10 {
+            animation-name: ms-fadeIn, ms-slideRightIn10;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideRightIn10 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideRightIn10 {
+            animation-name: ms-fadeIn, ms-slideLeftIn10;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideRightIn10 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideRightIn20 {
+            animation-name: ms-fadeIn, ms-slideRightIn20;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideRightIn20 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideRightIn20 {
+            animation-name: ms-fadeIn, ms-slideLeftIn20;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideRightIn20 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideRightIn40 {
+            animation-name: ms-fadeIn, ms-slideRightIn40;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideRightIn40 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideRightIn40 {
+            animation-name: ms-fadeIn, ms-slideLeftIn40;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideRightIn40 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideRightIn400 {
+            animation-name: ms-fadeIn, ms-slideRightIn400;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideRightIn400 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideRightIn400 {
+            animation-name: ms-fadeIn, ms-slideLeftIn400;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideRightIn400 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideRightOut40 {
+            animation-name: ms-fadeOut, ms-slideRightOut40;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideRightOut40 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideRightOut40 {
+            animation-name: ms-fadeOut, ms-slideLeftOut40;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideRightOut40 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideRightOut400 {
+            animation-name: ms-fadeOut, ms-slideRightOut400;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideRightOut400 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideRightOut400 {
+            animation-name: ms-fadeOut, ms-slideLeftOut400;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideRightOut400 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideLeftIn10 {
+            animation-name: ms-fadeIn, ms-slideLeftIn10;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideLeftIn10 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideLeftIn10 {
+            animation-name: ms-fadeIn, ms-slideRightIn10;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideLeftIn10 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideLeftIn20 {
+            animation-name: ms-fadeIn, ms-slideLeftIn20;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideLeftIn20 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideLeftIn20 {
+            animation-name: ms-fadeIn, ms-slideRightIn20;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideLeftIn20 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideLeftIn40 {
+            animation-name: ms-fadeIn, ms-slideLeftIn40;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideLeftIn40 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideLeftIn40 {
+            animation-name: ms-fadeIn, ms-slideRightIn40;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideLeftIn40 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideLeftIn400 {
+            animation-name: ms-fadeIn, ms-slideLeftIn400;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideLeftIn400 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideLeftIn400 {
+            animation-name: ms-fadeIn, ms-slideRightIn400;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideLeftIn400 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideLeftOut40 {
+            animation-name: ms-fadeOut, ms-slideLeftOut40;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideLeftOut40 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideLeftOut40 {
+            animation-name: ms-fadeOut, ms-slideRightOut40;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideLeftOut40 {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-slideLeftOut400 {
+            animation-name: ms-fadeOut, ms-slideLeftOut400;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-slideLeftOut400 {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-slideLeftOut400 {
+            animation-name: ms-fadeOut, ms-slideRightOut400;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-slideLeftOut400 {
+                animation: none
+            }
+        }
+
+        .ms-slideUpIn10 {
+            animation-name: ms-fadeIn, ms-slideUpIn10;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideUpIn10 {
+                animation: none
+            }
+        }
+
+        .ms-slideUpIn20 {
+            animation-name: ms-fadeIn, ms-slideUpIn20;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideUpIn20 {
+                animation: none
+            }
+        }
+
+        .ms-slideDownIn10 {
+            animation-name: ms-fadeIn, ms-slideDownIn10;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideDownIn10 {
+                animation: none
+            }
+        }
+
+        .ms-slideDownIn20 {
+            animation-name: ms-fadeIn, ms-slideDownIn20;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideDownIn20 {
+                animation: none
+            }
+        }
+
+        .ms-slideUpOut10 {
+            animation-name: ms-fadeOut, ms-slideUpOut10;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideUpOut10 {
+                animation: none
+            }
+        }
+
+        .ms-slideUpOut20 {
+            animation-name: ms-fadeOut, ms-slideUpOut20;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideUpOut20 {
+                animation: none
+            }
+        }
+
+        .ms-slideDownOut10 {
+            animation-name: ms-fadeOut, ms-slideDownOut10;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideDownOut10 {
+                animation: none
+            }
+        }
+
+        .ms-slideDownOut20 {
+            animation-name: ms-fadeOut, ms-slideDownOut20;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-slideDownOut20 {
+                animation: none
+            }
+        }
+
+        .ms-scaleUpIn100 {
+            animation-name: ms-fadeIn, ms-scaleUp100;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-scaleUpIn100 {
+                animation: none
+            }
+        }
+
+        .ms-scaleUpOut103 {
+            animation-name: ms-fadeOut, ms-scaleUp103;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-scaleUpOut103 {
+                animation: none
+            }
+        }
+
+        .ms-scaleDownOut98 {
+            animation-name: ms-fadeOut, ms-scaleDown98;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-scaleDownOut98 {
+                animation: none
+            }
+        }
+
+        .ms-scaleDownIn100 {
+            animation-name: ms-fadeIn, ms-scaleDown100;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-scaleDownIn100 {
+                animation: none
+            }
+        }
+
+        .ms-fadeIn100 {
+            animation-name: ms-fadeIn;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeIn100 {
+                animation: none
+            }
+        }
+
+        .ms-fadeIn200 {
+            animation-name: ms-fadeIn;
+            animation-duration: 267ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeIn200 {
+                animation: none
+            }
+        }
+
+        .ms-fadeIn400 {
+            animation-name: ms-fadeIn;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeIn400 {
+                animation: none
+            }
+        }
+
+        .ms-fadeIn500 {
+            animation-name: ms-fadeIn;
+            animation-duration: 467ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeIn500 {
+                animation: none
+            }
+        }
+
+        .ms-fadeOut100 {
+            animation-name: ms-fadeOut;
+            animation-duration: .1s;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeOut100 {
+                animation: none
+            }
+        }
+
+        .ms-fadeOut200 {
+            animation-name: ms-fadeOut;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeOut200 {
+                animation: none
+            }
+        }
+
+        .ms-fadeOut400 {
+            animation-name: ms-fadeOut;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeOut400 {
+                animation: none
+            }
+        }
+
+        .ms-fadeOut500 {
+            animation-name: ms-fadeOut;
+            animation-duration: 467ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-fadeOut500 {
+                animation: none
+            }
+        }
+
+        .ms-expandCollapse100 {
+            transition: height .1s cubic-bezier(.1, .25, .75, .9)
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-expandCollapse100 {
+                transition: none
+            }
+        }
+
+        .ms-expandCollapse200 {
+            transition: height 167ms cubic-bezier(.1, .25, .75, .9)
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-expandCollapse200 {
+                transition: none
+            }
+        }
+
+        .ms-expandCollapse400 {
+            transition: height 367ms cubic-bezier(.1, .25, .75, .9)
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .ms-expandCollapse400 {
+                transition: none
+            }
+        }
+
+        .ms-delay100 {
+            animation-delay: 167ms
+        }
+
+        .ms-delay200 {
+            animation-delay: 267ms
+        }
+
+        [dir=ltr] .ms-rotate90deg {
+            animation-name: ms-rotate90;
+            animation-duration: .1s;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-rotate90deg {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-rotate90deg {
+            animation-name: ms-rotateN90;
+            animation-duration: .1s;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-rotate90deg {
+                animation: none
+            }
+        }
+
+        [dir=ltr] .ms-rotateN90deg {
+            animation-name: ms-rotateN90;
+            animation-duration: .1s;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .ms-rotateN90deg {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .ms-rotateN90deg {
+            animation-name: ms-rotate90;
+            animation-duration: .1s;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .ms-rotateN90deg {
+                animation: none
+            }
+        }
+
+        .od-Link {
+            color: $themePrimary;
+            text-decoration: none;
+            cursor: pointer;
+            outline: 0
+        }
+
+        .od-Link:focus,
+        .od-Link:hover {
+            color: $themeDarker
+        }
+
+        .od-Link:active {
+            color: $themePrimary
+        }
+
+        .od-ContextualMenu-item {
+            box-sizing: border-box;
+            position: relative
+        }
+
+        .od-ContextualMenu-item.od-ContextualMenu-item--divider {
+            cursor: default;
+            display: block;
+            height: 1px;
+            margin: 4px 0;
+            background-color: $neutralLight;
+            position: relative
+        }
+
+        .od-ContextualMenu-item.od-ContextualMenu-item--header {
+            color: $themePrimary;
+            font-size: 12px;
+            text-transform: uppercase;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 18px
+        }
+
+        .od-ContextualMenu-link {
+            text-decoration: none;
+            color: $gray160;
+            border: 1px solid transparent;
+            cursor: pointer;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 18px;
+            position: relative
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-ContextualMenu-link {
+                border-color: $black
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-ContextualMenu-link {
+                border-color: $white
+            }
+        }
+
+        .od-ContextualMenu-link:first-child,
+        .od-ContextualMenu-link:last-child {
+            height: 39px
+        }
+
+        .od-ContextualMenu-link:active,
+        .od-ContextualMenu-link:focus,
+        .od-ContextualMenu-link:hover {
+            background-color: $neutralLight;
+            color: $black
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-ContextualMenu-link:hover {
+                background-color: #1aebff;
+                border-color: #1aebff;
+                color: $black
+            }
+
+            .od-ContextualMenu-link:hover:focus {
+                border-color: $black
+            }
+
+            .od-ContextualMenu-link:hover+.od-ContextualMenu-caretRight,
+            .od-ContextualMenu-link:hover+.od-ContextualMenu-subMenuIcon {
+                color: $black
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-ContextualMenu-link:hover {
+                background-color: #37006e;
+                border-color: #37006e;
+                color: $white
+            }
+
+            .od-ContextualMenu-link:hover+.od-ContextualMenu-caretRight,
+            .od-ContextualMenu-link:hover+.od-ContextualMenu-subMenuIcon {
+                color: $white
+            }
+        }
+
+        .od-ContextualMenu-link:active {
+            border: 1px solid $themePrimary
+        }
+
+        .od-ContextualMenu-link:focus {
+            border-color: $themePrimary;
+            outline: 0
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-ContextualMenu-link:focus {
+                border-color: $white
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-ContextualMenu-link:focus {
+                border-color: $black
+            }
+        }
+
+        .od-ContextualMenu-link.is-selected {
+            background-color: $themeLight;
+            color: $black;
+            font-weight: 600
+        }
+
+        .od-ContextualMenu-link.is-selected:hover {
+            background-color: $themeLight
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-ContextualMenu-link.is-selected {
+                background-color: #1aebff;
+                border-color: #1aebff;
+                color: $black
+            }
+
+            .od-ContextualMenu-link.is-selected:focus {
+                border-color: $black
+            }
+
+            .od-ContextualMenu-link.is-selected+.od-ContextualMenu-caretRight,
+            .od-ContextualMenu-link.is-selected+.od-ContextualMenu-subMenuIcon {
+                color: $black
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-ContextualMenu-link.is-selected {
+                background-color: #37006e;
+                border-color: #37006e;
+                color: $white
+            }
+
+            .od-ContextualMenu-link.is-selected+.od-ContextualMenu-caretRight,
+            .od-ContextualMenu-link.is-selected+.od-ContextualMenu-subMenuIcon {
+                color: $white
+            }
+        }
+
+        .od-ContextualMenu-link.is-disabled {
+            color: $neutralTertiary;
+            cursor: default;
+            pointer-events: none
+        }
+
+        .od-ContextualMenu-link.is-disabled:active,
+        .od-ContextualMenu-link.is-disabled:focus {
+            border-color: $white
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .od-ContextualMenu-link.is-disabled:active,
+            .od-ContextualMenu-link.is-disabled:focus {
+                border-color: $black
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+
+            .od-ContextualMenu-link.is-disabled:active,
+            .od-ContextualMenu-link.is-disabled:focus {
+                border-color: $white
+            }
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-ContextualMenu-link.is-disabled {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-ContextualMenu-link.is-disabled {
+                color: #600000
+            }
+        }
+
+        .od-ContextualMenu-link.od-ContextualMenu-link--hasMenu~.od-ContextualMenu {
+            position: absolute;
+            top: -1px;
+            left: 178px
+        }
+
+        .od-ContextualMenu-caretRight,
+        .od-ContextualMenu-subMenuIcon {
+            color: $neutralSecondary;
+            font-size: 16px;
+            height: 39px;
+            line-height: 40px;
+            position: absolute;
+            top: 0;
+            right: 7px;
+            z-index: 1;
+            pointer-events: none
+        }
+
+        .od-ContextualMenu.od-ContextualMenu--multiselect .od-ContextualMenu-item.od-ContextualMenu-item--header {
+            padding: 0 30px
+        }
+
+        .od-ContextualMenu.od-ContextualMenu--multiselect .od-ContextualMenu-link {
+            padding: 0 30px
+        }
+
+        .od-ContextualMenu.od-ContextualMenu--multiselect .od-ContextualMenu-link.is-selected {
+            background-color: $white
+        }
+
+        .od-ContextualMenu.od-ContextualMenu--multiselect .od-ContextualMenu-link.is-selected:after {
+            display: inline-block;
+            font-family: FabricMDL2Icons;
+            font-style: normal;
+            font-weight: 400;
+            speak: none;
+            color: $gray160;
+            content: '\e041';
+            font-size: 12px;
+            height: 39px;
+            line-height: 40px;
+            position: absolute;
+            left: 10px
+        }
+
+        .od-Label {
+            font-size: 12px;
+            font-weight: 400;
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: block;
+            padding: 5px 0
+        }
+
+        .od-Label.is-required:after {
+            content: ' *';
+            color: #a80000
+        }
+
+        .od-Label.is-disabled {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-Label.is-disabled {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-Label.is-disabled {
+                color: #600000
+            }
+        }
+
+        .is-disabled .od-Label {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .is-disabled .od-Label {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .is-disabled .od-Label {
+                color: #600000
+            }
+        }
+
+        .od-Button {
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            color: $gray160;
+            font-size: 14px;
+            font-weight: 400;
+            background-color: $neutralLighter;
+            border: 1px solid $neutralLighter;
+            cursor: pointer;
+            display: inline-block;
+            height: 32px;
+            min-width: 80px;
+            padding: 4px 20px 6px
+        }
+
+        .isFluent .od-Button {
+            position: relative;
+            border-radius: 2px;
+            background-color: $white;
+            border: 1px solid $neutralSecondaryAlt;
+            font-weight: 600
+        }
+
+        .od-Button.is-hidden {
+            display: none
+        }
+
+        .od-Button:hover {
+            background-color: $neutralLight;
+            border-color: $neutralLight
+        }
+
+        .isFluent .od-Button:hover {
+            background-color: $neutralLighter;
+            border-color: $neutralSecondaryAlt
+        }
+
+        .od-Button:hover .od-Button-label {
+            color: $black
+        }
+
+        .isFluent .od-Button:hover .od-Button-label {
+            color: $gray190
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-Button:hover {
+                color: #1aebff;
+                border-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-Button:hover {
+                color: #37006e;
+                border-color: #37006e
+            }
+        }
+
+        .od-Button:focus {
+            background-color: $neutralLight;
+            border-color: $themePrimary;
+            outline: 1px solid transparent
+        }
+
+        .isFluent .od-Button:focus {
+            background-color: $white;
+            border-color: $neutralSecondaryAlt
+        }
+
+        .od-focus--enabled.isFluent .od-Button:focus::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            outline: 1px solid $neutralSecondary;
+            outline-offset: -4px;
+            border: 2px solid $neutralSecondaryAlt;
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px $white inset
+        }
+
+        .od-Button:focus .od-Button-label {
+            color: $black
+        }
+
+        .isFluent .od-Button:focus .od-Button-label {
+            color: $gray160
+        }
+
+        .od-Button:active {
+            background-color: $themePrimary;
+            border-color: $themePrimary
+        }
+
+        .isFluent .od-Button:active {
+            background-color: $neutralLight;
+            border-color: $neutralSecondaryAlt
+        }
+
+        .od-Button:active .od-Button-label {
+            color: $white
+        }
+
+        .isFluent .od-Button:active .od-Button-label {
+            color: $gray190
+        }
+
+        .od-Button.is-disabled,
+        .od-Button:disabled {
+            background-color: $neutralLighter !important;
+            border-color: $neutralLighter !important;
+            cursor: default
+        }
+
+        .od-Button.is-disabled .od-Button-label,
+        .od-Button:disabled .od-Button-label {
+            color: $neutralTertiary
+        }
+
+        .od-Button.is-disabled:focus,
+        .od-Button.is-disabled:hover,
+        .od-Button:disabled:focus,
+        .od-Button:disabled:hover {
+            outline: 0
+        }
+
+        .od-Button-label {
+            color: $gray160;
+            font-weight: 600;
+            font-size: 14px
+        }
+
+        .od-Button-description,
+        .od-Button-icon {
+            display: none
+        }
+
+        .od-Button.od-Button--primary {
+            background-color: $themePrimary;
+            border-color: $themePrimary
+        }
+
+        .od-Button.od-Button--primary .od-Button-label {
+            color: $white
+        }
+
+        .isFluent .od-Button.od-Button--primary .od-Button-label .od-Button-label {
+            color: $white
+        }
+
+        .od-Button.od-Button--primary:hover {
+            background-color: $themeDark;
+            border-color: $themeDark
+        }
+
+        .isFluent .od-Button.od-Button--primary:hover {
+            background-color: $themeDarkAlt;
+            border-color: $themeDarkAlt
+        }
+
+        .isFluent .od-Button.od-Button--primary:hover .od-Button-label {
+            color: $white
+        }
+
+        .od-Button.od-Button--primary:focus {
+            background-color: $themeDark;
+            border-color: $themeDarker
+        }
+
+        .isFluent .od-Button.od-Button--primary:focus {
+            background-color: $themePrimary;
+            border-color: $themePrimary
+        }
+
+        .od-focus--enabled.isFluent .od-Button.od-Button--primary:focus::after {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            outline: 1px solid $themePrimary;
+            outline-offset: -4px;
+            border: 2px solid $themePrimary;
+            border-radius: 2px;
+            box-shadow: 0 0 0 1px $white inset
+        }
+
+        .isFluent .od-Button.od-Button--primary:focus .od-Button-label {
+            color: $white
+        }
+
+        .od-Button.od-Button--primary:active {
+            background-color: $themePrimary;
+            border-color: $themePrimary
+        }
+
+        .isFluent .od-Button.od-Button--primary:active {
+            background-color: $themeDark;
+            border-color: $themeDark
+        }
+
+        .isFluent .od-Button.od-Button--primary:active .od-Button-label {
+            color: $white
+        }
+
+        .od-Button.od-Button--primary.is-disabled,
+        .od-Button.od-Button--primary:disabled {
+            background-color: $neutralLighter;
+            border-color: $neutralLighter
+        }
+
+        .od-Button.od-Button--primary.is-disabled .od-Button-label,
+        .od-Button.od-Button--primary:disabled .od-Button-label {
+            color: $neutralTertiary !important
+        }
+
+        .od-Button.od-Button--hero {
+            align-items: center;
+            background-color: transparent;
+            border: 0;
+            display: flex;
+            padding: 0
+        }
+
+        .od-Button.od-Button--hero .od-Button-icon {
+            color: $themePrimary;
+            display: inline-block;
+            font-size: 12px;
+            margin-right: 4px;
+            position: relative;
+            top: 1px;
+            text-align: center
+        }
+
+        .od-Button.od-Button--hero .od-Button-icon .ms-Icon {
+            border-radius: 18px;
+            border: 1px solid $themePrimary;
+            font-size: 12px;
+            height: 18px;
+            line-height: 18px;
+            width: 18px
+        }
+
+        .od-Button.od-Button--hero .od-Button-label {
+            color: $themePrimary;
+            font-size: 21px;
+            font-weight: 100;
+            position: relative;
+            text-decoration: none
+        }
+
+        .od-Button.od-Button--hero:focus .od-Button-icon,
+        .od-Button.od-Button--hero:hover .od-Button-icon {
+            color: $themeDark
+        }
+
+        .od-Button.od-Button--hero:focus .od-Button-icon .ms-Icon,
+        .od-Button.od-Button--hero:hover .od-Button-icon .ms-Icon {
+            border: 1px solid $themeDark
+        }
+
+        .od-Button.od-Button--hero:focus .od-Button-label,
+        .od-Button.od-Button--hero:hover .od-Button-label {
+            color: $themeDarker
+        }
+
+        .od-Button.od-Button--hero:active .od-Button-icon {
+            color: $themePrimary
+        }
+
+        .od-Button.od-Button--hero:active .od-Button-icon .ms-Icon {
+            border: 1px solid $themePrimary
+        }
+
+        .od-Button.od-Button--hero:active .od-Button-label {
+            color: $themePrimary
+        }
+
+        .od-Button.od-Button--hero.is-disabled .od-Button-icon,
+        .od-Button.od-Button--hero:disabled .od-Button-icon {
+            color: $gray60
+        }
+
+        .od-Button.od-Button--hero.is-disabled .od-Button-icon .ms-Icon,
+        .od-Button.od-Button--hero:disabled .od-Button-icon .ms-Icon {
+            border: 1px solid $gray60
+        }
+
+        .od-Button.od-Button--hero.is-disabled .od-Button-label,
+        .od-Button.od-Button--hero:disabled .od-Button-label {
+            color: $neutralTertiary
+        }
+
+        .od-Button.od-Button--compound {
+            display: block;
+            height: auto;
+            max-width: 280px;
+            min-height: 72px;
+            padding: 20px
+        }
+
+        .od-Button.od-Button--compound .od-Button-label {
+            display: block;
+            font-weight: 600;
+            position: relative;
+            text-align: left;
+            margin-top: -5px
+        }
+
+        .od-Button.od-Button--compound .od-Button-description {
+            color: $neutralSecondary;
+            display: block;
+            font-weight: 400;
+            font-size: 12px;
+            position: relative;
+            text-align: left;
+            top: 3px
+        }
+
+        .od-Button.od-Button--compound:hover .od-Button-description {
+            color: $gray190
+        }
+
+        .od-Button.od-Button--compound:focus {
+            border-color: $themePrimary;
+            background-color: $neutralLighter
+        }
+
+        .od-Button.od-Button--compound:focus .od-Button-label {
+            color: $gray160
+        }
+
+        .od-Button.od-Button--compound:focus .od-Button-description {
+            color: $neutralSecondary
+        }
+
+        .od-Button.od-Button--compound:active {
+            background-color: $themePrimary
+        }
+
+        .od-Button.od-Button--compound:active .od-Button-description,
+        .od-Button.od-Button--compound:active .od-Button-label {
+            color: $white
+        }
+
+        .od-Button.od-Button--compound.is-disabled .od-Button-description,
+        .od-Button.od-Button--compound.is-disabled .od-Button-label,
+        .od-Button.od-Button--compound:disabled .od-Button-description,
+        .od-Button.od-Button--compound:disabled .od-Button-label {
+            color: $neutralTertiary
+        }
+
+        .od-Button.od-Button--compound.is-disabled:active,
+        .od-Button.od-Button--compound.is-disabled:focus,
+        .od-Button.od-Button--compound:disabled:active,
+        .od-Button.od-Button--compound:disabled:focus {
+            border-color: $neutralLighter;
+            background-color: $neutralLighter
+        }
+
+        .od-Button.od-Button--compound.is-disabled:active .od-Button-description,
+        .od-Button.od-Button--compound.is-disabled:active .od-Button-label,
+        .od-Button.od-Button--compound.is-disabled:focus .od-Button-description,
+        .od-Button.od-Button--compound.is-disabled:focus .od-Button-label,
+        .od-Button.od-Button--compound:disabled:active .od-Button-description,
+        .od-Button.od-Button--compound:disabled:active .od-Button-label,
+        .od-Button.od-Button--compound:disabled:focus .od-Button-description,
+        .od-Button.od-Button--compound:disabled:focus .od-Button-label {
+            color: $neutralTertiary
+        }
+
+        .od-Label {
+            font-size: 12px;
+            font-weight: 400;
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: block;
+            padding: 5px 0
+        }
+
+        .od-Label.is-required:after {
+            content: ' *';
+            color: #a80000
+        }
+
+        .od-Label.is-disabled {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-Label.is-disabled {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-Label.is-disabled {
+                color: #600000
+            }
+        }
+
+        .is-disabled .od-Label {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .is-disabled .od-Label {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .is-disabled .od-Label {
+                color: #600000
+            }
+        }
+
+        .od-Toggle {
+            font-size: 14px;
+            font-weight: 400;
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: block;
+            margin-bottom: 26px
+        }
+
+        .od-Toggle .ms-Label,
+        .od-Toggle .od-Label {
+            position: relative;
+            top: -1px;
+            padding: 0 0 0 50px
+        }
+
+        html[dir=rtl] .od-Toggle .ms-Label,
+        html[dir=rtl] .od-Toggle .od-Label {
+            padding: 0 50px 0 0
+        }
+
+        .od-Toggle .od-Toggle-field:before {
+            position: absolute;
+            top: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            content: '';
+            left: 4px;
+            background-color: $neutralSecondary;
+            outline: 1px solid transparent;
+            transition-property: background, left;
+            transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(.4, 0, .23, 1)
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-Toggle .od-Toggle-field:before {
+                border: 2.5px solid $white;
+                height: 15px;
+                outline: 0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-Toggle .od-Toggle-field:before {
+                border-color: $black
+            }
+        }
+
+        [dir=ltr] .od-Toggle .od-Toggle-field:before {
+            right: auto
+        }
+
+        [dir=rtl] .od-Toggle .od-Toggle-field:before {
+            left: auto
+        }
+
+        .od-Toggle .od-Toggle-field .ms-Label--off {
+            display: block
+        }
+
+        .od-Toggle .od-Toggle-field .ms-Label--on {
+            display: none
+        }
+
+        .od-Toggle .od-Toggle-field.is-selected {
+            background-color: $themePrimary;
+            border-color: $themePrimary
+        }
+
+        .od-Toggle .od-Toggle-field.is-selected:before {
+            position: absolute;
+            top: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            content: '';
+            right: 4px;
+            background-color: $neutralSecondary;
+            outline: 1px solid transparent;
+            transition-property: background, left;
+            transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(.4, 0, .23, 1)
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-Toggle .od-Toggle-field.is-selected:before {
+                border: 2.5px solid $white;
+                height: 15px;
+                outline: 0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-Toggle .od-Toggle-field.is-selected:before {
+                border-color: $black
+            }
+        }
+
+        .od-Toggle .od-Toggle-field.is-selected:before {
+            background-color: $white
+        }
+
+        [dir=ltr] .od-Toggle .od-Toggle-field.is-selected:before {
+            left: 28px
+        }
+
+        [dir=rtl] .od-Toggle .od-Toggle-field.is-selected:before {
+            right: 28px
+        }
+
+        .od-Toggle .od-Toggle-field.is-selected .ms-Label--off {
+            display: none
+        }
+
+        .od-Toggle .od-Toggle-field.is-selected .ms-Label--on {
+            display: block
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-Toggle .od-Toggle-field.is-selected {
+                background-color: $white
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-Toggle .od-Toggle-field.is-selected {
+                background-color: $black
+            }
+        }
+
+        .od-Toggle:focus+.od-Toggle-field,
+        .od-Toggle:hover+.od-Toggle-field {
+            border-color: $neutralSecondary
+        }
+
+        .od-Toggle:focus+.od-Toggle-field:before,
+        .od-Toggle:hover+.od-Toggle-field:before {
+            background-color: $gray160
+        }
+
+        .od-Toggle:focus:checked+.od-Toggle-field,
+        .od-Toggle:hover:checked+.od-Toggle-field {
+            background-color: $themeDarkAlt;
+            border-color: $themeDarkAlt
+        }
+
+        .od-Toggle:focus:checked+.od-Toggle-field:before,
+        .od-Toggle:hover:checked+.od-Toggle-field:before {
+            background-color: $white
+        }
+
+        .od-Toggle:active:checked+.od-Toggle-field {
+            background-color: $themeDark;
+            border-color: $themeDark
+        }
+
+        .od-Toggle .od-Toggle-field:focus,
+        .od-Toggle .od-Toggle-field:hover {
+            border-color: $gray160
+        }
+
+        .od-Toggle .od-Toggle-field.is-selected:focus,
+        .od-Toggle .od-Toggle-field.is-selected:hover {
+            background-color: $themeDarkAlt;
+            border-color: $themeDarkAlt
+        }
+
+        .od-Toggle .od-Toggle-field .ms-Label,
+        .od-Toggle .od-Toggle-field .od-Label {
+            color: $black;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        .od-Toggle .od-Toggle-field:hover .ms-Label,
+        .od-Toggle .od-Toggle-field:hover .od-Label {
+            color: $black
+        }
+
+        .od-Toggle .od-Toggle-field:active .ms-Label,
+        .od-Toggle .od-Toggle-field:active .od-Label {
+            color: $gray160
+        }
+
+        .od-Toggle.is-disabled .ms-Label,
+        .od-Toggle.is-disabled .od-Label {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .od-Toggle.is-disabled .ms-Label,
+            .od-Toggle.is-disabled .od-Label {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+
+            .od-Toggle.is-disabled .ms-Label,
+            .od-Toggle.is-disabled .od-Label {
+                color: #600000
+            }
+        }
+
+        .od-Toggle.is-disabled .od-Toggle-field {
+            background-color: $white;
+            border-color: $gray60;
+            pointer-events: none;
+            cursor: default
+        }
+
+        .od-Toggle.is-disabled .od-Toggle-field:before {
+            background-color: $gray60
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .od-Toggle.is-disabled .od-Toggle-field,
+            .od-Toggle.is-disabled .od-Toggle-field:before {
+                border-color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+
+            .od-Toggle.is-disabled .od-Toggle-field,
+            .od-Toggle.is-disabled .od-Toggle-field:before {
+                border-color: #600000
+            }
+        }
+
+        .od-Toggle-description {
+            position: relative;
+            font-size: 14px;
+            vertical-align: top;
+            display: block;
+            margin-bottom: 8px
+        }
+
+        .od-Toggle-field {
+            position: relative;
+            display: inline-block;
+            width: 45px;
+            height: 20px;
+            box-sizing: border-box;
+            border: 2px solid $neutralTertiary;
+            border-radius: 20px;
+            cursor: pointer;
+            transition-property: background, left, border-color;
+            transition-duration: 250ms;
+            transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+            outline: 0
+        }
+
+        .od-Toggle-field:focus,
+        .od-Toggle-field:hover {
+            border-color: $neutralSecondary
+        }
+
+        .od-Toggle-input {
+            display: none
+        }
+
+        .od-Toggle.od-Toggle--textLeft {
+            width: 225px;
+            margin-bottom: 40px
+        }
+
+        .od-Toggle.od-Toggle--textLeft .od-Toggle-description {
+            display: inline-block;
+            max-width: 150px;
+            top: -3px;
+            margin-bottom: 0
+        }
+
+        .od-Toggle.od-Toggle--textLeft .od-Toggle-field {
+            float: right
+        }
+
+        .od-Label {
+            font-size: 12px;
+            font-weight: 400;
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: block;
+            padding: 5px 0
+        }
+
+        .od-Label.is-required:after {
+            content: ' *';
+            color: #a80000
+        }
+
+        .od-Label.is-disabled {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-Label.is-disabled {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-Label.is-disabled {
+                color: #600000
+            }
+        }
+
+        .is-disabled .od-Label {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .is-disabled .od-Label {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .is-disabled .od-Label {
+                color: #600000
+            }
+        }
+
+        .od-TextField {
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            color: $gray160;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 8px
+        }
+
+        .od-TextField .ms-Label,
+        .od-TextField .od-Label {
+            font-size: 14px
+        }
+
+        .od-TextField.is-disabled .od-TextField-field {
+            background-color: $neutralLighter;
+            border-color: $neutralLighter;
+            pointer-events: none;
+            cursor: default
+        }
+
+        .od-TextField.is-disabled::-ms-input-placeholder {
+            color: $neutralTertiary
+        }
+
+        .od-TextField.is-disabled::placeholder {
+            color: $neutralTertiary
+        }
+
+        .od-TextField.is-required .ms-Label:after,
+        .od-TextField.is-required .od-Label:after {
+            content: ' *';
+            color: #a80000
+        }
+
+        .od-TextField.is-required::-ms-input-placeholder:after {
+            content: ' *';
+            color: #a80000
+        }
+
+        .od-TextField.is-required::placeholder:after {
+            content: ' *';
+            color: #a80000
+        }
+
+        .od-TextField.is-active {
+            border-color: $themePrimary
+        }
+
+        .od-TextField-field {
+            box-sizing: border-box;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+            border: 1px solid $gray60;
+            border-radius: 0;
+            font-weight: 300;
+            font-size: 14px;
+            color: $gray160;
+            background-color: $white;
+            height: 32px;
+            padding: 6px 12px 7px;
+            width: 100%;
+            min-width: 180px;
+            outline: 0
+        }
+
+        .isFluent .od-TextField-field {
+            padding: 8px;
+            border-radius: 2px;
+            border: 1px solid $neutralTertiary;
+            color: $neutralSecondary;
+            font-weight: 400
+        }
+
+        .od-TextField-field:hover {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .od-TextField-field:focus {
+            border-color: $themePrimary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .od-TextField-field:focus,
+            .od-TextField-field:hover {
+                border-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+
+            .od-TextField-field:focus,
+            .od-TextField-field:hover {
+                border-color: #37006e
+            }
+        }
+
+        .od-TextField-field::-ms-input-placeholder {
+            color: $neutralSecondary
+        }
+
+        .od-TextField-field::placeholder {
+            color: $neutralSecondary
+        }
+
+        .od-TextField-field-hasDropdown {
+            width: 68%
+        }
+
+        [dir=ltr] .od-TextField-field-hasDropdown {
+            margin-left: 7px
+        }
+
+        [dir=rtl] .od-TextField-field-hasDropdown {
+            margin-right: 7px
+        }
+
+        .od-TextField-description {
+            color: $neutralSecondaryAlt;
+            font-size: 11px
+        }
+
+        .od-TextField.od-TextField--placeholder {
+            position: relative
+        }
+
+        .od-TextField.od-TextField--placeholder .ms-Label,
+        .od-TextField.od-TextField--placeholder .od-Label {
+            position: absolute;
+            font-weight: 300;
+            font-size: 14px;
+            color: $neutralSecondary;
+            padding: 6px 12px 7px;
+            pointer-events: none
+        }
+
+        .od-TextField.od-TextField--placeholder.is-disabled {
+            color: $neutralTertiary
+        }
+
+        .od-TextField.od-TextField--underlined {
+            border-bottom: 1px solid $gray60;
+            display: table;
+            width: 100%;
+            min-width: 180px
+        }
+
+        .od-TextField.od-TextField--underlined:hover {
+            border-color: $neutralSecondaryAlt
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-TextField.od-TextField--underlined:hover {
+                border-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-TextField.od-TextField--underlined:hover {
+                border-color: #37006e
+            }
+        }
+
+        .od-TextField.od-TextField--underlined:active,
+        .od-TextField.od-TextField--underlined:focus {
+            border-color: $themePrimary
+        }
+
+        .od-TextField.od-TextField--underlined .ms-Label,
+        .od-TextField.od-TextField--underlined .od-Label {
+            font-size: 14px;
+            display: table-cell;
+            vertical-align: top;
+            padding-top: 10px;
+            height: 32px;
+            width: 1%;
+            white-space: nowrap
+        }
+
+        [dir=ltr] .od-TextField.od-TextField--underlined .ms-Label,
+        [dir=ltr] .od-TextField.od-TextField--underlined .od-Label {
+            margin-right: 8px
+        }
+
+        [dir=rtl] .od-TextField.od-TextField--underlined .ms-Label,
+        [dir=rtl] .od-TextField.od-TextField--underlined .od-Label {
+            margin-left: 8px
+        }
+
+        [dir=ltr] .od-TextField.od-TextField--underlined .ms-Label,
+        [dir=ltr] .od-TextField.od-TextField--underlined .od-Label {
+            padding-left: 12px
+        }
+
+        [dir=rtl] .od-TextField.od-TextField--underlined .ms-Label,
+        [dir=rtl] .od-TextField.od-TextField--underlined .od-Label {
+            padding-right: 12px
+        }
+
+        .od-TextField.od-TextField--underlined .od-TextField-field {
+            border: 0;
+            float: left;
+            display: table-cell;
+            padding-top: 8px;
+            padding-bottom: 3px
+        }
+
+        html[dir=ltr] .od-TextField.od-TextField--underlined .od-TextField-field {
+            text-align: left
+        }
+
+        html[dir=rtl] .od-TextField.od-TextField--underlined .od-TextField-field {
+            text-align: right
+        }
+
+        .od-TextField.od-TextField--underlined .od-TextField-field:active,
+        .od-TextField.od-TextField--underlined .od-TextField-field:focus,
+        .od-TextField.od-TextField--underlined .od-TextField-field:hover {
+            outline: 0
+        }
+
+        .od-TextField.od-TextField--underlined.is-disabled {
+            border-bottom-color: $neutralLight
+        }
+
+        .od-TextField.od-TextField--underlined.is-disabled .od-TextField-field {
+            background-color: transparent;
+            color: $neutralTertiary
+        }
+
+        .od-TextField.od-TextField--underlined.is-active {
+            border-color: $themePrimary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-TextField.od-TextField--underlined.is-active {
+                border-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-TextField.od-TextField--underlined.is-active {
+                border-color: #37006e
+            }
+        }
+
+        .od-TextField.od-TextField--multiline .od-TextField-field {
+            color: $neutralSecondary;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            min-height: 60px;
+            min-width: 260px;
+            padding-top: 6px;
+            overflow: auto
+        }
+
+        .isFluent .od-TextField.od-TextField--multiline .od-TextField-field {
+            padding: 6px 8px;
+            min-width: 254px
+        }
+
+        .od-TextField.od-TextField--textFieldUnderlined {
+            border: 0;
+            border-bottom: 1px solid $themePrimary;
+            display: table;
+            width: 100%;
+            min-width: 180px
+        }
+
+        .od-TextField.od-TextField--textFieldUnderlined:hover {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .od-TextField.od-TextField--textFieldUnderlined:active,
+        .od-TextField.od-TextField--textFieldUnderlined:focus {
+            border-color: $themePrimary
+        }
+
+        .od-TextField.od-TextField--textFieldUnderlined .od-TextField-field {
+            border: 0;
+            display: table-cell;
+            padding-top: 8px;
+            padding-bottom: 2px
+        }
+
+        html[dir=ltr] .od-TextField.od-TextField--textFieldUnderlined .od-TextField-field {
+            text-align: left
+        }
+
+        html[dir=rtl] .od-TextField.od-TextField--textFieldUnderlined .od-TextField-field {
+            text-align: right
+        }
+
+        .od-TextField.od-TextField--textFieldUnderlined .od-TextField-field:active,
+        .od-TextField.od-TextField--textFieldUnderlined .od-TextField-field:focus {
+            outline: 0
+        }
+
+        .od-TextField.od-TextField--textFieldUnderlined.is-disabled {
+            border-bottom-color: $neutralLight
+        }
+
+        .od-TextField.od-TextField--textFieldUnderlined.is-disabled .od-TextField-field {
+            background-color: transparent;
+            color: $neutralTertiary
+        }
+
+        .od-CheckBox {
+            font-size: 14px;
+            font-weight: 400;
+            box-sizing: border-box;
+            color: $gray160;
+            min-height: 36px;
+            position: relative
+        }
+
+        .od-CheckBox .od-Label {
+            font-size: 14px;
+            padding: 0 0 0 26px;
+            cursor: pointer;
+            display: inline-block
+        }
+
+        html[dir=rtl] .od-CheckBox .od-Label {
+            padding: 0 26px 0 0
+        }
+
+        .od-CheckBox-input {
+            position: absolute;
+            opacity: 0
+        }
+
+        .od-CheckBox-field::before {
+            content: '';
+            display: inline-block;
+            border: 2px solid $neutralTertiary;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-weight: 400;
+            position: absolute;
+            box-sizing: border-box;
+            transition-property: background, border, border-color;
+            transition-duration: .2s;
+            transition-timing-function: cubic-bezier(.4, 0, .23, 1)
+        }
+
+        .od-CheckBox-field::after {
+            content: '\E73E';
+            font-family: FabricMDL2Icons;
+            display: none;
+            position: absolute;
+            font-weight: 900;
+            background-color: transparent;
+            font-size: 13px;
+            top: 0;
+            color: $white;
+            line-height: 20px;
+            width: 20px;
+            text-align: center
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-CheckBox-field::after {
+                -ms-high-contrast-adjust: none;
+                color: $black
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-CheckBox-field::after {
+                color: $white
+            }
+        }
+
+        .od-CheckBox-field {
+            display: inline-block;
+            cursor: pointer;
+            margin-top: 8px;
+            position: relative;
+            outline: 0;
+            vertical-align: top
+        }
+
+        .od-CheckBox-field:focus::before,
+        .od-CheckBox-field:hover::before {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .od-CheckBox-field:focus .od-Label,
+        .od-CheckBox-field:hover .od-Label {
+            color: $black
+        }
+
+        .od-CheckBox-field.is-disabled {
+            cursor: default
+        }
+
+        .od-CheckBox-field.is-disabled::before {
+            background-color: $gray60;
+            border-color: $gray60;
+            color: $gray60
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-CheckBox-field.is-disabled::before {
+                border-color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-CheckBox-field.is-disabled::before {
+                border-color: #600000
+            }
+        }
+
+        .od-CheckBox-field.is-disabled .od-Label {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-CheckBox-field.is-disabled .od-Label {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-CheckBox-field.is-disabled .od-Label {
+                color: #600000
+            }
+        }
+
+        .od-CheckBox-field.in-focus::before {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .od-CheckBox-field.in-focus.is-disabled::before {
+            border-color: $gray60
+        }
+
+        .od-CheckBox-field.in-focus.is-checked::before {
+            border-color: $themeDark
+        }
+
+        .od-CheckBox-field.is-checked::before {
+            border: 10px solid $themePrimary;
+            background-color: $themePrimary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-CheckBox-field.is-checked::before {
+                border-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-CheckBox-field.is-checked::before {
+                border-color: #37006e
+            }
+        }
+
+        .od-CheckBox-field.is-checked::after {
+            display: block
+        }
+
+        .od-CheckBox-field.is-checked:focus::before,
+        .od-CheckBox-field.is-checked:hover::before {
+            border-color: $themeDarkAlt
+        }
+
+        .od-CheckBox-field.is-checked.is-disabled::before {
+            background-color: $gray60;
+            border: 10px solid $gray60;
+            color: $gray60
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-CheckBox-field.is-checked.is-disabled::before {
+                border-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-CheckBox-field.is-checked.is-disabled::before {
+                border-color: #37006e
+            }
+        }
+
+        .od-CheckBox-field.is-checked.is-disabled::after {
+            display: block
+        }
+
+        .od-CheckBox-field.is-checked.is-disabled:focus::before,
+        .od-CheckBox-field.is-checked.is-disabled:hover::before {
+            background-color: $gray60;
+            border: 10px solid $gray60;
+            color: $gray60
+        }
+
+        .ms-RadioButton {
+            font-size: 14px;
+            font-weight: 400;
+            box-sizing: border-box;
+            color: $gray160;
+            min-height: 36px;
+            position: relative
+        }
+
+        .ms-RadioButton .ms-Label,
+        .ms-RadioButton .od-Label {
+            font-size: 14px;
+            padding: 0 0 0 26px;
+            cursor: pointer;
+            display: inline-block
+        }
+
+        html[dir=rtl] .ms-RadioButton .ms-Label,
+        html[dir=rtl] .ms-RadioButton .od-Label {
+            padding: 0 26px 0 0
+        }
+
+        .ms-RadioButton-input {
+            position: absolute;
+            opacity: 0
+        }
+
+        .ms-RadioButton-field::before {
+            content: '';
+            display: inline-block;
+            border: 2px solid $neutralTertiary;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-weight: 400;
+            position: absolute;
+            box-sizing: border-box;
+            transition-property: border-color;
+            transition-duration: .2s;
+            transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+            border-radius: 50%
+        }
+
+        .ms-RadioButton-field::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            bottom: 0;
+            transition-property: top, left, width, height;
+            transition-duration: 150ms;
+            transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+            box-sizing: border-box
+        }
+
+        [dir=ltr] .ms-RadioButton-field::after {
+            left: 8px
+        }
+
+        [dir=rtl] .ms-RadioButton-field::after {
+            right: 8px
+        }
+
+        [dir=ltr] .ms-RadioButton-field::after {
+            right: 0
+        }
+
+        [dir=rtl] .ms-RadioButton-field::after {
+            left: 0
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .ms-RadioButton-field::after {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .ms-RadioButton-field::after {
+                color: #600000
+            }
+        }
+
+        .ms-RadioButton-field {
+            display: inline-block;
+            cursor: pointer;
+            margin-top: 8px;
+            position: relative;
+            outline: 0;
+            vertical-align: top
+        }
+
+        .ms-RadioButton-field:focus::before,
+        .ms-RadioButton-field:hover::before {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .ms-RadioButton-field:focus .ms-Label,
+        .ms-RadioButton-field:focus .od-Label,
+        .ms-RadioButton-field:hover .ms-Label,
+        .ms-RadioButton-field:hover .od-Label {
+            color: $black
+        }
+
+        .ms-RadioButton-field.is-disabled {
+            cursor: default
+        }
+
+        .ms-RadioButton-field.is-disabled::before {
+            background-color: $gray60;
+            border-color: $gray60;
+            color: $gray60
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .ms-RadioButton-field.is-disabled::before {
+                border-color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .ms-RadioButton-field.is-disabled::before {
+                border-color: #600000
+            }
+        }
+
+        .ms-RadioButton-field.is-disabled .ms-Label,
+        .ms-RadioButton-field.is-disabled .od-Label {
+            color: $neutralTertiary
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .ms-RadioButton-field.is-disabled .ms-Label,
+            .ms-RadioButton-field.is-disabled .od-Label {
+                color: #0f0
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+
+            .ms-RadioButton-field.is-disabled .ms-Label,
+            .ms-RadioButton-field.is-disabled .od-Label {
+                color: #600000
+            }
+        }
+
+        .ms-RadioButton-field.is-disabled:focus::before,
+        .ms-RadioButton-field.is-disabled:hover::before {
+            border-color: $gray60
+        }
+
+        .ms-RadioButton-field.in-focus::before {
+            border-color: $neutralSecondaryAlt
+        }
+
+        .ms-RadioButton-field.is-checked::before,
+        .ms-RadioButton-input:checked+.ms-RadioButton-field::before {
+            border: 2px solid $themePrimary;
+            background-color: transparent
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .ms-RadioButton-field.is-checked::before,
+            .ms-RadioButton-input:checked+.ms-RadioButton-field::before {
+                border-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+
+            .ms-RadioButton-field.is-checked::before,
+            .ms-RadioButton-input:checked+.ms-RadioButton-field::before {
+                border-color: #37006e
+            }
+        }
+
+        .ms-RadioButton-field.is-checked::after,
+        .ms-RadioButton-input:checked+.ms-RadioButton-field::after {
+            background-color: $themePrimary;
+            top: 5px;
+            width: 10px;
+            height: 10px
+        }
+
+        [dir=ltr] .ms-RadioButton-field.is-checked::after,
+        [dir=ltr] .ms-RadioButton-input:checked+.ms-RadioButton-field::after {
+            left: 5px
+        }
+
+        [dir=rtl] .ms-RadioButton-field.is-checked::after,
+        [dir=rtl] .ms-RadioButton-input:checked+.ms-RadioButton-field::after {
+            right: 5px
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            .ms-RadioButton-field.is-checked::after,
+            .ms-RadioButton-input:checked+.ms-RadioButton-field::after {
+                background-color: #1aebff
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+
+            .ms-RadioButton-field.is-checked::after,
+            .ms-RadioButton-input:checked+.ms-RadioButton-field::after {
+                background-color: #37006e
+            }
+        }
+
+        .ms-RadioButton-field.is-checked:focus::before,
+        .ms-RadioButton-field.is-checked:hover::before,
+        .ms-RadioButton-input:checked+.ms-RadioButton-field:focus::before,
+        .ms-RadioButton-input:checked+.ms-RadioButton-field:hover::before {
+            border-color: $themePrimary
+        }
+
+        .ms-RadioButton-field.is-checked.in-focus::before,
+        .ms-RadioButton-input:checked+.ms-RadioButton-field.in-focus::before {
+            border-color: $themePrimary
+        }
+
+        .ms-accessible {
+            position: absolute;
+            top: -9001px;
+            left: -9001px;
+            height: 1px;
+            width: 1px
+        }
+
+        body,
+        html {
+            height: 100%
+        }
+
+        body {
+            overflow: hidden;
+            color: $gray160;
+            background-color: $white;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Segoe UI Regular WestEuropean", "Segoe UI", Tahoma, Arial, sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        body:before {
+            content: '';
+            position: absolute;
+            background-image: none;
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1
+        }
+
+        body:after {
+            content: '';
+            position: absolute;
+            background-color: transparent;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1
+        }
+
+        div#c_watsonui {
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -ms-user-select: text;
+            user-select: text
+        }
+
+        div#c_watsonui a {
+            color: $themePrimary
+        }
+
+        div#c_watsonui a:hover {
+            color: $themeDarker
+        }
+
+        input:not([type]),
+        input[type=email],
+        input[type=file],
+        input[type=password],
+        input[type=text],
+        select,
+        textarea {
+            background-color: $white;
+            border-color: $gray60;
+            color: $gray160
+        }
+
+        input:not([type]):hover,
+        input[type=email]:hover,
+        input[type=file]:hover,
+        input[type=password]:hover,
+        input[type=text]:hover,
+        select:hover,
+        textarea:hover {
+            border-color: $neutralSecondaryAlt
+        }
+
+        input:not([type]):focus,
+        input[type=email]:focus,
+        input[type=file]:focus,
+        input[type=password]:focus,
+        input[type=text]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: $themePrimary
+        }
+
+        input,
+        textarea {
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -ms-user-select: text;
+            user-select: text
+        }
+
+        @media (max-width:319px) {
+            body {
+                overflow-x: auto
+            }
+        }
+
+        #spoAppComponent,
+        .SPOApp {
+            height: 100%
+        }
+
+        .od-focus--enabled a:focus {
+            box-shadow: 0 0 0 1px $neutralSecondary inset
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+            .od-focus--enabled a:focus {
+                box-shadow: 0 0 0 1px $white inset
+            }
+        }
+
+        @media screen and (-ms-high-contrast:black-on-white) {
+            .od-focus--enabled a:focus {
+                box-shadow: 0 0 0 1px $black inset
+            }
+        }
+
+        .od-focus--enabled button:focus {
+            box-shadow: 0 0 0 1px $neutralSecondary inset
+        }
+
+        @media (max-width:640px) {
+
+            .c-BreadcrumbBar,
+            .c-SortMenu,
+            .leftNavArea {
+                opacity: 0
+            }
+
+            .leftNavArea {
+                left: -180px
+            }
+
+            .contentArea {
+                left: 0
+            }
+        }
+
+        .debug {
+            border: 2px solid #333;
+            border-radius: 2px;
+            background: #f9f9f9;
+            height: 100px;
+            overflow-y: scroll
+        }
+
+        @media print {
+            body {
+                overflow: visible !important
+            }
+        }
+
+        .od-ItemsScopeList-commandBar {
+            display: flex;
+            flex: 0 0
+        }
+
+        html[dir=ltr] .xlg .od-TopBar-commandBar,
+        html[dir=ltr] .xxlg .od-TopBar-commandBar,
+        html[dir=ltr] .xxxlg .od-TopBar-commandBar,
+        html[dir=ltr] .xxxxlg .od-TopBar-commandBar {
+            clear: right
+        }
+
+        html[dir=rtl] .xlg .od-TopBar-commandBar,
+        html[dir=rtl] .xxlg .od-TopBar-commandBar,
+        html[dir=rtl] .xxxlg .od-TopBar-commandBar,
+        html[dir=rtl] .xxxxlg .od-TopBar-commandBar {
+            clear: left
+        }
+
+        .isFluent.xlg .od-TopBar-commandBar {
+            border-bottom: 1px solid $neutralLight
+        }
+
+        .isFluent.xxlg .od-TopBar-commandBar {
+            border-bottom: 1px solid $neutralLight
+        }
+
+        .isFluent.xxxlg .od-TopBar-commandBar {
+            border-bottom: 1px solid $neutralLight
+        }
+
+        .isFluent.xxxxlg .od-TopBar-commandBar {
+            border-bottom: 1px solid $neutralLight
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-Button--commandBar .ms-Button-menuIcon {
+            background-color: inherit
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot {
+            position: relative;
+            border-bottom: 2px solid transparent;
+            color: $black
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot .ms-Button-label:after {
+            transition: all .1s ease-in-out
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot:hover {
+            background-color: $neutralLighter;
+            border-bottom: 2px solid transparent
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot:active {
+            background-color: $neutralLight;
+            border-bottom: 2px solid $themePrimary
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view,
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled {
+            border-bottom: 2px solid transparent
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view:hover,
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled:hover {
+            background-color: $neutralLighter;
+            border-bottom: 2px solid transparent
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view:hover .ms-Button-label:after,
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled:hover .ms-Button-label:after {
+            width: 100%;
+            left: 0
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view .ms-Button-label,
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled .ms-Button-label {
+            font-weight: 600
+        }
+
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view .ms-Button-label:after,
+        .isFluent .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled .ms-Button-label:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 8px;
+            border-bottom: 2px solid $themePrimary;
+            bottom: -2px;
+            width: calc(100% - (8px + 8px))
+        }
+
+        .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view,
+        .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled,
+        .od-TopBar-commandBar .ms-CommandBar button.is-pivot:active,
+        .od-TopBar-commandBar .ms-CommandBar button.is-pivot:hover {
+            border-bottom: 2px solid $themePrimary
+        }
+
+        .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-current-view,
+        .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-toggled {
+            font-weight: 600
+        }
+
+        [dir=ltr] .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-last-pivot {
+            margin-right: 24px
+        }
+
+        [dir=rtl] .od-TopBar-commandBar .ms-CommandBar button.is-pivot.is-last-pivot {
+            margin-left: 24px
+        }
+
+        .od-TopBar-commandBar .ms-CommandBar button.is-toggled {
+            background-color: $neutralQuaternaryAlt;
+            color: $black
+        }
+
+        .od-TopBar.od--hasSelection .ms-CommandBar {
+            background-color: $neutralLight;
+            transition: background-color 467ms cubic-bezier(.1, .9, .2, 1)
+        }
+
+        .isFluent .od-TopBar.od--hasSelection .ms-CommandBar {
+            background-color: $neutralLighter;
+            transition: none
+        }
+
+        .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar {
+            color: $gray190;
+            background-color: $neutralLight;
+            transition: background-color 467ms cubic-bezier(.1, .9, .2, 1)
+        }
+
+        .isFluent .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar {
+            color: $gray160;
+            background-color: inherit;
+            transition: none
+        }
+
+        .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar:hover {
+            background-color: $gray50
+        }
+
+        .isFluent .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar:hover {
+            color: $gray190;
+            background-color: $neutralLight
+        }
+
+        .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar.is-toggled {
+            background-color: $neutralQuaternaryAlt
+        }
+
+        .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar.is-toggled:hover {
+            background-color: $gray60
+        }
+
+        .isFluent .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar:active {
+            color: $gray190;
+            background-color: $neutralQuaternaryAlt
+        }
+
+        .isFluent .od-TopBar.od--hasSelection .ms-CommandBar .ms-Button--commandBar.is-expanded:hover {
+            color: $gray190;
+            background-color: $gray50
+        }
+
+        .lg .sp-ReactLeftNav,
+        .md .sp-ReactLeftNav,
+        .sm .sp-ReactLeftNav {
+            width: 275px
+        }
+
+        .sp-ReactLeftNav .ms-Nav-group+.ms-Nav-group {
+            border-top: 1px solid $neutralLight
+        }
+
+        .sp-ReactLeftNav .ms-Nav-group .ms-Nav-chevronButton {
+            border-bottom: 0;
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .sp-ReactLeftNav .ms-Nav-group .ms-Nav-linkText {
+            color: $gray160
+        }
+
+        .sp-ReactLeftNav .ms-Nav-group.is-expanded .ms-Nav-chevronButton {
+            margin-bottom: -10px
+        }
+
+        .sp-ReactLeftNav.is-onTop {
+            display: block
+        }
+
+        .sp-ReactLeftNav-CloseButton {
+            float: right;
+            color: $gray160
+        }
+
+        .LeftPane {
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            flex-direction: column
+        }
+
+        .isFluent:not(.SPOApp) .LeftPane {
+            background: $neutralLighter
+        }
+
+        .LeftPaneDisplayNone {
+            display: none
+        }
+
+        .LeftPaneVisible {
+            display: flex
+        }
+
+        .LeftPane-notifications {
+            margin-top: auto
+        }
+
+        .LeftPane-bottom-padding {
+            height: 12px
+        }
+
+        .ms-compositeHeader>.ms-MessageBar {
+            min-height: 40px
+        }
+
+        [dir=ltr] .ms-compositeHeader .ms-MessageBar-link {
+            padding-left: 4px
+        }
+
+        [dir=rtl] .ms-compositeHeader .ms-MessageBar-link {
+            padding-right: 4px
+        }
+
+        .od-SuiteNav {
+            background: $themePrimary;
+            height: 48px;
+            position: absolute;
+            width: 100%
+        }
+
+        .od-userSelect--enabled div#o365cs-flexpane-overlay {
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -ms-user-select: text;
+            user-select: text
+        }
+
+        .pluginNoSize {
+            width: 0;
+            height: 0;
+            padding: 0;
+            position: absolute
+        }
+
+        .od-SuiteNav-reactShell-diamond {
+            display: none
+        }
+
+        [dir=ltr] .ms-Panel-header.ms-Panel-header {
+            margin-right: 0
+        }
+
+        [dir=rtl] .ms-Panel-header.ms-Panel-header {
+            margin-left: 0
+        }
+
+        .ms-Nav-chevronButton.ms-Nav-chevronButton {
+            background-color: transparent
+        }
+
+        ul.ms-Nav-navItems {
+            margin-top: 0
+        }
+
+        .sp-App-root {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        input,
+        textarea {
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+            font-family: inherit;
+            color: inherit
+        }
+
+        .sp-App-root {
+            height: 100%;
+            overflow: hidden;
+            min-width: 319px;
+            display: flex;
+            flex-direction: column
+        }
+
+        .sp-App-root .od-SuiteNav {
+            position: static;
+            flex-shrink: 0
+        }
+
+        .sp-App-body {
+            flex-grow: 1;
+            display: flex
+        }
+
+        .sp-App-bodyMain {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column
+        }
+
+        .sp-App-root.has-O365-flex-pane .sp-App-body:after {
+            content: '';
+            width: 320px;
+            flex-shrink: 0
+        }
+
+        .od-TopBar-search {
+            border-top: 1px solid $neutralLight
+        }
+
+        .od-SearchBox-search:after {
+            margin: 0
+        }
+
+        .SPPageChrome .od-Files-topBar {
+            border-bottom: 0
+        }
+
+        .od-Files-topBar {
+            border-bottom: 1px solid $neutralLight
+        }
+
+        [dir=ltr] .xlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search,
+        [dir=ltr] .xxlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search,
+        [dir=ltr] .xxxlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search,
+        [dir=ltr] .xxxxlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search {
+            margin-right: 0
+        }
+
+        [dir=rtl] .xlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search,
+        [dir=rtl] .xxlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search,
+        [dir=rtl] .xxxlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search,
+        [dir=rtl] .xxxxlg .od-Files-topBar .od-TopBar--hasHeader .od-TopBar-search {
+            margin-left: 0
+        }
+
+        [dir=ltr] .xlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch,
+        [dir=ltr] .xxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch,
+        [dir=ltr] .xxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch,
+        [dir=ltr] .xxxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-left: 208px
+        }
+
+        [dir=rtl] .xlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch,
+        [dir=rtl] .xxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch,
+        [dir=rtl] .xxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch,
+        [dir=rtl] .xxxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-right: 208px
+        }
+
+        [dir=ltr] .isFluent.xlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-left: 228px
+        }
+
+        [dir=rtl] .isFluent.xlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-right: 228px
+        }
+
+        [dir=ltr] .isFluent.xxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-left: 228px
+        }
+
+        [dir=rtl] .isFluent.xxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-right: 228px
+        }
+
+        [dir=ltr] .isFluent.xxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-left: 228px
+        }
+
+        [dir=rtl] .isFluent.xxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-right: 228px
+        }
+
+        [dir=ltr] .isFluent.xxxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-left: 228px
+        }
+
+        [dir=rtl] .isFluent.xxxxlg .od-Files-topBar .od-TopBar-commandBar--suiteNavSearch {
+            margin-right: 228px
+        }
+
+        .SPPageChrome .od-File-topBar {
+            border-bottom-width: 0
+        }
+
+        .Files-main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column
+        }
+
+        .Files-leftNav {
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            background-color: $white;
+            width: 208px
+        }
+
+        html[dir=ltr] .Files-leftNav {
+            border-right: 1px solid $neutralLight
+        }
+
+        html[dir=rtl] .Files-leftNav {
+            border-left: 1px solid $neutralLight
+        }
+
+        [dir=ltr] .Files-leftNav {
+            left: -302px
+        }
+
+        [dir=rtl] .Files-leftNav {
+            right: -302px
+        }
+
+        .isFluent .Files-leftNav {
+            width: 228px
+        }
+
+        .lg .Files-leftNav,
+        .md .Files-leftNav,
+        .sm .Files-leftNav {
+            z-index: 298;
+            box-shadow: 30px 0 30px -30px rgba(0, 0, 0, .4);
+            width: 272px
+        }
+
+        [dir=ltr] .lg .Files-leftNav,
+        [dir=ltr] .md .Files-leftNav,
+        [dir=ltr] .sm .Files-leftNav {
+            left: -302px
+        }
+
+        [dir=rtl] .lg .Files-leftNav,
+        [dir=rtl] .md .Files-leftNav,
+        [dir=rtl] .sm .Files-leftNav {
+            right: -302px
+        }
+
+        .lg .Files-leftNav .LeftNav,
+        .md .Files-leftNav .LeftNav,
+        .sm .Files-leftNav .LeftNav {
+            width: 272px
+        }
+
+        .Files-leftNav.Files-has-suiteNavHamburger {
+            top: 0
+        }
+
+        .sp-App-has-header .Files-leftNav.Files-has-fallbackHamburger {
+            top: 151px
+        }
+
+        .md .sp-App-has-header .Files-leftNav.Files-has-fallbackHamburger,
+        .sm .sp-App-has-header .Files-leftNav.Files-has-fallbackHamburger {
+            top: 130px
+        }
+
+        .Files-leftNav.Files-leftNav-showForEditOnly {
+            top: 0
+        }
+
+        .sp-App--hasLeftNav {
+            height: 100%
+        }
+
+        [dir=ltr] .sp-App--hasLeftNav .Files-leftNav {
+            left: 0
+        }
+
+        [dir=rtl] .sp-App--hasLeftNav .Files-leftNav {
+            right: 0
+        }
+
+        [dir=ltr] .sp-App--hasLeftNav .Files-leftNav {
+            animation-name: ms-fadeIn, ms-slideRightIn40;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .sp-App--hasLeftNav .Files-leftNav {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .sp-App--hasLeftNav .Files-leftNav {
+            animation-name: ms-fadeIn, ms-slideLeftIn40;
+            animation-duration: 367ms;
+            animation-timing-function: cubic-bezier(.1, .9, .2, 1);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .sp-App--hasLeftNav .Files-leftNav {
+                animation: none
+            }
+        }
+
+        .xlg .sp-App--hasLeftNav .Files-leftNav,
+        .xxlg .sp-App--hasLeftNav .Files-leftNav,
+        .xxxlg .sp-App--hasLeftNav .Files-leftNav,
+        .xxxxlg .sp-App--hasLeftNav .Files-leftNav {
+            position: static;
+            flex-shrink: 0
+        }
+
+        [dir=ltr] .sp-App-leftNavClosing .Files-leftNav {
+            animation-name: ms-fadeOut, ms-slideLeftOut40;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=ltr] .sp-App-leftNavClosing .Files-leftNav {
+                animation: none
+            }
+        }
+
+        [dir=rtl] .sp-App-leftNavClosing .Files-leftNav {
+            animation-name: ms-fadeOut, ms-slideRightOut40;
+            animation-duration: 167ms;
+            animation-timing-function: cubic-bezier(.1, .25, .75, .9);
+            animation-fill-mode: both
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            [dir=rtl] .sp-App-leftNavClosing .Files-leftNav {
+                animation: none
+            }
+        }
+
+        .Files-mainColumn {
+            flex-grow: 1;
+            flex-basis: 0;
+            min-height: 0;
+            display: flex
+        }
+
+        .Files-contentAreaFlexContainer {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            flex-grow: 1
+        }
+
+        .Files-contentAreaFlexContainer .Files-rightPaneInteractionContainer {
+            display: flex;
+            flex-direction: row
+        }
+
+        .Files-contentAreaFlexContainer .Files-rightPaneInteractionContainer .Files-rightPanePushedContainer {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column
+        }
+
+        .Files-contentAreaFlexContainer .Files-rightPaneInteractionContainer .Files-rightPanePushedContainer .Files-content {
+            position: relative;
+            flex-grow: 1
+        }
+
+        .Files-contentAreaFlexContainer .Files-rightPaneInteractionContainer .Files-rightPanePushedContainer .Files-search-upscope {
+            position: relative;
+            height: 40px
+        }
+
+        .Files-contentAreaFlexContainer .Files-rightPaneInteractionContainer .Files-rightPane {
+            position: relative
+        }
+
+        .Files-contentAreaFlexContainer.Files-fullscreen {
+            background: $white;
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 50px;
+            z-index: 1
+        }
+
+        .Files-contentAreaFlexContainer.Files-fullscreen-legacySearch {
+            top: 90px
+        }
+
+        .Files-rightPaneInteractionContainer {
+            flex-grow: 1;
+            position: relative
+        }
+
+        .Files-rightPanePushedContainer {
+            position: absolute;
+            top: 0;
+            bottom: 0
+        }
+
+        [dir=ltr] .Files-rightPanePushedContainer {
+            left: 0
+        }
+
+        [dir=rtl] .Files-rightPanePushedContainer {
+            right: 0
+        }
+
+        .Files-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0
+        }
+
+        .Files-content.is-scrollable {
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+            height: 100%
+        }
+
+        .Files-content.show-search-upscope {
+            bottom: 40px
+        }
+
+        .Files-innerContent {
+            position: relative;
+            box-sizing: border-box;
+            min-height: 100%
+        }
+
+        .Files-rightPane {
+            position: absolute;
+            background: $white;
+            top: 0;
+            bottom: 0;
+            box-sizing: border-box;
+            -webkit-overflow-scrolling: touch;
+            transition: 367ms cubic-bezier(.1, .9, .2, 1)
+        }
+
+        [dir=ltr] .Files-rightPane {
+            right: 0
+        }
+
+        [dir=rtl] .Files-rightPane {
+            left: 0
+        }
+
+        html[dir=ltr] .Files-rightPane {
+            transition-property: right
+        }
+
+        html[dir=rtl] .Files-rightPane {
+            transition-property: left
+        }
+
+        .od-userSelect--enabled .Files-rightPane {
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -ms-user-select: text;
+            user-select: text
+        }
+
+        [dir=ltr] .md .sp-App-rightPane-expanded .Files-content,
+        [dir=ltr] .sm .sp-App-rightPane-expanded .Files-content {
+            right: 0
+        }
+
+        [dir=rtl] .md .sp-App-rightPane-expanded .Files-content,
+        [dir=rtl] .sm .sp-App-rightPane-expanded .Files-content {
+            left: 0
+        }
+
+        .od-Resize {
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background: $neutralLight;
+            cursor: ew-resize
+        }
+
+        .od-Resize .od-Resize-hitTarget {
+            z-index: 286;
+            position: relative;
+            width: 8px;
+            cursor: ew-resize;
+            height: 100%
+        }
+
+        .Files-rightPaneContent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 1px;
+            bottom: 0
+        }
+
+        .Files-leftNavOverlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, .4);
+            cursor: pointer;
+            z-index: 297
+        }
+
+        .od-TeachingBubble-anchor {
+            position: absolute;
+            top: 0
+        }
+
+        .sp-App-hubNav {
+            height: 40px
+        }
+
+        .od-Share {
+            width: 320px
+        }
+
+        @media print {
+
+            .Files-leftNav,
+            .od-Files-topBar,
+            .od-SuiteNav {
+                display: none !important
+            }
+
+            .Files,
+            .Files-content {
+                overflow: visible !important;
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                top: auto !important;
+                bottom: auto !important
+            }
+
+            [dir=ltr] .Files,
+            [dir=ltr] .Files-content {
+                left: auto !important
+            }
+
+            [dir=rtl] .Files,
+            [dir=rtl] .Files-content {
+                right: auto !important
+            }
+
+            [dir=ltr] .Files,
+            [dir=ltr] .Files-content {
+                right: auto !important
+            }
+
+            [dir=rtl] .Files,
+            [dir=rtl] .Files-content {
+                left: auto !important
+            }
+
+            .Files-belowSuiteNav {
+                top: 0 !important
+            }
+
+            .Files-rightPanePushedContainer {
+                position: static !important;
+                top: auto !important;
+                bottom: auto !important
+            }
+
+            [dir=ltr] .Files-rightPanePushedContainer {
+                left: auto !important
+            }
+
+            [dir=rtl] .Files-rightPanePushedContainer {
+                right: auto !important
+            }
+
+            [dir=ltr] .Files-rightPanePushedContainer {
+                right: auto !important
+            }
+
+            [dir=rtl] .Files-rightPanePushedContainer {
+                left: auto !important
+            }
+        }
+
+        .od-TopBar-header-hidden {
+            display: none
+        }
+
+        .od-ItemsScopeList-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column
+        }
+
+        .od-ItemsScopeList-content {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            flex: 1
+        }
+
+        .od-ItemContent-header {
+            display: flex;
+            background-color: $white;
+            padding-top: 10px;
+            padding-bottom: 10px
+        }
+
+        .xlg .od-ItemContent-header,
+        .xxlg .od-ItemContent-header,
+        .xxxlg .od-ItemContent-header,
+        .xxxxlg .od-ItemContent-header {
+            padding-top: 23px;
+            padding-bottom: 20px
+        }
+
+        .od-ItemContent-footer {
+            margin: 0
+        }
+
+        [dir=ltr] .od-ItemContent-footer,
+        [dir=ltr] .od-ItemContent-header,
+        [dir=ltr] .od-ItemContent-list {
+            padding-left: 32px
+        }
+
+        [dir=rtl] .od-ItemContent-footer,
+        [dir=rtl] .od-ItemContent-header,
+        [dir=rtl] .od-ItemContent-list {
+            padding-right: 32px
+        }
+
+        [dir=ltr] .od-ItemContent-footer,
+        [dir=ltr] .od-ItemContent-header,
+        [dir=ltr] .od-ItemContent-list {
+            padding-right: 32px
+        }
+
+        [dir=rtl] .od-ItemContent-footer,
+        [dir=rtl] .od-ItemContent-header,
+        [dir=rtl] .od-ItemContent-list {
+            padding-left: 32px
+        }
+
+        [dir=ltr] .xlg .od-ItemContent-footer,
+        [dir=ltr] .xlg .od-ItemContent-header,
+        [dir=ltr] .xlg .od-ItemContent-list,
+        [dir=ltr] .xxlg .od-ItemContent-footer,
+        [dir=ltr] .xxlg .od-ItemContent-header,
+        [dir=ltr] .xxlg .od-ItemContent-list,
+        [dir=ltr] .xxxlg .od-ItemContent-footer,
+        [dir=ltr] .xxxlg .od-ItemContent-header,
+        [dir=ltr] .xxxlg .od-ItemContent-list,
+        [dir=ltr] .xxxxlg .od-ItemContent-footer,
+        [dir=ltr] .xxxxlg .od-ItemContent-header,
+        [dir=ltr] .xxxxlg .od-ItemContent-list {
+            padding-left: 32px
+        }
+
+        [dir=rtl] .xlg .od-ItemContent-footer,
+        [dir=rtl] .xlg .od-ItemContent-header,
+        [dir=rtl] .xlg .od-ItemContent-list,
+        [dir=rtl] .xxlg .od-ItemContent-footer,
+        [dir=rtl] .xxlg .od-ItemContent-header,
+        [dir=rtl] .xxlg .od-ItemContent-list,
+        [dir=rtl] .xxxlg .od-ItemContent-footer,
+        [dir=rtl] .xxxlg .od-ItemContent-header,
+        [dir=rtl] .xxxlg .od-ItemContent-list,
+        [dir=rtl] .xxxxlg .od-ItemContent-footer,
+        [dir=rtl] .xxxxlg .od-ItemContent-header,
+        [dir=rtl] .xxxxlg .od-ItemContent-list {
+            padding-right: 32px
+        }
+
+        [dir=ltr] .xlg .od-ItemContent-footer,
+        [dir=ltr] .xlg .od-ItemContent-header,
+        [dir=ltr] .xlg .od-ItemContent-list,
+        [dir=ltr] .xxlg .od-ItemContent-footer,
+        [dir=ltr] .xxlg .od-ItemContent-header,
+        [dir=ltr] .xxlg .od-ItemContent-list,
+        [dir=ltr] .xxxlg .od-ItemContent-footer,
+        [dir=ltr] .xxxlg .od-ItemContent-header,
+        [dir=ltr] .xxxlg .od-ItemContent-list,
+        [dir=ltr] .xxxxlg .od-ItemContent-footer,
+        [dir=ltr] .xxxxlg .od-ItemContent-header,
+        [dir=ltr] .xxxxlg .od-ItemContent-list {
+            padding-right: 32px
+        }
+
+        [dir=rtl] .xlg .od-ItemContent-footer,
+        [dir=rtl] .xlg .od-ItemContent-header,
+        [dir=rtl] .xlg .od-ItemContent-list,
+        [dir=rtl] .xxlg .od-ItemContent-footer,
+        [dir=rtl] .xxlg .od-ItemContent-header,
+        [dir=rtl] .xxlg .od-ItemContent-list,
+        [dir=rtl] .xxxlg .od-ItemContent-footer,
+        [dir=rtl] .xxxlg .od-ItemContent-header,
+        [dir=rtl] .xxxlg .od-ItemContent-list,
+        [dir=rtl] .xxxxlg .od-ItemContent-footer,
+        [dir=rtl] .xxxxlg .od-ItemContent-header,
+        [dir=rtl] .xxxxlg .od-ItemContent-list {
+            padding-left: 32px
+        }
+
+        [dir=ltr] .md .od-ItemContent-footer,
+        [dir=ltr] .md .od-ItemContent-header,
+        [dir=ltr] .md .od-ItemContent-list,
+        [dir=ltr] .sm .od-ItemContent-footer,
+        [dir=ltr] .sm .od-ItemContent-header,
+        [dir=ltr] .sm .od-ItemContent-list {
+            padding-left: 16px
+        }
+
+        [dir=rtl] .md .od-ItemContent-footer,
+        [dir=rtl] .md .od-ItemContent-header,
+        [dir=rtl] .md .od-ItemContent-list,
+        [dir=rtl] .sm .od-ItemContent-footer,
+        [dir=rtl] .sm .od-ItemContent-header,
+        [dir=rtl] .sm .od-ItemContent-list {
+            padding-right: 16px
+        }
+
+        [dir=ltr] .md .od-ItemContent-footer,
+        [dir=ltr] .md .od-ItemContent-header,
+        [dir=ltr] .md .od-ItemContent-list,
+        [dir=ltr] .sm .od-ItemContent-footer,
+        [dir=ltr] .sm .od-ItemContent-header,
+        [dir=ltr] .sm .od-ItemContent-list {
+            padding-right: 16px
+        }
+
+        [dir=rtl] .md .od-ItemContent-footer,
+        [dir=rtl] .md .od-ItemContent-header,
+        [dir=rtl] .md .od-ItemContent-list,
+        [dir=rtl] .sm .od-ItemContent-footer,
+        [dir=rtl] .sm .od-ItemContent-header,
+        [dir=rtl] .sm .od-ItemContent-list {
+            padding-left: 16px
+        }
+
+        .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky .od-ItemContent-header {
+            position: sticky;
+            position: -webkit-sticky;
+            z-index: 1;
+            top: 0;
+            will-change: transform;
+            height: 45px;
+            left: 0
+        }
+
+        .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky .ms-DetailsList-headerWrapper,
+        .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky table .ms-viewheadertr th {
+            position: sticky;
+            position: -webkit-sticky;
+            z-index: 1;
+            top: 65px;
+            will-change: transform
+        }
+
+        .xlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky .ms-DetailsList-headerWrapper,
+        .xlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky table .ms-viewheadertr th,
+        .xxlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky .ms-DetailsList-headerWrapper,
+        .xxlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky table .ms-viewheadertr th,
+        .xxxlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky .ms-DetailsList-headerWrapper,
+        .xxxlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky table .ms-viewheadertr th,
+        .xxxxlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky .ms-DetailsList-headerWrapper,
+        .xxxxlg .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky table .ms-viewheadertr th {
+            top: 88px
+        }
+
+        .od-ItemsScopeList-page .od-ItemsScopeList-content-sticky .od-ItemContent-list-footer {
+            margin: 0;
+            position: sticky;
+            position: -webkit-sticky;
+            bottom: 0;
+            will-change: transform
+        }
+
+        .od-scrollable-content.od-scrollablePane-content-ItemsScopeList {
+            overflow: scroll;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0
+        }
+
+        .od-ItemContent-header-sharedIndicator {
+            display: inline-block;
+            position: relative;
+            padding: 0
+        }
+
+        .od-ItemContent-header-sharedIndicator .od-ItemContent-metadata {
+            padding-bottom: 3px;
+            margin: 0
+        }
+
+        .od-ItemContent-footer.od-ItemContent-footer--sticky .ms-DetailsRow {
+            animation: none
+        }
+
+        .od-ItemsScopeItemContent-breadcrumb.od-ItemContent-breadcrumb {
+            flex: 1 1 auto
+        }
+
+        .od-ItemsScopeItemContent-breadcrumb.od-ItemContent-breadcrumb .od-ItemContent-breadcrumb-composed {
+            display: flex;
+            align-items: center
+        }
+
+        .od-ItemsScopeItemContent-breadcrumb.od-ItemContent-breadcrumb .od-ItemContent-breadcrumb-owner {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column
+        }
+
+        .od-ItemsScopeItemContent-breadcrumb.od-ItemContent-breadcrumb .od-ItemContent-breadcrumb-owner .od-ListFavorite-button input+label:before {
+            height: 28px;
+            padding-top: 6px
+        }
+
+        .od-ItemsScopeItemContent-breadcrumb.od-ItemContent-breadcrumb.webViewHostedBreadcrumb {
+            display: flex;
+            align-items: flex-start
+        }
+
+        .od-ItemsScopeItemContent-breadcrumb.od-ItemContent-breadcrumb.webViewHostedBreadcrumb .od-ItemContent-breadcrumb-composed {
+            align-items: flex-end
+        }
+
+        .od-ItemContent-title {
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 21px;
+            font-weight: 100
+        }
+
+        .od-ItemContent-title:not(.compositeTitle) {
+            flex-grow: 1
+        }
+
+        .isFluent .od-ItemContent-title {
+            font-size: 20px;
+            font-weight: 600
+        }
+
+        .lg .od-ItemContent-title,
+        .md .od-ItemContent-title,
+        .sm .od-ItemContent-title {
+            font-weight: 300
+        }
+
+        .xlg .od-ItemContent-title,
+        .xxlg .od-ItemContent-title,
+        .xxxlg .od-ItemContent-title,
+        .xxxxlg .od-ItemContent-title {
+            font-size: 28px;
+            font-weight: 100
+        }
+
+        .isFluent.xlg .od-ItemContent-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 14px
+        }
+
+        .isFluent.xxlg .od-ItemContent-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 14px
+        }
+
+        .isFluent.xxxlg .od-ItemContent-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 14px
+        }
+
+        .isFluent.xxxxlg .od-ItemContent-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 14px
+        }
+
+        .od-ItemContent-title-webviewHosted {
+            display: flex;
+            align-items: flex-start
+        }
+
+        .od-ItemContent-title-owner {
+            display: flex;
+            flex-direction: column
+        }
+
+        .xlg .od-ItemContent-title-owner .od-ListFavorite-button,
+        .xxlg .od-ItemContent-title-owner .od-ListFavorite-button,
+        .xxxlg .od-ItemContent-title-owner .od-ListFavorite-button,
+        .xxxxlg .od-ItemContent-title-owner .od-ListFavorite-button {
+            margin-top: 0
+        }
+
+        .od-ItemContent-title-owner .od-ListFavorite-button input+label:before {
+            height: 28px;
+            padding-top: 7px
+        }
+
+        .od-ItemContent-title-owner .od-ItemContent-title.compositeTitle {
+            margin-top: 0;
+            font-size: 18px;
+            line-height: 28px
+        }
+
+        .od-ItemContent-title-composed {
+            display: flex;
+            align-items: center
+        }
+
+        .od-ItemsScopeItemContent-breadcrumb.od-ItemContent-breadcrumb {
+            flex: 1 1 auto
+        }
+
+        @media print {
+            [dir=ltr] .od-ItemsScopeList-page {
+                left: 0 !important
+            }
+
+            [dir=rtl] .od-ItemsScopeList-page {
+                right: 0 !important
+            }
+
+            [dir=ltr] .od-ItemsScopeList-page {
+                right: auto !important
+            }
+
+            [dir=rtl] .od-ItemsScopeList-page {
+                left: auto !important
+            }
+
+            .od-ItemsScopeList-page .od-ItemsScopeList-content {
+                position: static !important;
+                height: auto !important
+            }
+
+            .ms-ScrollablePane--contentContainer,
+            .od-ItemsScopeItemContent-header.od-ItemContent-header .od-ItemContent-title,
+            .od-scrollable-content.od-scrollablePane-content-ItemsScopeList {
+                overflow: visible !important
+            }
+
+            .od-ItemsScopeList-commandBar {
+                display: flex !important;
+                flex: 0 0 !important;
+                height: 40px !important
+            }
+
+            .od-ItemContent-footer,
+            .od-ItemContent-list-footer {
+                display: none !important
+            }
+        }
+
+        .od-ListFavorite-button {
+            display: inline-block;
+            vertical-align: middle
+        }
+
+        [dir=ltr] .od-ListFavorite-button {
+            margin-left: 8px
+        }
+
+        [dir=rtl] .od-ListFavorite-button {
+            margin-right: 8px
+        }
+
+        .xlg .od-ListFavorite-button,
+        .xxlg .od-ListFavorite-button,
+        .xxxlg .od-ListFavorite-button,
+        .xxxxlg .od-ListFavorite-button {
+            margin-top: 14px
+        }
+
+        .od-ListFavorite-button input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            margin: 0;
+            -moz-appearance: none
+        }
+
+        .od-ListFavorite-button input+label {
+            cursor: pointer
+        }
+
+        .od-ListFavorite-button input+label::before {
+            font-family: FabricMDL2Icons;
+            content: "\e734";
+            font-size: 14px;
+            text-align: center;
+            color: $neutralSecondary;
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            padding-top: 8px;
+            width: 20px;
+            height: 32px
+        }
+
+        .od-ListFavorite-button input+label:hover::before {
+            content: "\e735"
+        }
+
+        .od-ListFavorite-button input:checked+label::before {
+            content: "\e735";
+            color: $themeDarkAlt
+        }
+
+        .od-ListFavorite-button input:checked+label:hover::before {
+            color: $themeDark
+        }
+
+        .od-ListFavorite-button input:focus+label::before {
+            border-color: $neutralSecondary
+        }
+
+        .od-ListFavorite-button.insideBreadcrumb {
+            margin: 0 3px;
+            width: 20px
+        }
+
+        .sp-List-color0 {
+            background-color: #a4262c !important
+        }
+
+        .sp-List-color1 {
+            background-color: #d13438 !important
+        }
+
+        .sp-List-color2 {
+            background-color: #ca5010 !important
+        }
+
+        .sp-List-color3 {
+            background-color: #498205 !important
+        }
+
+        .sp-List-color4 {
+            background-color: #005e50 !important
+        }
+
+        .sp-List-color5 {
+            background-color: #038387 !important
+        }
+
+        .sp-List-color6 {
+            background-color: $themePrimary !important
+        }
+
+        .sp-List-color7 {
+            background-color: #004e8c !important
+        }
+
+        .sp-List-color8 {
+            background-color: #4f6bed !important
+        }
+
+        .sp-List-color9 {
+            background-color: #8378de !important
+        }
+
+        .sp-List-color10 {
+            background-color: #881798 !important
+        }
+
+        .sp-List-color11 {
+            background-color: #e3008c !important
+        }
+
+        .od-ListIcon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            padding: 10px;
+            box-sizing: border-box
+        }
+
+        [dir=ltr] .od-ListIcon-container {
+            margin-right: 16px
+        }
+
+        [dir=rtl] .od-ListIcon-container {
+            margin-left: 16px
+        }
+
+        [dir=ltr] .od-ListIcon-container {
+            margin-left: 8px
+        }
+
+        [dir=rtl] .od-ListIcon-container {
+            margin-right: 8px
+        }
+
+        .od-ItemContent-listOwner-personal,
+        .od-ItemContent-listOwner-siteLink {
+            margin: 0;
+            font-size: 12px
+        }
+
+        .od-ItemContent-listOwner-siteLink {
+            align-self: flex-start;
+            text-decoration: none;
+            color: $neutralSecondary
+        }
+
+        .od-ItemContent-listOwner-siteLink:hover {
+            text-decoration: underline;
+            color: $gray160
+        }
+
+        .od-addColumnIcon {
+            font-size: 9px
+        }
+
+        [dir=ltr] .od-addColumnIcon {
+            margin-right: 6px
+        }
+
+        [dir=rtl] .od-addColumnIcon {
+            margin-left: 6px
+        }
+
+        [dir=ltr] .od-addColumnIcon {
+            padding-left: 0
+        }
+
+        [dir=rtl] .od-addColumnIcon {
+            padding-right: 0
+        }
+
+
+}
+
+
+}

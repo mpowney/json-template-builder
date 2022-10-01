@@ -16,7 +16,6 @@ export const HomeEntry: React.FunctionComponent<HomeEntryProps> = () => {
             <Helmet>
                 <title>Home</title>
             </Helmet>
-            <PanelHeader text="Home" />
             <Outlet />
 
             <Editors />
