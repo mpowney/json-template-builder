@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack, Text } from "@fluentui/react";
 import AceEditor from "react-ace";
+import { parse, valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
 
 import "ace-builds/src-noconflict/mode-json";
@@ -16,7 +17,10 @@ interface EditorsProps {
 
 export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsProps) => {
 
-    const [ workingHtml, setWorkingHtml ] = React.useState<string>("");
+    const [ workingHtml, setWorkingHtml ] = React.useState<string | undefined>();
+    const [ workingJson, setWorkingJson ] = React.useState<string | undefined>();
+
+    const htmlStorageKey = "JsonTemplates:HTML"
 
     const log = getLogger("Editors.tsx");
 
@@ -29,6 +33,24 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         setWorkingHtml(value);
     }
 
+    React.useEffect(() => {
+
+        if (workingHtml && valid(workingHtml)) {
+            localStorage.setItem(htmlStorageKey, workingHtml);
+        }
+
+    }, [ workingHtml ]);
+
+    React.useEffect(() => {
+
+        const preExistingValue = localStorage.getItem(htmlStorageKey);
+        if (preExistingValue) {
+            setWorkingHtml(preExistingValue);
+        }
+
+    }, [] );
+
+
     return (<Stack>
         <Stack horizontal>
 
@@ -39,6 +61,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                     theme="github"
                     onChange={jsonChange}
                     name="jsonEditor"
+                    value={workingJson}
                     editorProps={{ $blockScrolling: true }}
                 />
             </div>
@@ -51,6 +74,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                     theme="github"
                     onChange={htmlChange}
                     name="htmlEditor"
+                    value={workingHtml}
                     editorProps={{ $blockScrolling: true }}
                 />
             </div>
