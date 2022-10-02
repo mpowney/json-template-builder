@@ -1,12 +1,12 @@
 import React from "react";
-import { Stack, Text } from "@fluentui/react";
+import { Dropdown, IDropdownOption, Stack, Text } from "@fluentui/react";
 import AceEditor from "react-ace";
 import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
 
 import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/mode-html";
-import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/theme-chrome";
 import "ace-builds/src-noconflict/ext-language_tools";
 
 import moduleStyles from "./Editors.module.scss";
@@ -18,10 +18,12 @@ interface EditorsProps {
 
 export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsProps) => {
 
+    const htmlStorageKey = "JsonTemplates:HTML";
+    const workingTypeKey = "JsonTemplates:WorkingType";
+
     const [ workingHtml, setWorkingHtml ] = React.useState<string | undefined>();
     const [ workingJson, setWorkingJson ] = React.useState<string | undefined>();
-
-    const htmlStorageKey = "JsonTemplates:HTML"
+    const [ selectedWorkingType, setSelectedWorkingType ] = React.useState<string | undefined | number>(localStorage.getItem(workingTypeKey) || undefined);
 
     const log = getLogger("Editors.tsx");
 
@@ -34,14 +36,32 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         setWorkingHtml(value);
     }
 
+    const onOutputTypeChange = (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption<any> | undefined, index?: number | undefined) => {
+        setSelectedWorkingType(option?.key)
+    };
+
     React.useEffect(() => {
 
         if (workingHtml && valid(workingHtml)) {
             localStorage.setItem(htmlStorageKey, workingHtml);
-            setWorkingJson(MapHtmlToFieldJson.HtmlNodeToJson(workingHtml))
+            const json = (selectedWorkingType == "row" 
+                ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml)
+                : selectedWorkingType == "column" 
+                ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml)
+                : undefined)
+            setWorkingJson(json);
         }
 
-    }, [ workingHtml ]);
+    }, [ workingHtml, selectedWorkingType ]);
+
+    React.useEffect(() => {
+        if (selectedWorkingType) {
+            localStorage.setItem(workingTypeKey, selectedWorkingType.toString());
+        }
+        else {
+            localStorage.removeItem(workingTypeKey);
+        }
+    }, [ selectedWorkingType ])
 
     React.useEffect(() => {
 
@@ -57,10 +77,49 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         <Stack horizontal>
 
             <div className={`${moduleStyles.editor}`}>
+                <Text variant={"large"} block>HTML</Text>
+                <AceEditor
+                    width="80rem"
+                    mode="html"
+                    theme="chrome"
+                    onChange={htmlChange}
+                    name="htmlEditor"
+                    value={workingHtml}
+                    editorProps={{ 
+                        $blockScrolling: true,
+                        $rules: {
+                            "start": [{
+                                token: "invalid.deprecated",
+                                regex: "#.*$"
+                            }, {
+                                token: "string",
+                                regex: '".*?"'
+                            }]
+                        }}}
+                />
+            </div>
+
+        </Stack>
+
+        <Stack horizontal>
+
+            <div>
+                <PreviewHtml html={workingHtml} />
+            </div>
+
+            <div className={`${moduleStyles.editor}`}>
                 <Text variant={"large"} block>JSON Template</Text>
+                <Dropdown 
+                    placeholder={"Select an output type"}
+                    options={[
+                        { key: "row", text: "Row formatting" },
+                        { key: "column", text: "Column formatting" }
+                    ]}
+                    defaultSelectedKey={selectedWorkingType}
+                    onChange={onOutputTypeChange}/>
                 <AceEditor
                     mode="json"
-                    theme="github"
+                    theme="chrome"
                     onChange={jsonChange}
                     name="jsonEditor"
                     value={workingJson}
@@ -68,22 +127,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 />
             </div>
 
-            <div className={`${moduleStyles.editor}`}>
-                <Text variant={"large"} block>HTML</Text>
-                <AceEditor
-                    width="60rem"
-                    mode="html"
-                    theme="github"
-                    onChange={htmlChange}
-                    name="htmlEditor"
-                    value={workingHtml}
-                    editorProps={{ $blockScrolling: true }}
-                />
-            </div>
-
         </Stack>
-
-        <PreviewHtml html={workingHtml} />
 
     </Stack>);
 

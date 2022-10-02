@@ -4,11 +4,22 @@ import { IStyle } from './IStyle';
 
 export default class MapHtmlToFieldJson {
 
-    public static HtmlNodeToJson(value: string): string {
+    public static HtmlNodeToColumnJson(value: string): string {
         const html = parse(value.trim());
         const json = {
             "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
             ...MapHtmlToFieldJson.MapHtmlToJson(html)
+        }
+        return JSON.stringify(json, undefined, 2);
+    }
+
+    public static HtmlNodeToRowJson(value: string): string {
+        const html = parse(value.trim());
+        const json = {
+            "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+            "rowFormatter": {
+                ...MapHtmlToFieldJson.MapHtmlToJson(html)
+            }
         }
         return JSON.stringify(json, undefined, 2);
     }
