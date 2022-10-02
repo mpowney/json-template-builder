@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, Text } from "@fluentui/react";
 import AceEditor from "react-ace";
-import { parse, valid } from 'node-html-parser';
+import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
 
 import "ace-builds/src-noconflict/mode-json";
@@ -11,6 +11,7 @@ import "ace-builds/src-noconflict/ext-language_tools";
 
 import moduleStyles from "./Editors.module.scss";
 import { PreviewHtml } from "./PreviewHtml";
+import MapHtmlToFieldJson from "../common/services/MapHtmlToFieldJson";
 
 interface EditorsProps {
 }
@@ -37,6 +38,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
         if (workingHtml && valid(workingHtml)) {
             localStorage.setItem(htmlStorageKey, workingHtml);
+            setWorkingJson(MapHtmlToFieldJson.HtmlNodeToJson(workingHtml))
         }
 
     }, [ workingHtml ]);
