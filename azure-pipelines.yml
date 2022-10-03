@@ -66,13 +66,13 @@ stages:
             displayName: 'Azure File Copy'
             inputs:
               SourcePath: '$(System.DefaultWorkingDirectory)/build/*'
-              azureSubscription: 'Visual Studio Enterprise – MPN (31c30357-3d5e-4c0f-a82b-2283d0db4312)'
+              azureSubscription: 'Visual Studio Enterprise Subscription – MPN (31c30357-3d5e-4c0f-a82b-2283d0db4312)'
               Destination: AzureBlob
               storage: jsontemplates
               ContainerName: '$web'
           # - task: AzureCLI@1
           #   displayName: 'Azure CLI '
           #   inputs:
-          #     azureSubscription: 'Visual Studio Enterprise – MPN (31c30357-3d5e-4c0f-a82b-2283d0db4312)'
+          #     azureSubscription: 'Visual Studio Enterprise Subscription – MPN (31c30357-3d5e-4c0f-a82b-2283d0db4312)'
           #     scriptLocation: inlineScript
           #     inlineScript: 'az cdn endpoint purge --resource-group AzureRedirect --profile-name redirect-content --name redirect-content --content-paths /*'
