@@ -37,20 +37,25 @@ export default class MapHtmlToFieldJson {
             })
         }
         const valueStyleAttribute = value.attributes["style"];
-        const style = MapHtmlToFieldJson.MapStyleAttributes(valueStyleAttribute)
-        const json: any = {
-            ...(value.childNodes && value.childNodes.length == 1 && value.childNodes[0].text && {
-                txtContent: value.childNodes[0].text
-            }),
-            ...(attributes.class && { attributes: attributes }),
-            ...(style && { style: style}),
-            elmType: (value.tagName.toLowerCase() as IElmType['elmType']),
-            ...(value.childNodes && (value.childNodes.length > 1 || !value.childNodes[0].text) && { 
-                children: Array.from(value.childNodes as HTMLElement[])
-                                .map(MapHtmlToFieldJson.MapHtmlToJson).filter(Boolean)
-            }),
+        const style = MapHtmlToFieldJson.MapStyleAttributes(valueStyleAttribute);
+        try {
+            const json: any = {
+                ...(value.childNodes && value.childNodes.length == 1 && value.childNodes[0].text && {
+                    txtContent: value.childNodes[0].text
+                }),
+                ...(attributes.class && { attributes: attributes }),
+                ...(style && { style: style}),
+                elmType: (value.tagName.toLowerCase() as IElmType['elmType']),
+                ...(value.childNodes && (value.childNodes.length > 1 || !value.childNodes[0].text) && { 
+                    children: Array.from(value.childNodes as HTMLElement[])
+                                    .map(MapHtmlToFieldJson.MapHtmlToJson).filter(Boolean)
+                }),
+            }
+            return json;
         }
-        return json;
+        catch {
+            return {}
+        }
     }
 
     public static MapStyleAttributes(value: string): any {
