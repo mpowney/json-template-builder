@@ -1,4 +1,4 @@
-name: $(SourceBranchName)_1.0_$(Date:yyMM)$(DayOfMonth).$(Rev:r)
+name: $(SourceBranchName)_0.1_$(Date:yyMM)$(DayOfMonth).$(Rev:r)
 
 trigger:
   - main
@@ -16,9 +16,9 @@ stages:
     displayName: Bundle
     steps:
     - task: NodeTool@0
-      displayName: 'Use Node 16.15.0'
+      displayName: 'Use Node 16.15.1'
       inputs:
-        versionSpec: 16.15.0
+        versionSpec: 16.15.1
     - task: Npm@1
       displayName: 'npm ci'
       inputs:
@@ -66,13 +66,13 @@ stages:
             displayName: 'Azure File Copy'
             inputs:
               SourcePath: '$(System.DefaultWorkingDirectory)/build/*'
-              azureSubscription: 'Visual Studio Enterprise – MPN (bfd4bd72-b677-43e8-bb6a-9b1904db85d6)'
+              azureSubscription: 'Visual Studio Enterprise – MPN (31c30357-3d5e-4c0f-a82b-2283d0db4312)'
               Destination: AzureBlob
-              storage: ocmanagamentclient
+              storage: jsontemplates
               ContainerName: '$web'
           # - task: AzureCLI@1
           #   displayName: 'Azure CLI '
           #   inputs:
-          #     azureSubscription: 'Visual Studio Enterprise – MPN (bfd4bd72-b677-43e8-bb6a-9b1904db85d6)'
+          #     azureSubscription: 'Visual Studio Enterprise – MPN (31c30357-3d5e-4c0f-a82b-2283d0db4312)'
           #     scriptLocation: inlineScript
           #     inlineScript: 'az cdn endpoint purge --resource-group AzureRedirect --profile-name redirect-content --name redirect-content --content-paths /*'
