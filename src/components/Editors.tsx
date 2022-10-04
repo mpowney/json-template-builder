@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown, IDropdownOption, Stack, Text } from "@fluentui/react";
+import { Checkbox, Dropdown, IDropdownOption, Stack, Text } from "@fluentui/react";
 // import AceEditor from "react-ace";
 import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
@@ -26,10 +26,15 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
     const htmlStorageKey = "JsonTemplates:HTML";
     const workingTypeKey = "JsonTemplates:WorkingType";
+    const removeInvalidClassNamesKey = "JsonTemplates:RemoveInvalidClassNames";
+    const removeInvalidStyleAttributesKey = "JsonTemplates:RemoveInvalidStyleAttributes";
 
     const [ workingHtml, setWorkingHtml ] = React.useState<string | undefined>();
     const [ workingJson, setWorkingJson ] = React.useState<string | undefined>();
+    
     const [ selectedWorkingType, setSelectedWorkingType ] = React.useState<string | undefined | number>(localStorage.getItem(workingTypeKey) || undefined);
+    const [ removeInvalidClassNames, setRemoveInvalidClassNames ] = React.useState<boolean>((localStorage.getItem(removeInvalidClassNamesKey) || "false") == "true");
+    const [ removeInvalidStyleAttributes, setRemoveInvalidStyleAttributes ] = React.useState<boolean>((localStorage.getItem(removeInvalidStyleAttributesKey) || "false") == "true");
 
     const log = getLogger("Editors.tsx");
 
@@ -51,14 +56,14 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         if (workingHtml && valid(workingHtml)) {
             localStorage.setItem(htmlStorageKey, workingHtml);
             const json = (selectedWorkingType == "row" 
-                ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml)
+                ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml, { removeInvalidClassNames })
                 : selectedWorkingType == "column" 
                 ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml)
                 : undefined)
             setWorkingJson(json);
         }
 
-    }, [ workingHtml, selectedWorkingType ]);
+    }, [ workingHtml, selectedWorkingType, removeInvalidClassNames, removeInvalidStyleAttributes ]);
 
     React.useEffect(() => {
         if (selectedWorkingType) {
@@ -91,14 +96,16 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                         'namespace': /^[^\s>\/:]+:/
                     }
                 },
-                'class-name': {
-                    pattern: /class=([^>]+)/,
+                'class-attr-value': {
+                    pattern: /class=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
                     inside: {
                         'classes': {
-                            pattern: /('|"| )+.+('|"| )+/,
+                            pattern: /['"]+[\w- ]+?['"]+?/,
                             inside: {
-                                'valid-class': new RegExp(`('|"| )(${AllowedClassNames.map(className=>className.replace(".", "")).join("|")})('|"| )`),
-                                'invalid-class': /[\w-]+/
+                                'valid-class': new RegExp(`['" ]+(${AllowedClassNames.map(className=>className.replace(".", "")).join("|")})`),
+                                'invalid-class': {
+                                    pattern: /[\w-]+/
+                                }
                             }
                         }
                     }
@@ -159,7 +166,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                     name="htmlEditor"
                     value={workingHtml || "<div></div>"}
                     highlight={
-                        code => Prism.highlight(code, Prism.languages.markup, 'markup')
+                        (code: any) => Prism.highlight(code, Prism.languages.markup, 'markup')
                     }
                     padding={10}
                     style={{
@@ -174,9 +181,14 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         <Stack horizontal>
 
             <div>
+                <Text variant={"large"} block>Preview</Text>
                 <PreviewHtml html={workingHtml} />
             </div>
 
+        </Stack>
+
+        <Stack horizontal>
+    
             <div className={`${moduleStyles.editor}`}>
                 <Text variant={"large"} block>JSON Template</Text>
                 <Dropdown 
@@ -187,6 +199,8 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                     ]}
                     defaultSelectedKey={selectedWorkingType}
                     onChange={onOutputTypeChange}/>
+                <Checkbox label="Remove invalid class names" checked={removeInvalidClassNames} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidClassNames(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
+                <Checkbox label="Remove invalid style attributes" checked={removeInvalidStyleAttributes} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidStyleAttributes(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
                 {/* <AceEditor
                     mode="json"
                     theme="chrome"
@@ -200,7 +214,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                     name="jsonEditor"
                     value={workingJson || "{}"}
                     highlight={
-                        code => Prism.highlight(code, Prism.languages.json, 'json')
+                        (code: any) => Prism.highlight(code, Prism.languages.json, 'json')
                     }
                     padding={10}
                     style={{
@@ -209,6 +223,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                     }}
                 />
             </div>
+
 
         </Stack>
 

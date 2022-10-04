@@ -22,9 +22,11 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 The app in its current form is very rudimentry.  The following ideas will help develop this into a more robust and globally usable solution:
 
+* Copy to clipboard button for JSON output
 * Highlight code as invalid in the HTML editor, if it is not supported in a List layout customization (e.g. class names not available in the SharePoint platform, style attributes not supported by the schemas)
 * Support for inline functions, and operators
 * Smart previewing for operators logic
+* Ability to enter import JSON template and reverse-engineer it in to working HTML
 * Ability to enter a set of field names sourced from the SharePoint environment
 * Highlight code as invalid in the HTML editor, if the code references fields that aren't specified / valid
 * Ability to enter sample data, to be used in the preview window
