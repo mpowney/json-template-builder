@@ -1,4 +1,5 @@
 import { parse, HTMLElement, TextNode } from 'node-html-parser';
+import { AllowedClassNames } from '../utils/AllowedClassNames';
 import { IElmType } from './IElmType';
 import { IStyle } from './IStyle';
 
@@ -33,7 +34,7 @@ export default class MapHtmlToFieldJson {
         }
         const attributes = {
             ...(value.classList.length > 0 && {
-                class: Array.from(value.classList.values()).join(" ")
+                class: Array.from(value.classList.values()).filter(className => { return AllowedClassNames.includes(`.${className}`)}).join(" ").trim()
             })
         }
         const valueStyleAttribute = value.attributes["style"];

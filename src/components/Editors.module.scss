@@ -1,3 +1,11 @@
 .jsonEditor, .htmlEditor {
     padding: 1rem;
 }
+
+.htmlEditor {
+    :global {
+        .invalid-class {
+            text-decoration: line-through;
+        }
+    }
+}

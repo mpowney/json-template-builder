@@ -1,17 +1,23 @@
 import React from "react";
 import { Dropdown, IDropdownOption, Stack, Text } from "@fluentui/react";
-import AceEditor from "react-ace";
+// import AceEditor from "react-ace";
 import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
+import Editor from 'react-simple-code-editor';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-json';
+import 'prismjs/themes/prism.css';
 
-import "ace-builds/src-noconflict/mode-json";
-import "ace-builds/src-noconflict/mode-html";
-import "ace-builds/src-noconflict/theme-chrome";
-import "ace-builds/src-noconflict/ext-language_tools";
+// import "ace-builds/src-noconflict/mode-json";
+// import "ace-builds/src-noconflict/mode-html";
+// import "ace-builds/src-noconflict/theme-chrome";
+// import "ace-builds/src-noconflict/ext-language_tools";
 
 import moduleStyles from "./Editors.module.scss";
 import { PreviewHtml } from "./PreviewHtml";
 import MapHtmlToFieldJson from "../common/services/MapHtmlToFieldJson";
+import { AllowedClassNames } from "../common/utils/AllowedClassNames";
 
 interface EditorsProps {
 }
@@ -73,12 +79,63 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
     }, [] );
 
 
+    Prism.languages.insertBefore('markup', 'tag', {
+        'tag': {
+            pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
+            greedy: true,
+            inside: {
+                'tag': {
+                    pattern: /^<\/?[^\s>\/]+/,
+                    inside: {
+                        'punctuation': /^<\/?/,
+                        'namespace': /^[^\s>\/:]+:/
+                    }
+                },
+                'class-name': {
+                    pattern: /class=([^>]+)/,
+                    inside: {
+                        'classes': {
+                            pattern: /('|"| )+.+('|"| )+/,
+                            inside: {
+                                'valid-class': new RegExp(`('|"| )(${AllowedClassNames.map(className=>className.replace(".", "")).join("|")})('|"| )`),
+                                'invalid-class': /[\w-]+/
+                            }
+                        }
+                    }
+                },
+                'special-attr': [],
+                'attr-value': {
+                    pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
+                    inside: {
+                        'punctuation': [
+                            {
+                                pattern: /^=/,
+                                alias: 'attr-equals'
+                            },
+                            {
+                                pattern: /^(\s*)["']|["']$/,
+                                lookbehind: true
+                            }
+                        ],
+                    }
+                },
+                'punctuation': /\/?>/,
+                'attr-name': {
+                    pattern: /[^\s>\/]+/,
+                    inside: {
+                        'namespace': /^[^\s>\/:]+:/
+                    }
+                }    
+            }
+        }
+    })
+
     return (<Stack>
         <Stack horizontal>
 
-            <div className={`${moduleStyles.editor}`}>
+            <div className={`${moduleStyles.editor} ${moduleStyles.htmlEditor}`}>
                 <Text variant={"large"} block>HTML</Text>
-                <AceEditor
+                {/* <AceEditor
                     width="80rem"
                     mode="html"
                     theme="chrome"
@@ -96,6 +153,19 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                                 regex: '".*?"'
                             }]
                         }}}
+                /> */}
+                <Editor
+                    onValueChange={htmlChange}
+                    name="htmlEditor"
+                    value={workingHtml || "<div></div>"}
+                    highlight={
+                        code => Prism.highlight(code, Prism.languages.markup, 'markup')
+                    }
+                    padding={10}
+                    style={{
+                      fontFamily: '"Fira code", "Fira Mono", monospace',
+                      fontSize: 12,
+                    }}
                 />
             </div>
 
@@ -117,13 +187,26 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                     ]}
                     defaultSelectedKey={selectedWorkingType}
                     onChange={onOutputTypeChange}/>
-                <AceEditor
+                {/* <AceEditor
                     mode="json"
                     theme="chrome"
                     onChange={jsonChange}
                     name="jsonEditor"
                     value={workingJson}
                     editorProps={{ $blockScrolling: true }}
+                /> */}
+                <Editor
+                    onValueChange={jsonChange}
+                    name="jsonEditor"
+                    value={workingJson || "{}"}
+                    highlight={
+                        code => Prism.highlight(code, Prism.languages.json, 'json')
+                    }
+                    padding={10}
+                    style={{
+                      fontFamily: '"Fira code", "Fira Mono", monospace',
+                      fontSize: 12,
+                    }}
                 />
             </div>
 
