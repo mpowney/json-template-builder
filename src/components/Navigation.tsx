@@ -1,12 +1,7 @@
 import * as React from "react";
 import { Stack, IStyle, Dropdown, IDropdownOption } from "@fluentui/react";
-import { IContextualMenuItem } from "@fluentui/react";
-import { DefaultButton } from "@fluentui/react";
-import { getLogger } from "../common/utils/InitLogger";
-import moduleStyles from "./Navigation.module.scss";
-import { useNavigate } from "react-router-dom";
-import { IRootElementStyles } from "./IRootElementStyles";
 import { ClassNames } from "./toolbox/ClassNames";
+import { TagNames } from "./toolbox/TagNames";
 
 export interface INavigationProps {
     userLoggedIn: boolean;
@@ -37,10 +32,12 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
                 onChange={onDropdownChange}
                 defaultSelectedKey={selectedNavigation}
                 options={[
+                    { key: "tag", text: "Tags" },
                     { key: "class", text: "Classes" }
                 ]} />
 
             {selectedNavigation == "class" && <ClassNames />}
+            {selectedNavigation == "tag" && <TagNames />}
         </Stack>
     )
 }

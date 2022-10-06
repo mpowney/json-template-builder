@@ -18,6 +18,7 @@ import moduleStyles from "./Editors.module.scss";
 import { PreviewHtml } from "./PreviewHtml";
 import MapHtmlToFieldJson from "../common/services/MapHtmlToFieldJson";
 import { AllowedClassNames } from "../common/utils/AllowedClassNames";
+import { AllowedTagNames } from "../common/utils/AllowedTagNames";
 
 interface EditorsProps {
 }
@@ -92,6 +93,10 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 'tag': {
                     pattern: /^<\/?[^\s>\/]+/,
                     inside: {
+                        'valid-tag': new RegExp(`</?(${AllowedTagNames.map(tagName=>tagName).join("|")})`),
+                        'invalid-tag': {
+                            pattern: /[\w]+/
+                        },
                         'punctuation': /^<\/?/,
                         'namespace': /^[^\s>\/:]+:/
                     }
