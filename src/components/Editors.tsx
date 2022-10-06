@@ -141,25 +141,6 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         <Stack className={`${moduleStyles.section} ${moduleStyles.htmlSection}`}>
 
             <Text variant={"large"} block>HTML</Text>
-            {/* <AceEditor
-                width="80rem"
-                mode="html"
-                theme="chrome"
-                onChange={htmlChange}
-                name="htmlEditor"
-                value={workingHtml}
-                editorProps={{ 
-                    $blockScrolling: true,
-                    $rules: {
-                        "start": [{
-                            token: "invalid.deprecated",
-                            regex: "#.*$"
-                        }, {
-                            token: "string",
-                            regex: '".*?"'
-                        }]
-                    }}}
-            /> */}
             <div className={`${moduleStyles.editor}`}>
                 <Editor
                     onValueChange={htmlChange}
@@ -200,14 +181,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 onChange={onOutputTypeChange}/>
             <Checkbox label="Remove invalid class names" checked={removeInvalidClassNames} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidClassNames(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
             <Checkbox label="Remove invalid style attributes" checked={removeInvalidStyleAttributes} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidStyleAttributes(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
-            {/* <AceEditor
-                mode="json"
-                theme="chrome"
-                onChange={jsonChange}
-                name="jsonEditor"
-                value={workingJson}
-                editorProps={{ $blockScrolling: true }}
-            /> */}
+
             <div className={`${moduleStyles.editor}`}>
                 <Editor
                     onValueChange={jsonChange}
