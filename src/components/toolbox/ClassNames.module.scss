@@ -1,0 +1,26 @@
+.container {
+    width: 240px;
+    height: calc(100vh - 120px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tooltipCallout {
+    font-family: monospace;
+}
+
+.classSelection {
+    width: 200px;
+    max-height: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0.5rem;
+    border: 1px solid #ccc0;
+    font-family: monospace;
+
+    &:hover {
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+}

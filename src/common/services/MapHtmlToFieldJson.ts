@@ -38,7 +38,7 @@ export default class MapHtmlToFieldJson {
         }
         const attributes = {
             ...(value.classList.length > 0 && {
-                class: Array.from(value.classList.values()).filter(className => { return ((options && options.removeInvalidClassNames) ? AllowedClassNames.includes(`.${className}`) : true); }).join(" ").trim()
+                class: Array.from(value.classList.values()).filter(className => { return ((options && options.removeInvalidClassNames) ? AllowedClassNames.includes(className) : true); }).join(" ").trim()
             })
         }
         const valueStyleAttribute = value.attributes["style"];

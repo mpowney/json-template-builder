@@ -102,7 +102,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                         'classes': {
                             pattern: /['"]+[\w- ]+?['"]+?/,
                             inside: {
-                                'valid-class': new RegExp(`['" ]+(${AllowedClassNames.map(className=>className.replace(".", "")).join("|")})`),
+                                'valid-class': new RegExp(`['" ]+(${AllowedClassNames.map(className=>className).join("|")})`),
                                 'invalid-class': {
                                     pattern: /[\w-]+/
                                 }
@@ -138,29 +138,29 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
     })
 
     return (<Stack>
-        <Stack horizontal>
+        <Stack className={`${moduleStyles.section} ${moduleStyles.htmlSection}`}>
 
-            <div className={`${moduleStyles.editor} ${moduleStyles.htmlEditor}`}>
-                <Text variant={"large"} block>HTML</Text>
-                {/* <AceEditor
-                    width="80rem"
-                    mode="html"
-                    theme="chrome"
-                    onChange={htmlChange}
-                    name="htmlEditor"
-                    value={workingHtml}
-                    editorProps={{ 
-                        $blockScrolling: true,
-                        $rules: {
-                            "start": [{
-                                token: "invalid.deprecated",
-                                regex: "#.*$"
-                            }, {
-                                token: "string",
-                                regex: '".*?"'
-                            }]
-                        }}}
-                /> */}
+            <Text variant={"large"} block>HTML</Text>
+            {/* <AceEditor
+                width="80rem"
+                mode="html"
+                theme="chrome"
+                onChange={htmlChange}
+                name="htmlEditor"
+                value={workingHtml}
+                editorProps={{ 
+                    $blockScrolling: true,
+                    $rules: {
+                        "start": [{
+                            token: "invalid.deprecated",
+                            regex: "#.*$"
+                        }, {
+                            token: "string",
+                            regex: '".*?"'
+                        }]
+                    }}}
+            /> */}
+            <div className={`${moduleStyles.editor}`}>
                 <Editor
                     onValueChange={htmlChange}
                     name="htmlEditor"
@@ -178,37 +178,37 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
         </Stack>
 
-        <Stack horizontal>
+        <Stack horizontal className={`${moduleStyles.section} ${moduleStyles.previewSection}`}>
 
-            <div>
+            <div className={moduleStyles.preview}>
                 <Text variant={"large"} block>Preview</Text>
                 <PreviewHtml html={workingHtml} />
             </div>
 
         </Stack>
 
-        <Stack horizontal>
+        <Stack className={`${moduleStyles.section} ${moduleStyles.jsonSection}`}>
     
+            <Text variant={"large"} block>JSON Template</Text>
+            <Dropdown 
+                placeholder={"Select an output type"}
+                options={[
+                    { key: "row", text: "Row formatting" },
+                    { key: "column", text: "Column formatting" }
+                ]}
+                defaultSelectedKey={selectedWorkingType}
+                onChange={onOutputTypeChange}/>
+            <Checkbox label="Remove invalid class names" checked={removeInvalidClassNames} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidClassNames(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
+            <Checkbox label="Remove invalid style attributes" checked={removeInvalidStyleAttributes} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidStyleAttributes(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
+            {/* <AceEditor
+                mode="json"
+                theme="chrome"
+                onChange={jsonChange}
+                name="jsonEditor"
+                value={workingJson}
+                editorProps={{ $blockScrolling: true }}
+            /> */}
             <div className={`${moduleStyles.editor}`}>
-                <Text variant={"large"} block>JSON Template</Text>
-                <Dropdown 
-                    placeholder={"Select an output type"}
-                    options={[
-                        { key: "row", text: "Row formatting" },
-                        { key: "column", text: "Column formatting" }
-                    ]}
-                    defaultSelectedKey={selectedWorkingType}
-                    onChange={onOutputTypeChange}/>
-                <Checkbox label="Remove invalid class names" checked={removeInvalidClassNames} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidClassNames(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
-                <Checkbox label="Remove invalid style attributes" checked={removeInvalidStyleAttributes} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidStyleAttributes(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
-                {/* <AceEditor
-                    mode="json"
-                    theme="chrome"
-                    onChange={jsonChange}
-                    name="jsonEditor"
-                    value={workingJson}
-                    editorProps={{ $blockScrolling: true }}
-                /> */}
                 <Editor
                     onValueChange={jsonChange}
                     name="jsonEditor"
