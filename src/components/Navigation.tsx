@@ -3,6 +3,7 @@ import { Stack, IStyle, Dropdown, IDropdownOption } from "@fluentui/react";
 import { ClassNames } from "./toolbox/ClassNames";
 import { TagNames } from "./toolbox/TagNames";
 import { StyleAttributes } from "./toolbox/StyleAttributes";
+import { Documentation } from "./toolbox/Documentation";
 
 export interface INavigationProps {
     userLoggedIn: boolean;
@@ -41,6 +42,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
             {selectedNavigation == "class" && <ClassNames />}
             {selectedNavigation == "tag" && <TagNames />}
             {selectedNavigation == "styleAttributes" && <StyleAttributes />}
+            <Documentation />
         </Stack>
     )
 }

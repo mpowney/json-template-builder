@@ -1,6 +1,8 @@
 import { parse, HTMLElement, TextNode } from 'node-html-parser';
 import { AllowedClassNames } from '../utils/AllowedClassNames';
 import { IElmType } from './IElmType';
+import { getLogger } from "../../common/utils/InitLogger";
+import { AllowedAttributes } from '../utils/AllowedAttributes';
 
 export interface IMapHtmlToJsonOptions {
     removeInvalidClassNames?: boolean;
@@ -30,35 +32,48 @@ export default class MapHtmlToFieldJson {
     }
 
     public static MapHtmlToJson(value: HTMLElement, options?: IMapHtmlToJsonOptions): any {
+
+        const log = getLogger("MapHtmlToFieldJson.ts MapHtmlToJson");
+
         if (!value.tagName) {
             if (value.childNodes.length == 1) {
                 return MapHtmlToFieldJson.MapHtmlToJson(value.childNodes[0] as HTMLElement, options);
             }
             return undefined;
         }
-        const attributes = {
+        const attributes: any = {
             ...(value.classList.length > 0 && {
                 class: Array.from(value.classList.values()).filter(className => { return ((options && options.removeInvalidClassNames) ? AllowedClassNames.includes(className) : true); }).join(" ").trim()
             })
         }
+        let hasOtherAttributes = false;
+        AllowedAttributes.filter(attr => { return attr !== "class"; }).forEach(attr => {
+            const attrValue = value.attributes[attr];
+            if (attrValue) {
+                attributes[attr] = attrValue;
+                hasOtherAttributes = true;
+            }
+        });
+
         const valueStyleAttribute = value.attributes["style"];
         const style = MapHtmlToFieldJson.MapStyleAttributes(valueStyleAttribute);
         try {
             const json: any = {
-                ...(value.childNodes && value.childNodes.length == 1 && value.childNodes[0].text && {
+                ...(value.childNodes && value.childNodes.length == 1 && value.childNodes[0] && value.childNodes[0].text && {
                     txtContent: value.childNodes[0].text
                 }),
-                ...(attributes.class && { attributes: attributes }),
+                ...((attributes.class || hasOtherAttributes) && { attributes: attributes }),
                 ...(style && { style: style}),
                 elmType: (value.tagName.toLowerCase() as IElmType['elmType']),
-                ...(value.childNodes && (value.childNodes.length > 1 || !value.childNodes[0].text) && { 
+                ...(value.childNodes && (value.childNodes.length > 1 || (value.childNodes[0] && !value.childNodes[0].text)) && { 
                     children: Array.from(value.childNodes as HTMLElement[])
                                     .map((node: HTMLElement) => MapHtmlToFieldJson.MapHtmlToJson(node, options)).filter(Boolean)
                 }),
             }
             return json;
         }
-        catch {
+        catch (err: any) {
+            log.error(`${value.tagName} error: ${JSON.stringify(err)}`);
             return {}
         }
     }

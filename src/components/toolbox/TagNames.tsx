@@ -35,7 +35,7 @@ export const TagNames: React.FunctionComponent<IToolboxProperties> = (props: ITo
             <TextField 
                 value={tagNameFilter} 
                 onChange={onTagNameFilterChange}
-                placeholder={"Filter class names"} />
+                placeholder={"Filter tag names"} />
 
             <div className={moduleStyles.container}>
                 { AllowedTagNames
