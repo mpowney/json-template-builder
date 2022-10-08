@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, Dropdown, IDropdownOption, Stack, Text } from "@fluentui/react";
+import { Checkbox, CommandBar, CommandBarButton, DefaultButton, Dropdown, ICommandBarItemProps, IDropdownOption, Stack, Text } from "@fluentui/react";
 // import AceEditor from "react-ace";
 import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
@@ -60,7 +60,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
             const json = (selectedWorkingType == "row" 
                 ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml, { removeInvalidClassNames })
                 : selectedWorkingType == "column" 
-                ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml)
+                ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml, { removeInvalidClassNames })
                 : undefined)
             setWorkingJson(json);
         }
@@ -84,6 +84,44 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         }
 
     }, [] );
+
+    const jsonCommandBarItems: ICommandBarItemProps[] = [
+        {
+          key: 'formatOptions',
+          text: `Schema: ${selectedWorkingType === "row" ? "Row" : selectedWorkingType === "column" ? "Column" : "(none)" }`,
+          iconProps: { iconName: 'FileTemplate' },
+          subMenuProps: {
+            items: [
+              {
+                key: 'row',
+                text: 'Row formatting',
+                iconProps: { iconName: 'RowsGroup' },
+              },
+              {
+                key: 'column',
+                text: 'Column formatting',
+                iconProps: { iconName: 'FieldEmpty' },
+              },
+            ],
+          },
+        },
+        {
+            key: 'invalidClassNames',
+            commandBarButtonAs: () => { return <CommandBarButton 
+                                                toggle
+                                                onClick={() => setRemoveInvalidClassNames(!removeInvalidClassNames)}
+                                                text={"Remove invalid class names"}
+                                                checked={removeInvalidClassNames} />},
+        },
+        {
+            key: 'invalidStyleAttributes',
+            commandBarButtonAs: () => { return <CommandBarButton 
+                                                toggle
+                                                onClick={() => setRemoveInvalidStyleAttributes(!removeInvalidStyleAttributes)}
+                                                text={"Remove invalid style attributes"}
+                                                checked={removeInvalidStyleAttributes} />},
+        }
+    ];
 
 
     Prism.languages.insertBefore('markup', 'tag', {
@@ -199,9 +237,11 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 ]}
                 defaultSelectedKey={selectedWorkingType}
                 onChange={onOutputTypeChange}/>
-            <Checkbox label="Remove invalid class names" checked={removeInvalidClassNames} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidClassNames(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
-            <Checkbox label="Remove invalid style attributes" checked={removeInvalidStyleAttributes} onChange={( ev: any, checked: boolean | undefined) => { setRemoveInvalidStyleAttributes(checked === true); localStorage.setItem(htmlStorageKey, `${checked === true}`); }} />
 
+            <CommandBar
+                items={jsonCommandBarItems}
+                ariaLabel="Template actions"
+            />
             <div className={`${moduleStyles.editor}`}>
                 <Editor
                     onValueChange={jsonChange}

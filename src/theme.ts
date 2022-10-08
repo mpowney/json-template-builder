@@ -3,7 +3,7 @@ import { PartialTheme } from "@fluentui/react";
 // Created with https://aka.ms/themedesigner
 const myTheme: PartialTheme = {
     palette: {
-        themePrimary: "#ff78d4",
+        themePrimary: "#0078d4",
         themeLighterAlt: "#eff6fc",
         themeLighter: "#deecf9",
         themeLight: "#c7e0f4",
