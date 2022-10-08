@@ -2,6 +2,7 @@ import * as React from "react";
 import { Stack, IStyle, Dropdown, IDropdownOption } from "@fluentui/react";
 import { ClassNames } from "./toolbox/ClassNames";
 import { TagNames } from "./toolbox/TagNames";
+import { StyleAttributes } from "./toolbox/StyleAttributes";
 
 export interface INavigationProps {
     userLoggedIn: boolean;
@@ -33,11 +34,13 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
                 defaultSelectedKey={selectedNavigation}
                 options={[
                     { key: "tag", text: "Tags" },
-                    { key: "class", text: "Classes" }
+                    { key: "class", text: "Classes" },
+                    { key: "styleAttributes", text: "Style attributes" }
                 ]} />
 
             {selectedNavigation == "class" && <ClassNames />}
             {selectedNavigation == "tag" && <TagNames />}
+            {selectedNavigation == "styleAttributes" && <StyleAttributes />}
         </Stack>
     )
 }

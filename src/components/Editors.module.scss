@@ -34,7 +34,7 @@
 
 .htmlSection .editor {
     :global {
-        .invalid-class, .invalid-tag {
+        .invalid-class, .invalid-tag, .invalid-style-attr {
             text-decoration: line-through;
             background-color: #fce100;
         }

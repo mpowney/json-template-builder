@@ -19,6 +19,7 @@ import { PreviewHtml } from "./PreviewHtml";
 import MapHtmlToFieldJson from "../common/services/MapHtmlToFieldJson";
 import { AllowedClassNames } from "../common/utils/AllowedClassNames";
 import { AllowedTagNames } from "../common/utils/AllowedTagNames";
+import { AllowedStyleAttributes } from "../common/utils/AllowedStyleAttributes";
 
 interface EditorsProps {
 }
@@ -110,6 +111,20 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                                 'valid-class': new RegExp(`['" ]+(${AllowedClassNames.map(className=>className).join("|")})`),
                                 'invalid-class': {
                                     pattern: /[\w-]+/
+                                }
+                            }
+                        }
+                    }
+                },
+                'style-attr-value': {
+                    pattern: /style=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
+                    inside: {
+                        'styles': {
+                            pattern: /['"]+[\w-:#; ]+?['"]+?/,
+                            inside: {
+                                'valid-style-attr': new RegExp(`['" ]+(${AllowedStyleAttributes.map(attrName=>attrName).join(": |")})`),
+                                'invalid-style-attr': {
+                                    pattern: /[\w-]+:[\w-:#\s]+[;]?/
                                 }
                             }
                         }
