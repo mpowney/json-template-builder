@@ -40,6 +40,7 @@ export const ClassNames: React.FunctionComponent<IToolboxProperties> = (props: I
             <div className={moduleStyles.container}>
                 { AllowedClassNames
                         .filter(className => { return className.toLowerCase().indexOf(classNameFilter.toLowerCase()) > -1; })
+                        .sort()
                         .map((className: string) => {return (
                             <TooltipHost closeDelay={500} content={`Copy "${className}" to clipboard`} key={className} calloutProps={calloutProps}>
                                 <div

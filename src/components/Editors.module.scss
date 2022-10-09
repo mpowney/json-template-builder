@@ -1,8 +1,11 @@
 .htmlSection {
     max-height: calc(100vh - 50px - 60vh);
 }
-.previewSection, .jsonSection {
-    max-height: 30vh;
+.previewSection {
+    max-height: 20vh;
+}
+.jsonSection {
+    max-height: 40vh;
 }
 .previewSection {
     overflow-y: scroll;
@@ -20,7 +23,7 @@
 
 .jsonSection {
     .editor {
-        height: calc(100vh - 50px - 70vh - 2rem - 24px);
+        height: calc(100vh - 50px - 60vh - 2rem - 24px);
         overflow: auto;
     }
 }
@@ -30,6 +33,7 @@
     textarea:focus-visible {
         outline: none;
     }
+    width: calc(100vw - 200px - 10rem);
 }
 
 .htmlSection .editor {

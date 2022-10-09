@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, CommandBar, CommandBarButton, DefaultButton, Dropdown, ICommandBarItemProps, IDropdownOption, Stack, Text } from "@fluentui/react";
+import { Checkbox, CommandBar, CommandBarButton, DefaultButton, Dropdown, ICommandBarItemProps, IContextualMenuItem, IDropdownOption, Stack, Text } from "@fluentui/react";
 // import AceEditor from "react-ace";
 import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
@@ -49,9 +49,12 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         setWorkingHtml(value);
     }
 
-    const onOutputTypeChange = (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption<any> | undefined, index?: number | undefined) => {
+    const onOutputTypeChange = (ev?: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement> | React.FormEvent<HTMLDivElement> | undefined, option?: IContextualMenuItem | IDropdownOption<any> | undefined, index?: number | undefined) => {
         setSelectedWorkingType(option?.key)
     };
+
+    const onImportTemplateClick =  (ev?: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement> | React.FormEvent<HTMLDivElement> | undefined, option?: IContextualMenuItem | IDropdownOption<any> | undefined, index?: number | undefined) => {
+    }
 
     React.useEffect(() => {
 
@@ -87,23 +90,27 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
     const jsonCommandBarItems: ICommandBarItemProps[] = [
         {
-          key: 'formatOptions',
-          text: `Schema: ${selectedWorkingType === "row" ? "Row" : selectedWorkingType === "column" ? "Column" : "(none)" }`,
-          iconProps: { iconName: 'FileTemplate' },
-          subMenuProps: {
-            items: [
-              {
-                key: 'row',
-                text: 'Row formatting',
-                iconProps: { iconName: 'RowsGroup' },
-              },
-              {
-                key: 'column',
-                text: 'Column formatting',
-                iconProps: { iconName: 'FieldEmpty' },
-              },
-            ],
-          },
+            key: 'import',
+            text: 'Import template',
+            subMenuProps: {
+                onItemClick: onImportTemplateClick,
+                items: [
+                    { key: 'pnp', text: 'PnP List Formatting project ...', iconProps: { iconName: 'GiftboxOpen' }, },
+                    { key: 'url', text: 'Enter URL ...', iconProps: { iconName: 'Link' }, },
+                ]
+            }
+        },
+        {
+            key: 'formatOptions',
+            text: `Schema: ${selectedWorkingType === "row" ? "Row" : selectedWorkingType === "column" ? "Column" : "(none)" }`,
+            iconProps: { iconName: 'FileTemplate' },
+            subMenuProps: {
+                onItemClick: onOutputTypeChange,
+                items: [
+                    { key: 'row', text: 'Row formatting', iconProps: { iconName: 'RowsGroup' }, },
+                    { key: 'column', text: 'Column formatting', iconProps: { iconName: 'FieldEmpty' }, },
+                ],
+            },
         },
         {
             key: 'invalidClassNames',
@@ -229,14 +236,14 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         <Stack className={`${moduleStyles.section} ${moduleStyles.jsonSection}`}>
     
             <Text variant={"large"} block>JSON Template</Text>
-            <Dropdown 
+            {/* <Dropdown 
                 placeholder={"Select an output type"}
                 options={[
                     { key: "row", text: "Row formatting" },
                     { key: "column", text: "Column formatting" }
                 ]}
                 defaultSelectedKey={selectedWorkingType}
-                onChange={onOutputTypeChange}/>
+                onChange={onOutputTypeChange}/> */}
 
             <CommandBar
                 items={jsonCommandBarItems}
