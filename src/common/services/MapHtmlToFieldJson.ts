@@ -1,6 +1,6 @@
 import { parse, HTMLElement, TextNode } from 'node-html-parser';
 import { AllowedClassNames } from '../utils/AllowedClassNames';
-import { IElmType } from './IElmType';
+import { IElmType } from '../model/IElmType';
 import { getLogger } from "../../common/utils/InitLogger";
 import { AllowedAttributes } from '../utils/AllowedAttributes';
 
