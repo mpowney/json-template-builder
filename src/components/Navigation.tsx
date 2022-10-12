@@ -5,6 +5,7 @@ import { TagNames } from "./toolbox/TagNames";
 import { StyleAttributes } from "./toolbox/StyleAttributes";
 import { Documentation } from "./toolbox/Documentation";
 import { Variables } from "./toolbox/Variables";
+import { Fields } from "./toolbox/Fields";
 
 export interface INavigationProps {
     userLoggedIn: boolean;
@@ -38,13 +39,15 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
                     { key: "tag", text: "Tags" },
                     { key: "class", text: "Classes" },
                     { key: "styleAttributes", text: "Style attributes" },
-                    { key: "variables", text: "Variables" }
+                    { key: "variables", text: "Variables" },
+                    { key: "fields", text: "Fields" }
                 ]} />
 
             {selectedNavigation == "class" && <ClassNames />}
             {selectedNavigation == "tag" && <TagNames />}
             {selectedNavigation == "styleAttributes" && <StyleAttributes />}
             {selectedNavigation == "variables" && <Variables />}
+            {selectedNavigation == "fields" && <Fields />}
             <Documentation />
         </Stack>
     )

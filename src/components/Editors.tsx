@@ -20,6 +20,7 @@ import MapHtmlToFieldJson from "../common/services/MapHtmlToFieldJson";
 import { AllowedClassNames } from "../common/utils/AllowedClassNames";
 import { AllowedTagNames } from "../common/utils/AllowedTagNames";
 import { AllowedStyleAttributes } from "../common/utils/AllowedStyleAttributes";
+import { ImportTemplate } from "./ImportTemplate";
 
 interface EditorsProps {
 }
@@ -38,6 +39,9 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
     const [ removeInvalidClassNames, setRemoveInvalidClassNames ] = React.useState<boolean>((localStorage.getItem(removeInvalidClassNamesKey) || "false") == "true");
     const [ removeInvalidStyleAttributes, setRemoveInvalidStyleAttributes ] = React.useState<boolean>((localStorage.getItem(removeInvalidStyleAttributesKey) || "false") == "true");
 
+    const [ importModalOpen, setImportModalOpen ] = React.useState<boolean>(false);
+    const [ importMethod, setImportMethod ] = React.useState<"url" | "pnp">("url");
+
     const log = getLogger("Editors.tsx");
 
     const jsonChange = () => {
@@ -54,6 +58,10 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
     };
 
     const onImportTemplateClick =  (ev?: React.MouseEvent<HTMLElement, MouseEvent> | React.KeyboardEvent<HTMLElement> | React.FormEvent<HTMLDivElement> | undefined, option?: IContextualMenuItem | IDropdownOption<any> | undefined, index?: number | undefined) => {
+        if (option?.key) {
+            setImportMethod(option?.key as "pnp" | "url");
+            setImportModalOpen(true);
+        }
     }
 
     React.useEffect(() => {
@@ -236,15 +244,6 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         <Stack className={`${moduleStyles.section} ${moduleStyles.jsonSection}`}>
     
             <Text variant={"large"} block>JSON Template</Text>
-            {/* <Dropdown 
-                placeholder={"Select an output type"}
-                options={[
-                    { key: "row", text: "Row formatting" },
-                    { key: "column", text: "Column formatting" }
-                ]}
-                defaultSelectedKey={selectedWorkingType}
-                onChange={onOutputTypeChange}/> */}
-
             <CommandBar
                 items={jsonCommandBarItems}
                 ariaLabel="Template actions"
@@ -267,6 +266,8 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
 
         </Stack>
+
+        <ImportTemplate isOpen={importModalOpen} defaultImportMethod={importMethod} styles={{ main: { minWidth: "800px", minHeight: "300px" } }} />
 
     </Stack>);
 

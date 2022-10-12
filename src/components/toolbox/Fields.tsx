@@ -28,8 +28,8 @@ export const Fields: React.FunctionComponent<IToolboxProperties> = (props: ITool
         className: moduleStyles.tooltipCallout
     }
 
-    const action = (field: string) => {
-        CopyToClipboard.copyTextToClipboard(field);
+    const action = (field: IField) => {
+        CopyToClipboard.copyTextToClipboard(`$${field.name}`);
     }
 
     const enteredFields = DefaultFields;
@@ -38,17 +38,17 @@ export const Fields: React.FunctionComponent<IToolboxProperties> = (props: ITool
             <TextField 
                 value={fieldFilter} 
                 onChange={onFieldFilterChange}
-                placeholder={"Filter tag names"} />
+                placeholder={"Filter fields"} />
 
             <div className={moduleStyles.container}>
                 { enteredFields
                         .filter((field: IField) => { return field.name.toLowerCase().indexOf(fieldFilter.toLowerCase()) > -1 || (field.displayName || "").toLowerCase().indexOf(fieldFilter.toLowerCase()) > -1; })
                         .map((field: IField) => {return (
-                            <TooltipHost closeDelay={500} content={`Copy "${field}" to clipboard`} key={field.name} calloutProps={calloutProps}>
+                            <TooltipHost closeDelay={500} content={`Copy "$${field.name}" to clipboard`} key={field.name} calloutProps={calloutProps}>
                                 <div
-                                    onClick={() => { action(field.name); }} 
-                                    className={moduleStyles.tagSelection}
-                                    >&lt;{field} /&gt;</div>
+                                    onClick={() => { action(field); }} 
+                                    className={moduleStyles.fieldSelection}
+                                    >${field.name}</div>
                             </TooltipHost>
                             
                         )})}

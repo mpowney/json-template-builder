@@ -38,6 +38,28 @@ The app in its current form is very rudimentry.  The following ideas will help d
     * To OneDrive
     * To a SharePoint document library
 
+## Underlying principles
+
+You may ask, why build a new solution to this problem when there's already a [solution published](https://github.com/pnp/List-Formatting/tree/master/tools/html-formatter-generator) in the PnP List-Formatting repository?
+
+Please take into consideration the following:
+
+* The feature set of the PnP published solution is simpler than this one; the PnP solution has:
+  * No invalid syntax highlighting
+  * No ability to import existing JSON templates
+  * No preview function
+* Design language - the PnP solution is a simpler UI, and does not incorporate Microsoft's Fluent UI design language in its implementation:
+  * In the PnP solution's UI itself
+  * The tool has no opinion on the design language of the templates produced
+* Neglect - at the time of publishing this solution, there has been very little maintenance of the PnP published solution
+  * The last meaningful update to the features of the PnP published solution was more than 2 years ago
+
+In contrast, this solution:
+* Embeds a desire to produce templates that fit the design language of the target SharePoint platform, through use of:
+  * UI prompts that tell the user what elements of their design are not valid in the target platform
+  * Utilises components of the Fluent UI library so the user feels more 'at-home' with the Microsoft platform
+* 
+
 ## Development
 
 In the project directory, you can run:

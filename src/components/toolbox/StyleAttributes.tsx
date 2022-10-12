@@ -40,6 +40,7 @@ export const StyleAttributes: React.FunctionComponent<IToolboxProperties> = (pro
             <div className={moduleStyles.container}>
                 { AllowedStyleAttributes
                         .filter(className => { return className.toLowerCase().indexOf(classNameFilter.toLowerCase()) > -1; })
+                        .sort()
                         .map((styleAttribute: string) => {return (
                             <TooltipHost closeDelay={500} content={`Copy "${styleAttribute}" to clipboard`} key={styleAttribute} calloutProps={calloutProps}>
                                 <div
