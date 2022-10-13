@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, CommandBar, CommandBarButton, DefaultButton, Dropdown, ICommandBarItemProps, IContextualMenuItem, IDropdownOption, Stack, Text } from "@fluentui/react";
+import { BaseButton, Button, Checkbox, CommandBar, CommandBarButton, DefaultButton, Dropdown, ICommandBarItemProps, IContextualMenuItem, IDropdownOption, Stack, Text } from "@fluentui/react";
 // import AceEditor from "react-ace";
 import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
@@ -95,6 +95,14 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         }
 
     }, [] );
+
+    const cancelCallback: React.MouseEventHandler<HTMLDivElement | HTMLAnchorElement | HTMLButtonElement | HTMLSpanElement | BaseButton | Button> = () => {
+        setImportModalOpen(false);
+    }
+
+    const setHtmlCallback = (html: string) => {
+        setWorkingHtml(html);
+    }
 
     const jsonCommandBarItems: ICommandBarItemProps[] = [
         {
@@ -267,7 +275,12 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
         </Stack>
 
-        <ImportTemplate isOpen={importModalOpen} defaultImportMethod={importMethod} styles={{ main: { minWidth: "800px", minHeight: "300px" } }} />
+        <ImportTemplate 
+            isOpen={importModalOpen} 
+            defaultImportMethod={importMethod} 
+            styles={{ main: { minWidth: "800px", minHeight: "300px" } }}
+            setHtmlCallback={setHtmlCallback}
+            dismissCallback={cancelCallback} />
 
     </Stack>);
 

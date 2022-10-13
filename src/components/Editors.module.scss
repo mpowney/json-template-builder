@@ -33,6 +33,9 @@
     textarea:focus-visible {
         outline: none;
     }
+    & > div {
+        min-height: 100%;
+    }
     width: calc(100vw - 200px - 10rem);
 }
 
