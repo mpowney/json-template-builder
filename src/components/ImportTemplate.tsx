@@ -40,7 +40,7 @@ export const ImportTemplate: React.FunctionComponent<ImportTemplateProps> = (pro
     const onImportClick = () => {
         // try {
             const object = JSON.parse(workingJson || "");
-            const html = MapJsonToHtml.MapJsonToHtml(object)
+            const html = MapJsonToHtml.MapJsonObjectToHtml(object)
             const prettyHtml = pretty(html?.outerHTML || "", { unformatted: [], inline: [] } as any)
             props.setHtmlCallback && props.setHtmlCallback(prettyHtml);
             props.dismissCallback && props.dismissCallback(undefined as any);
