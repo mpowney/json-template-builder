@@ -31,6 +31,17 @@ export default class MapHtmlToFieldJson {
         return JSON.stringify(json, undefined, 2);
     }
 
+    public static HtmlNodeToTileJson(value: string, options?: IMapHtmlToJsonOptions): string {
+        const html = parse(value.trim());
+        const json = {
+            "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
+            "formatter": {
+                ...MapHtmlToFieldJson.MapHtmlToJson(html, options)
+            }
+        }
+        return JSON.stringify(json, undefined, 2);
+    }
+
     public static MapHtmlToJson(value: HTMLElement, options?: IMapHtmlToJsonOptions): any {
 
         const log = getLogger("MapHtmlToFieldJson.ts MapHtmlToJson");

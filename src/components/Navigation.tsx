@@ -6,6 +6,7 @@ import { StyleAttributes } from "./toolbox/StyleAttributes";
 import { Documentation } from "./toolbox/Documentation";
 import { Variables } from "./toolbox/Variables";
 import { Fields } from "./toolbox/Fields";
+import { Schemas } from "./toolbox/Schemas";
 
 export interface INavigationProps {
     userLoggedIn: boolean;
@@ -40,7 +41,8 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
                     { key: "class", text: "Classes" },
                     { key: "styleAttributes", text: "Style attributes" },
                     { key: "variables", text: "Variables" },
-                    { key: "fields", text: "Fields" }
+                    { key: "fields", text: "Fields" },
+                    { key: "schema", text: "Schema properties" }
                 ]} />
 
             {selectedNavigation == "class" && <ClassNames />}
@@ -48,6 +50,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
             {selectedNavigation == "styleAttributes" && <StyleAttributes />}
             {selectedNavigation == "variables" && <Variables />}
             {selectedNavigation == "fields" && <Fields />}
+            {selectedNavigation == "schema" && <Schemas />}
             <Documentation />
         </Stack>
     )

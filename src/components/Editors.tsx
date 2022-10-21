@@ -1,5 +1,5 @@
 import React from "react";
-import { BaseButton, Button, Checkbox, CommandBar, CommandBarButton, DefaultButton, Dropdown, ICommandBarItemProps, IContextualMenuItem, IDropdownOption, Stack, Text } from "@fluentui/react";
+import { BaseButton, Button, CommandBar, CommandBarButton, ICommandBarItemProps, IContextualMenuItem, IDropdownOption, Stack, Text } from "@fluentui/react";
 // import AceEditor from "react-ace";
 import { valid } from 'node-html-parser';
 import { getLogger } from "../common/utils/InitLogger";
@@ -72,6 +72,8 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml, { removeInvalidClassNames })
                 : selectedWorkingType == "column" 
                 ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml, { removeInvalidClassNames })
+                : selectedWorkingType == "tile" 
+                ? MapHtmlToFieldJson.HtmlNodeToTileJson(workingHtml, { removeInvalidClassNames })
                 : undefined)
             setWorkingJson(json);
         }
@@ -118,13 +120,14 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         },
         {
             key: 'formatOptions',
-            text: `Schema: ${selectedWorkingType === "row" ? "Row" : selectedWorkingType === "column" ? "Column" : "(none)" }`,
+            text: `Schema: ${selectedWorkingType === "row" ? "Row" : selectedWorkingType === "column" ? "Column" : selectedWorkingType === "tile" ? "Tile" : "(none)" }`,
             iconProps: { iconName: 'FileTemplate' },
             subMenuProps: {
                 onItemClick: onOutputTypeChange,
                 items: [
-                    { key: 'row', text: 'Row formatting', iconProps: { iconName: 'RowsGroup' }, },
-                    { key: 'column', text: 'Column formatting', iconProps: { iconName: 'FieldEmpty' }, },
+                    { key: 'row', text: 'Row formatting' },
+                    { key: 'column', text: 'Column formatting' },
+                    { key: 'tile', text: 'Tile formatting' },
                 ],
             },
         },
