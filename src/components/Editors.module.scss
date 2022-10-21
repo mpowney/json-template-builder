@@ -45,5 +45,11 @@
             text-decoration: line-through;
             background-color: #fce100;
         }
+        .valid-class, .valid-style-attr {
+            color: #07a;
+        }
+        .class-attr-name, .style-attr-name {
+            color: #690;
+        }
     }
 }

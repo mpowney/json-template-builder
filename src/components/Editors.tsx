@@ -166,6 +166,9 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 'class-attr-value': {
                     pattern: /class=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
                     inside: {
+                        'class-attr-name': {
+                            pattern: /^class/
+                        },
                         'classes': {
                             pattern: /['"]+[\w- ]+?['"]+?/,
                             inside: {
@@ -180,12 +183,29 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 'style-attr-value': {
                     pattern: /style=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
                     inside: {
+                        'style-attr-name': {
+                            pattern: /^style/
+                        },
                         'styles': {
-                            pattern: /['"]+[\w-:#; ]+?['"]+?/,
+                            pattern: /['"]+[\w-;:%\. ]+?['"]+?/,
                             inside: {
-                                'valid-style-attr': new RegExp(`['" ]+(${AllowedStyleAttributes.map(attrName=>attrName).join(": |")})`),
+                                'valid-style-attr': {
+                                    pattern: new RegExp(`(${AllowedStyleAttributes.map(attrName=>attrName).join("|")})[\\w -:#%\\.\\s]+['"; ]`),
+                                    inside: {
+                                        'punctuation': [
+                                            {
+                                                pattern: /^=/,
+                                                alias: 'attr-equals'
+                                            },
+                                            {
+                                                pattern: /^(\s*)["']|["']$/,
+                                                lookbehind: true
+                                            }
+                                        ]
+                                    }
+                                },
                                 'invalid-style-attr': {
-                                    pattern: /[\w-]+:[\w-:#\s]+[;]?/
+                                    pattern: /[\w-]+:[\w-:#%\.\s]+;?/
                                 }
                             }
                         }
