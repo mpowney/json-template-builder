@@ -36,8 +36,8 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
     const [ workingJson, setWorkingJson ] = React.useState<string | undefined>();
     
     const [ selectedWorkingType, setSelectedWorkingType ] = React.useState<string | undefined | number>(localStorage.getItem(workingTypeKey) || undefined);
-    const [ removeInvalidClassNames, setRemoveInvalidClassNames ] = React.useState<boolean>((localStorage.getItem(removeInvalidClassNamesKey) || "false") == "true");
-    const [ removeInvalidStyleAttributes, setRemoveInvalidStyleAttributes ] = React.useState<boolean>((localStorage.getItem(removeInvalidStyleAttributesKey) || "false") == "true");
+    const [ removeInvalidClassNames, setRemoveInvalidClassNames ] = React.useState<boolean>((localStorage.getItem(removeInvalidClassNamesKey) || "false") === "true");
+    const [ removeInvalidStyleAttributes, setRemoveInvalidStyleAttributes ] = React.useState<boolean>((localStorage.getItem(removeInvalidStyleAttributesKey) || "false") === "true");
 
     const [ importModalOpen, setImportModalOpen ] = React.useState<boolean>(false);
     const [ importMethod, setImportMethod ] = React.useState<"url" | "pnp">("url");
@@ -68,11 +68,11 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
         if (workingHtml && valid(workingHtml)) {
             localStorage.setItem(htmlStorageKey, workingHtml);
-            const json = (selectedWorkingType == "row" 
+            const json = (selectedWorkingType === "row" 
                 ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml, { removeInvalidClassNames })
-                : selectedWorkingType == "column" 
+                : selectedWorkingType === "column" 
                 ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml, { removeInvalidClassNames })
-                : selectedWorkingType == "tile" 
+                : selectedWorkingType === "tile" 
                 ? MapHtmlToFieldJson.HtmlNodeToTileJson(workingHtml, { removeInvalidClassNames })
                 : undefined)
             setWorkingJson(json);
@@ -104,6 +104,14 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
     const setHtmlCallback = (html: string) => {
         setWorkingHtml(html);
+    }
+
+    const setWorkingTypeCallback = (workingType: string | undefined | number) => {
+        setSelectedWorkingType(workingType);
+    }
+
+    const setSchemaPropertiesCallback = (properties: any) => {
+        log.debug(`${JSON.stringify(properties)}`);
     }
 
     const jsonCommandBarItems: ICommandBarItemProps[] = [
@@ -302,7 +310,9 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
             isOpen={importModalOpen} 
             defaultImportMethod={importMethod} 
             styles={{ main: { minWidth: "800px", minHeight: "300px" } }}
+            setWorkingTypeCallback={setWorkingTypeCallback}
             setHtmlCallback={setHtmlCallback}
+            setSchemaPropertiesCallback={setSchemaPropertiesCallback}
             dismissCallback={cancelCallback} />
 
     </Stack>);

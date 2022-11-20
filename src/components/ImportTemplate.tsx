@@ -11,6 +11,8 @@ interface ImportTemplateProps extends IModalProps {
     defaultImportMethod: "url" | "pnp" | "clipboard";
     dismissCallback?: React.MouseEventHandler<HTMLDivElement | HTMLAnchorElement | HTMLButtonElement | HTMLSpanElement | BaseButton | Button>;
     setHtmlCallback?: (html: string) => void;
+    setWorkingTypeCallback?: (workingType: string | undefined | number) => void;
+    setSchemaPropertiesCallback?: (properties: any) => void;
 }
 
 export const ImportTemplate: React.FunctionComponent<ImportTemplateProps> = (props: ImportTemplateProps) => {
@@ -40,9 +42,20 @@ export const ImportTemplate: React.FunctionComponent<ImportTemplateProps> = (pro
     const onImportClick = () => {
         // try {
             const object = JSON.parse(workingJson || "");
-            const html = MapJsonToHtml.MapJsonObjectToHtml(object)
-            const prettyHtml = pretty(html?.outerHTML || "", { unformatted: [], inline: [] } as any)
+            const template = MapJsonToHtml.MapJsonObjectToHtml(object)
+            const prettyHtml = pretty(template.html?.outerHTML || "", { unformatted: [], inline: [] } as any)
+
+            const shallowObject = { ...object }
+            delete shallowObject.rowFormatter;
+            delete shallowObject.formatter;
+            delete shallowObject.children;
+            delete shallowObject.elmType;
+            delete shallowObject.style;
+            delete shallowObject.attributes;
+
             props.setHtmlCallback && props.setHtmlCallback(prettyHtml);
+            props.setWorkingTypeCallback && props.setWorkingTypeCallback(template.workingType);
+            props.setSchemaPropertiesCallback && props.setSchemaPropertiesCallback( shallowObject );
             props.dismissCallback && props.dismissCallback(undefined as any);
 
         // }
