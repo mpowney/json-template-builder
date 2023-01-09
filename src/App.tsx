@@ -13,6 +13,7 @@ import Home from "./entries/Home";
 
 // import globalStyles from "./assets/styles/global.scss";
 import styles from "./App.module.scss";
+import { ISchemaPropertiesRow, ISchemaPropertiesTile } from "./components/toolbox/Schemas";
 const log = getLogger("App.tsx");
 
 export const PACKAGE_NAME = "JSON Template Builder for SharePoint";
@@ -35,6 +36,7 @@ export const App: React.FunctionComponent = () => {
     const [ loginModalRecover, setLoginModalRecover ] = React.useState<boolean>(false);
     const [ processing, setProcessing ] = React.useState<boolean>(false);
     const [ user, setUser ] = React.useState<IUser | null>(null);
+    const [ schemaProperties, setSchemaProperties ] = React.useState<ISchemaPropertiesRow | ISchemaPropertiesTile>();
 
     const hideLoginModal = () => {
       setLoginModalOpen(false);
@@ -65,10 +67,10 @@ export const App: React.FunctionComponent = () => {
                     user={user} 
                     processing={processing} />
                 <Stack horizontal>
-                    <Navigation userLoggedIn={userLoggedIn} />
+                    <Navigation userLoggedIn={userLoggedIn} schemaProperties={schemaProperties} />
                     <div id={`appContainer`} className={styles.appContainer}>
                         <Routes>
-                            <Route path="/" element={<Home />} />
+                            <Route path="/" element={<Home schemaProperties={schemaProperties} />} />
                         </Routes>
                     </div>
                 </Stack>

@@ -6,9 +6,6 @@ import { getLogger } from "../../common/utils/InitLogger";
 import previewModuleStyles from "../PreviewHtml.module.scss";
 import moduleStyles from "./Schemas.module.scss";
 
-interface ISchemaToolboxProperties {
-}
-
 export interface ISchemaPropertiesRow {
     hideSelection?: boolean;
     hideColumnHeader?: boolean;
@@ -21,6 +18,10 @@ export interface ISchemaPropertiesTile {
     width?: number;
     hideSelection?: boolean;
     fillHorizontally?: boolean;
+}
+
+interface ISchemaToolboxProperties extends ISchemaPropertiesRow, ISchemaPropertiesTile {
+    setSchemaPropertiesCallback?: (properties: any) => void;
 }
 
 export const Schemas: React.FunctionComponent<ISchemaToolboxProperties> = (props: ISchemaToolboxProperties) => {
@@ -46,6 +47,11 @@ export const Schemas: React.FunctionComponent<ISchemaToolboxProperties> = (props
         (setObject as any)[property] = value;
         localStorage.setItem(`JsonTemplates:SchemaSettings:${storageKey}`, JSON.stringify(setObject));
         setFunction(setObject);
+        props.setSchemaPropertiesCallback && props.setSchemaPropertiesCallback( {
+            ...schemaSettingsRow,
+            ...schemaSettingsTile,
+            ...setObject
+        });
     }
 
     const log = getLogger("Schemas.tsx");

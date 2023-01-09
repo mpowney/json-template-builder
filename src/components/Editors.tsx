@@ -21,8 +21,10 @@ import { AllowedClassNames } from "../common/utils/AllowedClassNames";
 import { AllowedTagNames } from "../common/utils/AllowedTagNames";
 import { AllowedStyleAttributes } from "../common/utils/AllowedStyleAttributes";
 import { ImportTemplate } from "./ImportTemplate";
+import { ISchemaPropertiesRow, ISchemaPropertiesTile } from "./toolbox/Schemas";
 
 interface EditorsProps {
+    schemaProperties?: ISchemaPropertiesRow | ISchemaPropertiesTile;
 }
 
 export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsProps) => {
@@ -68,13 +70,17 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
         if (workingHtml && valid(workingHtml)) {
             localStorage.setItem(htmlStorageKey, workingHtml);
-            const json = (selectedWorkingType === "row" 
+            let json: any = (selectedWorkingType === "row" 
                 ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml, { removeInvalidClassNames })
                 : selectedWorkingType === "column" 
                 ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml, { removeInvalidClassNames })
                 : selectedWorkingType === "tile" 
                 ? MapHtmlToFieldJson.HtmlNodeToTileJson(workingHtml, { removeInvalidClassNames })
                 : undefined)
+            json = {
+                ...json,
+                ...MapHtmlToFieldJson.ImportSchemaProperties(props.schemaProperties, workingTypeKey)
+            }
             setWorkingJson(json);
         }
 

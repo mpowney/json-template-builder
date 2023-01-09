@@ -3,13 +3,15 @@ import { Helmet } from "react-helmet";
 import { Outlet } from "react-router-dom";
 import { Editors } from "../components/Editors";
 import { PanelHeader } from "../components/PanelHeader";
+import { ISchemaPropertiesRow, ISchemaPropertiesTile } from "../components/toolbox/Schemas";
 
 import styles from "./Home.module.scss";
 
-interface HomeEntryProps {
+interface IHomeEntryProps {
+    schemaProperties?: ISchemaPropertiesRow | ISchemaPropertiesTile;
 }
 
-export const HomeEntry: React.FunctionComponent<HomeEntryProps> = () => {
+export const HomeEntry: React.FunctionComponent<IHomeEntryProps> = (props: IHomeEntryProps) => {
 
     return (
         <div>
@@ -18,7 +20,7 @@ export const HomeEntry: React.FunctionComponent<HomeEntryProps> = () => {
             </Helmet>
             <Outlet />
 
-            <Editors />
+            <Editors schemaProperties={props.schemaProperties} />
         </div>
     );
 }

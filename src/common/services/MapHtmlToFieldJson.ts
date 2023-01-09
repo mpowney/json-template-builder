@@ -3,6 +3,7 @@ import { AllowedClassNames } from '../utils/AllowedClassNames';
 import { IElmType } from '../model/IElmType';
 import { getLogger } from "../../common/utils/InitLogger";
 import { AllowedAttributes } from '../utils/AllowedAttributes';
+import { ISchemaPropertiesRow, ISchemaPropertiesTile } from '../../components/toolbox/Schemas';
 
 export interface IMapHtmlToJsonOptions {
     removeInvalidClassNames?: boolean;
@@ -40,6 +41,22 @@ export default class MapHtmlToFieldJson {
             }
         }
         return JSON.stringify(json, undefined, 2);
+    }
+
+    public static ImportSchemaProperties(schemaProperties: ISchemaPropertiesRow | ISchemaPropertiesTile | any, workingType: string): any {
+        if (schemaProperties) Object.keys(schemaProperties).forEach((key: string) => {
+            if (workingType === "row") {
+                if (key !== "hideSelection" && key !== "hideColumnHeader" && key !== "hideFooter" && key !== "additionalRowClass") {
+                    delete schemaProperties[key];
+                }
+            }
+            if (workingType === "tile") {
+                if (key !== "hideSelection" && key !== "height" && key !== "width" && key !== "fillHorizontally") {
+                    delete schemaProperties[key];
+                }
+            }
+        });
+        return schemaProperties;
     }
 
     public static MapHtmlToJson(value: HTMLElement, options?: IMapHtmlToJsonOptions): any {

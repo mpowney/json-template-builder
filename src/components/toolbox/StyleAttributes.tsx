@@ -6,11 +6,10 @@ import { getLogger } from "../../common/utils/InitLogger";
 import previewModuleStyles from "../PreviewHtml.module.scss";
 import moduleStyles from "./StyleAttributes.module.scss";
 
-interface IToolboxProperties {
-
+interface IStyleAttributesProperties {
 }
 
-export const StyleAttributes: React.FunctionComponent<IToolboxProperties> = (props: IToolboxProperties) => {
+export const StyleAttributes: React.FunctionComponent<IStyleAttributesProperties> = (props: IStyleAttributesProperties) => {
 
     const classNameFilterStorageKey = "JsonTemplates:StyleAttrbuteFilter";
 

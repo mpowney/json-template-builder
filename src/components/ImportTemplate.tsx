@@ -55,7 +55,7 @@ export const ImportTemplate: React.FunctionComponent<ImportTemplateProps> = (pro
 
             props.setHtmlCallback && props.setHtmlCallback(prettyHtml);
             props.setWorkingTypeCallback && props.setWorkingTypeCallback(template.workingType);
-            props.setSchemaPropertiesCallback && props.setSchemaPropertiesCallback( shallowObject );
+            props.setSchemaPropertiesCallback && props.setSchemaPropertiesCallback(shallowObject);
             props.dismissCallback && props.dismissCallback(undefined as any);
 
         // }

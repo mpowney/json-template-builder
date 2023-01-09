@@ -6,10 +6,12 @@ import { StyleAttributes } from "./toolbox/StyleAttributes";
 import { Documentation } from "./toolbox/Documentation";
 import { Variables } from "./toolbox/Variables";
 import { Fields } from "./toolbox/Fields";
-import { Schemas } from "./toolbox/Schemas";
+import { ISchemaPropertiesRow, ISchemaPropertiesTile, Schemas } from "./toolbox/Schemas";
 
 export interface INavigationProps {
     userLoggedIn: boolean;
+    schemaProperties?: ISchemaPropertiesRow | ISchemaPropertiesTile;
+    setSchemaPropertiesCallback?: (properties: any) => void;
 }
 export interface INavigationState {
     minimised: boolean;
@@ -24,12 +26,17 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
     const selectedNavigationStorageKey = "JsonTemplates:SelectedNavigation"
 
     const [ selectedNavigation, setSelectedNavigation ] = React.useState<string>(localStorage.getItem(selectedNavigationStorageKey) || "class");
+    const [ schemaProperties, setSchemaProperties ] = React.useState<ISchemaPropertiesRow | ISchemaPropertiesTile | undefined>(props.schemaProperties);
 
     const onDropdownChange = (event: React.FormEvent<HTMLDivElement>, option?: IDropdownOption<any> | undefined, index?: number | undefined) => {
         const value = option?.key.toString() || "class";
         localStorage.setItem(selectedNavigationStorageKey, value);
         setSelectedNavigation(value);
     };
+
+    React.useEffect(() => {
+        setSchemaProperties(props.schemaProperties);
+    }, [ props.schemaProperties ])
 
     return (
         <Stack>
@@ -50,7 +57,7 @@ export const Navigation: React.FunctionComponent<INavigationProps> = (props: INa
             {selectedNavigation == "styleAttributes" && <StyleAttributes />}
             {selectedNavigation == "variables" && <Variables />}
             {selectedNavigation == "fields" && <Fields />}
-            {selectedNavigation == "schema" && <Schemas />}
+            {selectedNavigation == "schema" && <Schemas {...schemaProperties} setSchemaPropertiesCallback={props.setSchemaPropertiesCallback} />}
             <Documentation />
         </Stack>
     )
