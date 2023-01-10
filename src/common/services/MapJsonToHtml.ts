@@ -2,6 +2,7 @@ import { HTMLElement } from 'node-html-parser';
 import { getLogger } from "../../common/utils/InitLogger";
 import { AllowedAttributes } from '../utils/AllowedAttributes';
 import { KeyAttributes } from 'node-html-parser/dist/nodes/html';
+import { AllowedStyleAttributes } from '../utils/AllowedStyleAttributes';
 
 export interface IMapJsonToHtmlOptions {
 }
@@ -49,19 +50,30 @@ export default class MapJsonToHtml {
         const log = getLogger("MapJsonToHtml.ts ParseObjectToHtml");
 
         if (value.elmType) {
-            const rawAttrs = (value.attributes) ? Object.keys(value.attributes)
+            let rawAttrs = (value.attributes) ? Object.keys(value.attributes)
                                                         .filter(attr => { return AllowedAttributes.indexOf(attr) >= 0 })
                                                         .map(attr => {
                                                             return `${attr}="${value.attributes[attr]}"`
                                                         }).join(" ") : "";
-
             const keyAttrs: KeyAttributes = { };
+            if (value.style) {
+                rawAttrs = `${rawAttrs} style="${Object.keys(value.style)
+                                                        .filter(styleAttr => { return AllowedStyleAttributes.indexOf(styleAttr) })
+                                                        .map(styleAttr => {
+                                                            return `${styleAttr}: ${value.style[styleAttr]};`
+                                                        }).join(" ")}"`;
+            }
             const element: HTMLElement = new HTMLElement(value.elmType, keyAttrs, rawAttrs, parentNode, [0, 0]);
             if (value.children && value.children.length > 0) {
                 value.children.forEach((child: any) => {
                     const childElement = MapJsonToHtml.ParseObjectToHtml(child, options, element);
                     childElement && element.appendChild(childElement);
                 })
+            }
+            else {
+                if (value.txtContent) {
+                    element.set_content(value.txtContent);
+                }
             }
             return element;
         }

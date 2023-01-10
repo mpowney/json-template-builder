@@ -77,10 +77,10 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 : selectedWorkingType === "tile" 
                 ? MapHtmlToFieldJson.HtmlNodeToTileJson(workingHtml, { removeInvalidClassNames })
                 : undefined)
-            json = {
-                ...json,
+            json = JSON.stringify({
+                ...JSON.parse(json),
                 ...MapHtmlToFieldJson.ImportSchemaProperties(props.schemaProperties, workingTypeKey)
-            }
+            }, undefined, 2)
             setWorkingJson(json);
         }
 
