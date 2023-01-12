@@ -9,6 +9,7 @@ import styles from "./Home.module.scss";
 
 interface IHomeEntryProps {
     schemaProperties?: ISchemaPropertiesRow | ISchemaPropertiesTile;
+    setSchemaPropertiesCallback?: (properties: any) => void;
 }
 
 export const HomeEntry: React.FunctionComponent<IHomeEntryProps> = (props: IHomeEntryProps) => {
@@ -20,7 +21,7 @@ export const HomeEntry: React.FunctionComponent<IHomeEntryProps> = (props: IHome
             </Helmet>
             <Outlet />
 
-            <Editors schemaProperties={props.schemaProperties} />
+            <Editors schemaProperties={props.schemaProperties} setSchemaPropertiesCallback={props.setSchemaPropertiesCallback} />
         </div>
     );
 }

@@ -12,10 +12,16 @@ export interface IMapHtmlToJsonOptions {
 
 export default class MapHtmlToFieldJson {
 
+    public static SchemaUris = {
+        "column": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+        "row": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+        "tile": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json"
+    }
+
     public static HtmlNodeToColumnJson(value: string, options?: IMapHtmlToJsonOptions): string {
         const html = parse(value.trim());
         const json = {
-            "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
+            "$schema": MapHtmlToFieldJson.SchemaUris.column,
             ...MapHtmlToFieldJson.MapHtmlToJson(html, options)
         }
         return JSON.stringify(json, undefined, 2);
@@ -24,7 +30,7 @@ export default class MapHtmlToFieldJson {
     public static HtmlNodeToRowJson(value: string, options?: IMapHtmlToJsonOptions): string {
         const html = parse(value.trim());
         const json = {
-            "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+            "$schema": MapHtmlToFieldJson.SchemaUris.row,
             "rowFormatter": {
                 ...MapHtmlToFieldJson.MapHtmlToJson(html, options)
             }
@@ -35,7 +41,7 @@ export default class MapHtmlToFieldJson {
     public static HtmlNodeToTileJson(value: string, options?: IMapHtmlToJsonOptions): string {
         const html = parse(value.trim());
         const json = {
-            "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
+            "$schema": MapHtmlToFieldJson.SchemaUris.tile,
             "formatter": {
                 ...MapHtmlToFieldJson.MapHtmlToJson(html, options)
             }

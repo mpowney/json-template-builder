@@ -14,6 +14,7 @@ import 'prismjs/themes/prism.css';
 // import "ace-builds/src-noconflict/theme-chrome";
 // import "ace-builds/src-noconflict/ext-language_tools";
 
+import { parse } from 'node-html-parser';
 import moduleStyles from "./Editors.module.scss";
 import { PreviewHtml } from "./PreviewHtml";
 import MapHtmlToFieldJson from "../common/services/MapHtmlToFieldJson";
@@ -25,6 +26,7 @@ import { ISchemaPropertiesRow, ISchemaPropertiesTile } from "./toolbox/Schemas";
 
 interface EditorsProps {
     schemaProperties?: ISchemaPropertiesRow | ISchemaPropertiesTile;
+    setSchemaPropertiesCallback?: (properties: any) => void;
 }
 
 export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsProps) => {
@@ -70,21 +72,15 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
 
         if (workingHtml && valid(workingHtml)) {
             localStorage.setItem(htmlStorageKey, workingHtml);
-            let json: any = (selectedWorkingType === "row" 
-                ? MapHtmlToFieldJson.HtmlNodeToRowJson(workingHtml, { removeInvalidClassNames })
-                : selectedWorkingType === "column" 
-                ? MapHtmlToFieldJson.HtmlNodeToColumnJson(workingHtml, { removeInvalidClassNames })
-                : selectedWorkingType === "tile" 
-                ? MapHtmlToFieldJson.HtmlNodeToTileJson(workingHtml, { removeInvalidClassNames })
-                : undefined)
-            json = JSON.stringify({
-                ...JSON.parse(json),
-                ...MapHtmlToFieldJson.ImportSchemaProperties(props.schemaProperties, workingTypeKey)
-            }, undefined, 2)
-            setWorkingJson(json);
+            let json: any = {
+                "$schema": selectedWorkingType !== undefined ? MapHtmlToFieldJson.SchemaUris[selectedWorkingType] : undefined,
+                ...MapHtmlToFieldJson.ImportSchemaProperties(props.schemaProperties, workingTypeKey),
+                ...MapHtmlToFieldJson.MapHtmlToJson(parse(workingHtml.trim()), { removeInvalidClassNames })
+            }
+            setWorkingJson(JSON.stringify(json, undefined, 2));
         }
 
-    }, [ workingHtml, selectedWorkingType, removeInvalidClassNames, removeInvalidStyleAttributes ]);
+    }, [ workingHtml, selectedWorkingType, removeInvalidClassNames, removeInvalidStyleAttributes, props.schemaProperties ]);
 
     React.useEffect(() => {
         if (selectedWorkingType) {
@@ -116,9 +112,9 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         setSelectedWorkingType(workingType);
     }
 
-    const setSchemaPropertiesCallback = (properties: any) => {
-        log.debug(`${JSON.stringify(properties)}`);
-    }
+    // const setSchemaPropertiesCallback = (properties: any) => {
+    //     props.setSchemaPropertiesCallback && setSchemaPropertiesCallback(properties);
+    // }
 
     const jsonCommandBarItems: ICommandBarItemProps[] = [
         {
@@ -256,6 +252,10 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
     })
 
     return (<Stack>
+        <CommandBar
+            items={jsonCommandBarItems}
+            ariaLabel="Template actions"
+        />
         <Stack className={`${moduleStyles.section} ${moduleStyles.htmlSection}`}>
 
             <Text variant={"large"} block>HTML</Text>
@@ -263,7 +263,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
                 <Editor
                     onValueChange={htmlChange}
                     name="htmlEditor"
-                    value={workingHtml || "<div></div>"}
+                    value={workingHtml || ""}
                     highlight={
                         (code: any) => Prism.highlight(code, Prism.languages.markup, 'markup')
                     }
@@ -289,10 +289,6 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
         <Stack className={`${moduleStyles.section} ${moduleStyles.jsonSection}`}>
     
             <Text variant={"large"} block>JSON Template</Text>
-            <CommandBar
-                items={jsonCommandBarItems}
-                ariaLabel="Template actions"
-            />
             <div className={`${moduleStyles.editor}`}>
                 <Editor
                     onValueChange={jsonChange}
@@ -318,7 +314,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
             styles={{ main: { minWidth: "800px", minHeight: "300px" } }}
             setWorkingTypeCallback={setWorkingTypeCallback}
             setHtmlCallback={setHtmlCallback}
-            setSchemaPropertiesCallback={setSchemaPropertiesCallback}
+            setSchemaPropertiesCallback={props.setSchemaPropertiesCallback}
             dismissCallback={cancelCallback} />
 
     </Stack>);

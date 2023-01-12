@@ -62,9 +62,9 @@ export const Schemas: React.FunctionComponent<ISchemaToolboxProperties> = (props
 
     React.useEffect(() => {
 
-        if (schemaSettingsTile.width && schemaSettingsTile.height
-            && (schemaSettingsTile.width < schemaSettingsTile.height / 2
-            || schemaSettingsTile.width > schemaSettingsTile.height * 3)) {
+        if (schemaSettingsTile?.width && schemaSettingsTile?.height
+            && (schemaSettingsTile?.width < schemaSettingsTile?.height / 2
+            || schemaSettingsTile?.width > schemaSettingsTile?.height * 3)) {
                 setWidthValidationMinimumWidth(schemaSettingsTile.height / 2);
                 setWidthValidationMaximumWidth(schemaSettingsTile.height * 3);
                 setShowWidthValidation(true);
@@ -75,7 +75,15 @@ export const Schemas: React.FunctionComponent<ISchemaToolboxProperties> = (props
             setShowWidthValidation(false);
     }
 
-    }, [ schemaSettingsTile, schemaSettingsTile.width, schemaSettingsTile.height ])
+    }, [ schemaSettingsTile, schemaSettingsTile?.width, schemaSettingsTile?.height ])
+
+    React.useEffect(() => {
+        const cleansedProps = {...props}
+        delete cleansedProps.setSchemaPropertiesCallback;
+
+        setSchemaSettingsRow(cleansedProps as ISchemaPropertiesRow);
+        setSchemaSettingsTile(cleansedProps as ISchemaPropertiesTile);
+    }, [ props.width, props.height, props.hideSelection, props.fillHorizontally ])
 
     const enteredFields = DefaultFields;
 
@@ -89,19 +97,24 @@ export const Schemas: React.FunctionComponent<ISchemaToolboxProperties> = (props
                 ]} />
             <div className={moduleStyles.propertyContainer}>
                 {selectedSchema === "row" && <Stack tokens={{ childrenGap: '0.5rem' }}>
-                        <Checkbox defaultChecked={schemaSettingsRow.hideSelection} label="Hide selection" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "hideSelection", checked, "Row") } />
-                        <Checkbox defaultChecked={schemaSettingsRow.hideColumnHeader} label="Hide column header" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "hideColumnHeader", checked, "Row") } />
-                        <Checkbox defaultChecked={schemaSettingsRow.hideFooter} label="Hide footer" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "hideFooter", checked, "Row") } />
-                        <TextField defaultValue={schemaSettingsRow.additionalRowClass || ""} label="Additional row class" onChange={(ev: any, newValue?: string) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "additionalRowClass", newValue, "Row") }  />
+                        <Checkbox checked={schemaSettingsRow?.hideSelection} label="Hide selection" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "hideSelection", checked, "Row") } />
+                        <Checkbox checked={schemaSettingsRow?.hideColumnHeader} label="Hide column header" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "hideColumnHeader", checked, "Row") } />
+                        <Checkbox checked={schemaSettingsRow?.hideFooter} label="Hide footer" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "hideFooter", checked, "Row") } />
+                        <TextField value={schemaSettingsRow?.additionalRowClass || ""} label="Additional row class" onChange={(ev: any, newValue?: string) => setPropertyValue(schemaSettingsRow, setSchemaSettingsRow, "additionalRowClass", newValue, "Row") }  />
                     </Stack>}
                 {selectedSchema === "tile" && <Stack tokens={{ childrenGap: '0.5rem' }}>
-                        <Checkbox defaultChecked={schemaSettingsTile.hideSelection} label="Hide selection" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsTile, setSchemaSettingsTile, "hideSelection", checked, "Tile") } />
-                        <Checkbox defaultChecked={schemaSettingsTile.fillHorizontally} label="Fill horizontally" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsTile, setSchemaSettingsTile, "fillHorizontally", checked, "Tile") } />
-                        <TextField suffix="px" className={moduleStyles.pixelTextField} defaultValue={schemaSettingsTile.height?.toString() || ""} label="Height" onChange={(ev: any, newValue?: string) => setPropertyValue(schemaSettingsTile, setSchemaSettingsTile, "height", newValue ? parseInt(newValue) : undefined, "Tile") } />
+                        <Checkbox checked={schemaSettingsTile?.hideSelection} label="Hide selection" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsTile, setSchemaSettingsTile, "hideSelection", checked, "Tile") } />
+                        <Checkbox checked={schemaSettingsTile?.fillHorizontally} label="Fill horizontally" onChange={(ev: any, checked?: boolean) => setPropertyValue(schemaSettingsTile, setSchemaSettingsTile, "fillHorizontally", checked, "Tile") } />
                         <TextField 
                             suffix="px" 
                             className={moduleStyles.pixelTextField} 
-                            defaultValue={schemaSettingsTile.width?.toString() || ""} 
+                            value={schemaSettingsTile?.height?.toString() || ""} 
+                            label="Height" 
+                            onChange={(ev: any, newValue?: string) => setPropertyValue(schemaSettingsTile, setSchemaSettingsTile, "height", newValue ? parseInt(newValue) : undefined, "Tile") } />
+                        <TextField 
+                            suffix="px" 
+                            className={moduleStyles.pixelTextField} 
+                            value={schemaSettingsTile?.width?.toString() || ""} 
                             label="Width" 
                             errorMessage={showWidthValidation ? `Should be greater than the height value divided by 2, and less than the height value multiplied by 3 (>= ${widthValidationMinimumWidth} and <=${widthValidationMaximumWidth}` : undefined}
                             onChange={(ev: any, newValue?: string) => setPropertyValue(schemaSettingsTile, setSchemaSettingsTile, "width", newValue ? parseInt(newValue) : undefined, "Tile") } />

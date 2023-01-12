@@ -58,6 +58,9 @@ export const App: React.FunctionComponent = () => {
         return React.createElement(component, finalProps);
     };
 
+    const setSchemaPropertiesCallback = (properties: any) => {
+        setSchemaProperties(properties);
+    }
 
     return (
         <div>
@@ -67,10 +70,10 @@ export const App: React.FunctionComponent = () => {
                     user={user} 
                     processing={processing} />
                 <Stack horizontal>
-                    <Navigation userLoggedIn={userLoggedIn} schemaProperties={schemaProperties} />
+                    <Navigation userLoggedIn={userLoggedIn} schemaProperties={schemaProperties} setSchemaPropertiesCallback={setSchemaPropertiesCallback} />
                     <div id={`appContainer`} className={styles.appContainer}>
                         <Routes>
-                            <Route path="/" element={<Home schemaProperties={schemaProperties} />} />
+                            <Route path="/" element={<Home schemaProperties={schemaProperties} setSchemaPropertiesCallback={setSchemaPropertiesCallback} />} />
                         </Routes>
                     </div>
                 </Stack>
