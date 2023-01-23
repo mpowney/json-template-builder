@@ -75,7 +75,7 @@ export const Editors: React.FunctionComponent<EditorsProps> = (props: EditorsPro
             let json: any = {
                 "$schema": selectedWorkingType !== undefined ? MapHtmlToFieldJson.SchemaUris[selectedWorkingType] : undefined,
                 ...MapHtmlToFieldJson.ImportSchemaProperties(props.schemaProperties, workingTypeKey),
-                ...MapHtmlToFieldJson.MapHtmlToJson(parse(workingHtml.trim()), { removeInvalidClassNames })
+                ...MapHtmlToFieldJson.MapJsonToSchema(selectedWorkingType, MapHtmlToFieldJson.MapHtmlToJson(parse(workingHtml.trim()), { removeInvalidClassNames }))
             }
             setWorkingJson(JSON.stringify(json, undefined, 2));
         }

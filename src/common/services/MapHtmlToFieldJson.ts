@@ -18,37 +18,6 @@ export default class MapHtmlToFieldJson {
         "tile": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json"
     }
 
-    public static HtmlNodeToColumnJson(value: string, options?: IMapHtmlToJsonOptions): string {
-        const html = parse(value.trim());
-        const json = {
-            "$schema": MapHtmlToFieldJson.SchemaUris.column,
-            ...MapHtmlToFieldJson.MapHtmlToJson(html, options)
-        }
-        return JSON.stringify(json, undefined, 2);
-    }
-
-    public static HtmlNodeToRowJson(value: string, options?: IMapHtmlToJsonOptions): string {
-        const html = parse(value.trim());
-        const json = {
-            "$schema": MapHtmlToFieldJson.SchemaUris.row,
-            "rowFormatter": {
-                ...MapHtmlToFieldJson.MapHtmlToJson(html, options)
-            }
-        }
-        return JSON.stringify(json, undefined, 2);
-    }
-
-    public static HtmlNodeToTileJson(value: string, options?: IMapHtmlToJsonOptions): string {
-        const html = parse(value.trim());
-        const json = {
-            "$schema": MapHtmlToFieldJson.SchemaUris.tile,
-            "formatter": {
-                ...MapHtmlToFieldJson.MapHtmlToJson(html, options)
-            }
-        }
-        return JSON.stringify(json, undefined, 2);
-    }
-
     public static ImportSchemaProperties(schemaProperties: ISchemaPropertiesRow | ISchemaPropertiesTile | any, workingType: string): any {
         if (schemaProperties) Object.keys(schemaProperties).forEach((key: string) => {
             if (workingType === "row") {
@@ -93,12 +62,12 @@ export default class MapHtmlToFieldJson {
         const style = MapHtmlToFieldJson.MapStyleAttributes(valueStyleAttribute);
         try {
             const json: any = {
+                elmType: (value.tagName.toLowerCase() as IElmType['elmType']),
+                ...((attributes.class || hasOtherAttributes) && { attributes: attributes }),
+                ...(style && { style: style}),
                 ...(value.childNodes && value.childNodes.length == 1 && value.childNodes[0] && value.childNodes[0].text && {
                     txtContent: value.childNodes[0].text
                 }),
-                ...((attributes.class || hasOtherAttributes) && { attributes: attributes }),
-                ...(style && { style: style}),
-                elmType: (value.tagName.toLowerCase() as IElmType['elmType']),
                 ...(value.childNodes && (value.childNodes.length > 1 || (value.childNodes[0] && !value.childNodes[0].text)) && { 
                     children: Array.from(value.childNodes as HTMLElement[])
                                     .map((node: HTMLElement) => MapHtmlToFieldJson.MapHtmlToJson(node, options)).filter(Boolean)
@@ -110,6 +79,12 @@ export default class MapHtmlToFieldJson {
             log.error(`${value.tagName} error: ${JSON.stringify(err)}`);
             return {}
         }
+    }
+
+    public static MapJsonToSchema(schema: string | number, json: any): any {
+        return schema === "row" ? { rowFormatter: json }
+            : schema === "tile" ? { formatter: json }
+            : json
     }
 
     public static MapStyleAttributes(value: string): any {
