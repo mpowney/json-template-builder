@@ -17,7 +17,7 @@ export const HomeEntry: React.FunctionComponent<IHomeEntryProps> = (props: IHome
     return (
         <div>
             <Helmet>
-                <title>Home</title>
+                <title>JSON Template Builder for SharePoint</title>
             </Helmet>
             <Outlet />
 
