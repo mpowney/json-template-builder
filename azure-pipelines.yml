@@ -68,7 +68,7 @@ stages:
               SourcePath: '$(System.DefaultWorkingDirectory)/build/*'
               azureSubscription: 'Visual Studio Enterprise Subscription – MPN (31c30357-3d5e-4c0f-a82b-2283d0db4312)'
               Destination: AzureBlob
-              storage: jsontemplates
+              storage: jsontemplatebuilder
               ContainerName: '$web'
           # - task: AzureCLI@1
           #   displayName: 'Azure CLI '
